@@ -9,7 +9,7 @@ helper_method :user
     # If we were to use User.find, it would throw an exception if the user can't be found.
     puts User.find_by_email(session[:user]).to_s
     puts session[:user].to_s
-    
+    puts request.original_url
     
     @current_user ||= User.find_by_email(session[:user]) if session[:user]
     #@current_user ||= User.find_by_authentication_token(cookies[:auth_token]) if cookies[:auth_token] && @current_user.nil?
@@ -20,7 +20,12 @@ helper_method :user
 def authenticate_user
   if current_user.nil?
     flash[:error] = 'You must be signed in to view that page.'
+    puts "came here " + request.original_url
+   session[:requestUrl] = request.original_url
     redirect_to :root
-  end
+   
+     
+   end
+   
 end
 end

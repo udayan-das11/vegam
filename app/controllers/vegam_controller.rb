@@ -9,17 +9,26 @@ class VegamController < ApplicationController
   def signin
          puts(params[:user][:email])
 		 user2 = User.find_by_email(params[:user][:email])
-		 puts(params[:user][:password].to_s+"  > "+user2.password.to_s+"#")
+		puts "ss url" + session[:requestUrl]
+		 puts(Digest::SHA1.hexdigest(params[:user][:password].to_s)+"  > "+user2.password.to_s+"#")
 		 if (Digest::SHA1.hexdigest(params[:user][:password].to_s) == user2.password.to_s)
+		  puts "pwd match"
 		   session[:user]=user2.email
 		   if (user2.email=="admin")
 				redirect_to :controller=>"admins" ,:action => "admin"
-		   else
-				redirect_to :action => "index"
+		    elsif session[:requestUrl].nil?
+      puts "ssurl nil"
+         redirect_to :action => "index"
+				else
+			puts "ssurl not nil"
+				 url = session[:requestUrl]
+          session.delete(:requestUrl)
+				redirect_to  url  
 		   end	
 		 else
 	       render :template => "users/error" 
 		 end  
+  
   end
 
   def signup

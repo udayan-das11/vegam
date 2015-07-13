@@ -930,3 +930,1017 @@ Completed 200 OK in 46ms (Views: 45.6ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 01:31:09 +0530
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 01:33:25 +0530
+Processing by VegamController#myaccount as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "kartikkhatri00001@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "kartikkhatri00001@gmail.com"]]
+  Rendered vegam/myaccount.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-07-14 01:44:09 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/login"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.0ms)
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 01:44:15 +0530
+
+SyntaxError (/home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam/app/controllers/vegam_controller.rb:47: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/vegam_controller.rb:47: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.4ms)
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VegamController#myaccount as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 177ms (Views: 169.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-14 01:45:28 +0530
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 01:45:29 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-07-14 01:45:29 +0530
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-14 01:45:35 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AD+avy30DBhWF7rSwPn3Hm70vZRjBsa4YrsX0q6Wji+ahXdVzrgnt2RCiczsQ2Qw+eWmsqfBE/UFzNTLwAr7AA==", "user"=>{"email"=>"kartikkhatri00001@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"signin"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "kartikkhatri00001@gmail.com"]]
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+ActionView::MissingTemplate (Missing template users/error with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam/app/views"
+):
+  app/controllers/vegam_controller.rb:25:in `signin'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (14.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.4ms)
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-14 01:48:38 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AD+avy30DBhWF7rSwPn3Hm70vZRjBsa4YrsX0q6Wji+ahXdVzrgnt2RCiczsQ2Qw+eWmsqfBE/UFzNTLwAr7AA==", "user"=>{"email"=>"kartikkhatri00001@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"signin"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "kartikkhatri00001@gmail.com"]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+ActionView::MissingTemplate (Missing template users/error with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam/app/views"
+):
+  app/controllers/vegam_controller.rb:25:in `signin'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (16.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 01:48:47 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 58ms (Views: 56.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 01:48:47 +0530
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-14 01:48:58 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KeR27Clxa2FEe/P7ZIV/mATHmZKZdS5HtgSNv++Qjw2zXpsGyj1AznYuwOVIP+y2k9aCtF2y+wrRc06mgQz6Ig==", "user"=>{"email"=>"kartikkhatri0001@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"signin"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "kartikkhatri0001@gmail.com"]]
+  Rendered vegam/signin.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 70ms (Views: 68.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-14 01:49:04 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KeR27Clxa2FEe/P7ZIV/mATHmZKZdS5HtgSNv++Qjw2zXpsGyj1AznYuwOVIP+y2k9aCtF2y+wrRc06mgQz6Ig==", "user"=>{"email"=>"kartikkhatri0001@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"signin"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "kartikkhatri0001@gmail.com"]]
+  Rendered vegam/signin.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KeR27Clxa2FEe/P7ZIV/mATHmZKZdS5HtgSNv++Qjw2zXpsGyj1AznYuwOVIP+y2k9aCtF2y+wrRc06mgQz6Ig==", "user"=>{"email"=>"kartikkhatri0001@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"signin"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "kartikkhatri0001@gmail.com"]]
+  Rendered vegam/signin.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-14 01:49:10 +0530
+
+
+Started GET "/login" for 127.0.0.1 at 2015-07-14 01:49:28 +0530
+
+ActionController::RoutingError (No route matches [GET] "/login"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (27.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (22.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 01:49:37 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 48ms (Views: 47.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 01:49:37 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-07-14 01:49:37 +0530
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 01:49:49 +0530
+Processing by VegamController#myaccount as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 01:49:49 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 01:49:49 +0530
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-14 01:50:02 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AWXW5HoTeggsHhovkz3HkCVK2I2vtwxzHNZPPeLFnsub3zsOmV9Rpx5LKTG/h1S+slvDq2tw2T57oYwkjFnr5A==", "user"=>{"email"=>"kartikkhatri0001@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"signin"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "kartikkhatri0001@gmail.com"]]
+  Rendered vegam/signin.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-07-14 01:51:14 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/login"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (28.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.6ms)
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 01:51:27 +0530
+Processing by VegamController#myaccount as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 01:51:27 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 168ms (Views: 161.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 01:51:27 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-07-14 01:51:27 +0530
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 01:53:00 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VegamController#myaccount as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 01:53:00 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 180ms (Views: 171.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 01:53:01 +0530
+Processing by VegamController#myaccount as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 01:53:01 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 77ms (Views: 76.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 01:53:01 +0530
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-14 01:53:09 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w1EwC3MRJSV9OyxWiFRqqjuLu+Lihz8FxAquA6D0yTlZ693hkF0Oik9uH0ik7vmErJqgxCZA6kijfW0azmi8Fg==", "user"=>{"email"=>"kartikkhatri0001@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"signin"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "kartikkhatri0001@gmail.com"]]
+  Rendered vegam/signin.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 75ms (Views: 66.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-07-14 01:54:04 +0530
+
+ActionController::RoutingError (No route matches [GET] "/login"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 01:54:06 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 53ms (Views: 52.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 01:54:06 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-07-14 01:54:06 +0530
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 01:54:10 +0530
+Processing by VegamController#myaccount as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 01:54:10 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 45ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 01:54:10 +0530
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-14 01:54:20 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GXROwu4G94vMbtUwc8p4HJjZdth4sDjooIA9GVK0S2uDzqMoDUrcJP475i5fcOsyD8ht/rx37aXH9/4APCg+RA==", "user"=>{"email"=>"kartikkhatri001@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"signin"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "kartikkhatri001@gmail.com"]]
+  Rendered vegam/signin.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 64ms (Views: 62.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 01:56:13 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VegamController#myaccount as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 01:56:13 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 175ms (Views: 167.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 01:56:14 +0530
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-14 01:56:22 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u6ZNGhWmiOMdR2oIyE5NdYGhaim4tIFTqcKxPSW28XchHKDw9uqjTC8SWRbk9N5bFrBxD3xzVB7OtXIkSyqEWA==", "user"=>{"email"=>"kartikkhatri0001@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"signin"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "kartikkhatri0001@gmail.com"]]
+  Rendered vegam/signin.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 87ms (Views: 83.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 01:57:41 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VegamController#myaccount as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 01:57:41 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 174ms (Views: 167.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 01:57:42 +0530
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-14 01:57:51 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GsiCTyotAsfPcfjZLPk/OsEG6HSR4rzZ+1xWawJ5mTuAcm+lyWEpaP0ky8cAQ6wUVhfzUlUlaZScK5VybOXsFA==", "user"=>{"email"=>"kartikkhatri0001@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"signin"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "kartikkhatri0001@gmail.com"]]
+  Rendered vegam/signin.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 85ms (Views: 80.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 01:59:06 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 61ms (Views: 59.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 01:59:07 +0530
+
+
+Started POST "/vegam/signup" for 127.0.0.1 at 2015-07-14 01:59:23 +0530
+Processing by VegamController#signup as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/UxvXShOn1F+PaaW2sd3++sG2z+JQd/pApP5RxJvaWtn9oK3ywK0/kxolYj2feTVfBfAGU2GCqRl5DpefPMcRA==", "user"=>{"fname"=>"", "lname"=>"", "phone"=>"", "email"=>"abc", "password"=>"[FILTERED]", "confirm_password"=>"[FILTERED]", "dob"=>""}, "commit"=>"signup"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "fname", "lname", "dob", "password", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "abc"], ["fname", ""], ["lname", ""], ["dob", ""], ["password", "a9993e364706816aba3e25717850c26c9cd0d89d"], ["phone", ""], ["created_at", "2015-07-13 20:29:23.192730"], ["updated_at", "2015-07-13 20:29:23.192730"]]
+  [1m[35m (153.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 157ms (ActiveRecord: 153.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 01:59:23 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 53ms (Views: 52.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 01:59:23 +0530
+
+
+Started GET "/login" for 127.0.0.1 at 2015-07-14 01:59:43 +0530
+
+ActionController::RoutingError (No route matches [GET] "/login"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (21.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 01:59:46 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 45ms (Views: 44.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 01:59:46 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-07-14 01:59:46 +0530
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-14 01:59:53 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uXpX4aYMRb5RAeZyqx2M+2t5hBDSirm2pzpdrvXH5bsjwLoLRUBuEWNU1WyHpx/V/GifNhZNbPvATZ63m1uQlA==", "user"=>{"email"=>"abc", "password"=>"[FILTERED]"}, "commit"=>"signin"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "abc"]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+ActionView::MissingTemplate (Missing template users/error with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam/app/views"
+):
+  app/controllers/vegam_controller.rb:26:in `signin'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (17.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.3ms)
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 02:01:13 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VegamController#myaccount as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "abc"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "abc"]]
+  Rendered vegam/myaccount.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 175ms (Views: 157.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 02:01:19 +0530
+Processing by VegamController#myaccount as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "abc"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "abc"]]
+  Rendered vegam/myaccount.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 66ms (Views: 64.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 02:01:30 +0530
+Processing by VegamController#myaccount as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "abc"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "abc"]]
+  Rendered vegam/myaccount.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 79ms (Views: 77.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VegamController#myaccount as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 172ms (Views: 164.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-14 02:02:13 +0530
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 02:02:14 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-07-14 02:02:14 +0530
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-14 02:02:21 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hNn3P5w2mJqHwUNOkQeWSXCIVllz/7/Zqe2tzCtxs1cEhr3Zem4sOi5LszcQ1Ws1lbgPUeOlpwGIImGiLTpkQQ==", "user"=>{"email"=>"abc", "password"=>"[FILTERED]"}, "commit"=>"signin"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "abc"]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+ActionView::MissingTemplate (Missing template users/error with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam/app/views"
+):
+  app/controllers/vegam_controller.rb:26:in `signin'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (14.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.1ms)
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 02:03:43 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VegamController#myaccount as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 02:03:43 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 172ms (Views: 166.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 02:03:43 +0530
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-14 02:03:49 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pdVAUyw5PmUPszAtkSPk8LLwe4gWMrvCBD+uNLw5tI8ligq1ymGKxaY5wFQQ8RmMV8AigIZooxol8GJaunJjmQ==", "user"=>{"email"=>"abc", "password"=>"[FILTERED]"}, "commit"=>"signin"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "abc"]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms)
+
+ActionView::MissingTemplate (Missing template users/error with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam/app/views"
+):
+  app/controllers/vegam_controller.rb:27:in `signin'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (16.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (30.2ms)
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 02:08:12 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VegamController#myaccount as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 02:08:13 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 173ms (Views: 167.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 02:08:13 +0530
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-14 02:08:20 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ndsrn0wnudgAfdXHgA17cMkEyE0KeQvTK2qAHo0sRMS1hGF5qn8NeKn3Jb4B34YMLDSRRZojEwsKpUxwi2eT0g==", "user"=>{"email"=>"abc", "password"=>"[FILTERED]"}, "commit"=>"signin"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "abc"]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `nil' for "http://localhost:3000/vegam/myaccount":String):
+  app/controllers/vegam_controller.rb:19:in `signin'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.2ms)
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 02:09:00 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VegamController#myaccount as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 02:09:00 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 173ms (Views: 166.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 02:09:00 +0530
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-14 02:09:06 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZpUb62NvlyUenuItSmeDKjNLuwju3vAiuw9TgF3qAZ7mylENhTcjhbcUElTLtX5W1nviAH6E6PqawJ/uW6HWiA==", "user"=>{"email"=>"abc", "password"=>"[FILTERED]"}, "commit"=>"signin"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "abc"]]
+Redirected to 
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"http://localhost:3000/vegam/myaccount", :controller=>"vegam"}):
+  app/controllers/vegam_controller.rb:26:in `signin'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.2ms)
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 02:09:35 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VegamController#myaccount as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 02:09:35 +0530
+Processing by VegamController#index as HTML
+  Rendered vegam/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 177ms (Views: 172.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-14 02:09:35 +0530
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-14 02:09:41 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z+13wdahKnFhcohe/Nr5YkMKYXtpnef+9j+ALhFBCfjnsj0nMPme0cj4eCd9CAQepjo4c/nH/ybX8ExAFwre7g==", "user"=>{"email"=>"abc", "password"=>"[FILTERED]"}, "commit"=>"signin"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "abc"]]
+Redirected to http://localhost:3000/vegam/myaccount
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/vegam/myaccount" for 127.0.0.1 at 2015-07-14 02:09:41 +0530
+Processing by VegamController#myaccount as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "abc"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "abc"]]
+  Rendered vegam/myaccount.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 85ms (Views: 83.6ms | ActiveRecord: 0.1ms)
