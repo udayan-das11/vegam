@@ -6,6 +6,7 @@ class AdminsController < ApplicationController
   end
 
   def contractors
+    redirect_to :controller=>"contractors" ,:action => "new"
   end
 
   def jobs

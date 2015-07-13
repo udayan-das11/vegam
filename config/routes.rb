@@ -11,6 +11,8 @@ get 'vegam/index'
   get 'admins/admin'
   get 'vegam/myaccount'
   
+  resources :contractors
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
