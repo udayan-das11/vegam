@@ -7,7 +7,7 @@ class VegamController < ApplicationController
          puts(params[:user][:email])
 		 user2 = User.find_by_email(params[:user][:email])
 		 puts(params[:user][:password].to_s+"  > "+user2.password.to_s+"#")
-		 if (params[:user][:password].to_s == user2.password.to_s)
+		 if (Digest::SHA1.hexdigest(params[:user][:password].to_s) == user2.password.to_s)
 		   session[:user]=user2.email
 		   if (user2.email=="admin")
 				redirect_to :controller=>"admins" ,:action => "admin"
@@ -22,6 +22,7 @@ class VegamController < ApplicationController
   def signup
        @user=User.new(email:params[:user][:email],fname:params[:user][:fname],lname:params[:user][:lname],dob:params[:user][:dob],password:params[:user][:password],gender:params[:user][:gender],phone:params[:user][:phone])
 	   if (params[:password].to_s == params[:confirm_password].to_s)
+	      @user.password = Digest::SHA1.hexdigest(@user.password);
 	     @user.save
 	     session[:user]=@user.email
 	     redirect_to :action => :index
