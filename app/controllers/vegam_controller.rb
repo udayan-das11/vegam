@@ -1,4 +1,7 @@
 class VegamController < ApplicationController
+  before_filter :authenticate_user, :only => [:myaccount] 
+  
+  
   def index
    @user = User.new
   end
@@ -28,4 +31,12 @@ class VegamController < ApplicationController
 	     redirect_to :action => :index
 	 end  
   end
-end
+  
+  def myaccount
+    
+    
+  end
+  
+  end
+
+
