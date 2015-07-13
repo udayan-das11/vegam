@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vegam</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>VEGAM</title>
+    
+	<style>
+	
+	#search{
+		background-image:url(/assets/home_page.jpg);
+		background-repeat:no-repeat;
+		background-size:cover;
+		height:600px;
+		}
+	#inner{
+		padding-left:25px;
+   		padding-bottom:30px;
+    	background-color:rgba(190,190,190,0.6);
+		margin-top:250px;
+		box-shadow: 10px 10px 5px #666;
+		border-radius:9px;
+		}
+	#cont{
+		padding-top:10px;
+		border-radius:6px;
+		margin-left:20px;
+		background-color:#FFF;
+		height:100px;
+		width:100px;
+		}
+	
+	</style>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

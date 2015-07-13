@@ -1,0 +1,430 @@
+<body>
+  <div class="img-responsive" id="search">  
+  
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                  <div class="container-fluid">
+                    <div class="col-md-5" >
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                      </button>
+                      <a class="navbar-brand" href="#">Welcome <%= session[:user].to_s %></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                      <ul class="nav navbar-nav" >
+                         <li><a href="#">Home</a></li>
+                         <li class="dropdown">
+                                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
+                                  <ul class="dropdown-menu">
+                                    <li><a href="#">Plumbing</a></li>
+                                    <li><a href="#">Electrical</a></li>
+                                    <li><a href="#">painting</a></li>
+                                    <li><a href="#">fitness</a></li>
+                                    <li><a href="#">Beauty</a></li>
+                                    <li><a href="#"></a></li>
+                                  </ul>
+                         </li>
+                         <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cities<span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Hyderabad</a></li>
+                                <li><a href="#">Bangalore</a></li>
+                                <li><a href="#">Delhi</a></li>
+                                <li><a href="#">Chennai</a></li>
+                                <li><a href="#">Mumbai</a></li>
+                                <li><a href="#"></a></li>
+                              </ul>
+                         </li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                         <li  data-toggle="modal" data-target="#loginModal"><a href="#">Login&nbsp;<i class="fa fa-user fa-1x"></i> </a></li>
+                        <li  data-toggle="modal" data-target="#signup"><a href="#">Register&nbsp;<i class="fa fa-unlock fa-1x"></i></a></li>
+                       </ul>
+                   </div>
+                </div>
+              </nav>   
+          
+          
+           				   <!--  ( Create )-->
+              
+              <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+              <div class="modal-dialog">
+               <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">SignUp</h4>
+                 </div>
+    
+                 <div class="modal-body">     
+					  <%= form_for @user, :html => {:class => 'form-horizontal'}, :url => {:controller => 'vegam',:action =>"signup" } do |f|%>
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">Full name</label>
+                    
+                            <div class="col-xs-3">
+							    <%= f.text_field :fname,class:"form-control",placeholder:"First name"%>
+                            </div>
+    
+                            <div class="col-xs-3">
+                                <%= f.text_field :lname,class:"form-control",placeholder:"Last name"%>
+                            </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">Phone number</label>
+                    
+                            <div class="col-xs-6">
+								<%= f.text_field :phone,class:"form-control",placeholder:"Phone Number"%>
+                            </div>
+                    
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">Email Id</label>                    
+                            <div class="col-xs-6">
+								<%= f.text_field :email,class:"form-control",placeholder:"Email"%>
+                            </div>
+                         </div>
+                        
+                         <div class="form-group">
+                            <label class="col-xs-3 control-label">Password</label>
+                                <div class="col-xs-6">
+									<%= f.password_field :password,class:"form-control",placeholder:"Password",placeholder:"Password",type:"password"%>
+                                </div>
+                         </div>
+                        
+                          <div class="form-group">
+                                <label class="col-xs-3 control-label">Re-Enter Password</label>
+                                <div class="col-xs-6">
+								<%= f.password_field :confirm_password,class:"form-control",placeholder:"Confirm Password",placeholder:"Password",type:"password"%>
+                                </div>
+                          </div>
+                        
+                         <div class="form-group">
+                             <label class="col-xs-3 control-label">Gender</label>
+                               <div class="col-xs-5">
+                                   <div class="radio">
+                                        <label>
+										<%= f.radio_button  :gender,value:"male"%> Male
+                                        </label>
+                                   </div>
+                                   <div class="radio">
+                                        <label>
+										<%= f.radio_button  :gender,value:"female"%> Female
+                                        </label>
+                                   </div>
+                                   <div class="radio">
+                                        <label>
+										<%= f.radio_button  :gender,value:"Wont Disclose"%> Wont't Disclose
+                                        </label>
+                                   </div>
+                              </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">Date of birth</label>
+                            <div class="col-xs-3">
+								<%= f.text_field :dob,class:"form-control",placeholder:"YYYY/MM/DD"%>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-xs-3 col-xs-offset-3">
+                            <button type="submit" class="btn btn-link">Update profile</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-xs-5 col-xs-offset-3">
+							    <button type="submit" class="btn btn-info" actions=<%=f.submit 'signup'%>Register</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </div>
+							
+                       </div>
+                  <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>    <!--  ( Create )-->
+
+
+             <!-- (  Login  )-->
+         
+         
+         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+   		  <div class="modal-dialog">
+           <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Login</h4>
+             </div>
+
+             <div class="modal-body">
+                
+                 <%= form_for @user, :html => {:class => 'form-horizontal'}, :url => {:controller => 'vegam',:action =>"signin" } do |f|%>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">Email</label>
+                        <div class="col-xs-5">
+                            <%= f.text_field :email,class:"form-control",placeholder:"Email"%>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">Password</label>
+                        <div class="col-xs-5">
+                            <%= f.password_field :password,class:"form-control",placeholder:"Password",placeholder:"Password",type:"password"%>
+                        </div>
+                    </div>
+                    
+                  
+                    <div class="form-group">
+                        <div class="col-xs-3 col-xs-offset-3">
+                        <button type="submit" class="btn btn-link">Forget Password</button>
+                        <button type="submit" class="btn btn-link">Connect with facebook&nbsp;<i class="fa fa-facebook-official fa-1x"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-xs-5 col-xs-offset-3">
+                            <button type="submit" class="btn btn-info" actions=<%=f.submit 'signin'%>Login</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>		<!-- (  Login  )-->
+        
+        
+            
+     								<!--  ( Banner   )-->
+        
+            <div class="container">
+             <div class="col-md-2" ></div>
+              <div class="col-md-8" id="inner">
+                <h2 align="center" style="color:#FFF"><strong>What would you like to do ?</strong></h2>
+              
+        	  <div class="row">
+              		<div>
+					  <a href="#"  rel=""  target="_blank">
+                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
+					      <img class="img-responsive "><i class="fa fa-cog fa-3x" style="color:#0CF"></i><br>Manage Services
+						</div>	
+                     </a>
+                   </div>
+                    
+                    
+                   <div>
+                      <a href="#"  rel=""  target="_blank">	
+				       <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
+						<img class="img-responsive "><i class="fa fa-university fa-3x" style="color:#0CF"></i><br>Manage Cities
+                        </div>
+                      </a>
+				   </div>
+                   
+                    <div>
+                      <a href="#"  rel=""  target="_blank">	
+				       <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
+						<img class="img-responsive "><i class="fa fa-users fa-3x" style="color:#0CF"></i><br>Manage Workforce
+                        </div>
+                      </a>
+				   </div>
+                   
+                   <div>
+                      <a href="#"  rel=""  target="_blank">	
+				       <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
+						<img class="img-responsive "><i class="fa fa-suitcase fa-3x" style="color:#0CF"></i><br>Manage Inventory
+                        </div>
+                      </a>
+				   </div>
+                  
+                  
+                   <div>
+                      <a href="#"  rel=""  target="_blank">	
+				       <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
+						<img class="img-responsive "><i class="fa fa-wrench fa-3x" style="color:#0CF"></i><br>Manage Jobs
+                        </div>
+                      </a>
+				   </div>
+                    
+                    
+                   <div>
+                      <a href="#"  rel=""  target="_blank">	
+				       <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
+						<img class="img-responsive "><i class="fa fa-bar-chart fa-3x" style="color:#0CF"></i><br>Analyze finances
+                        </div>
+                      </a>
+				   </div>
+			    </div>
+             </div>
+          </div>        <!--(banner)-->
+          <div class="container">
+          </div>
+     </div>
+  </div>
+     
+              
+     
+      			<!-- (signup)-->
+    
+        <script>
+		
+   			 $(function() {
+	  				$('button.navbar-toggle').click(function() {
+					if ($('body').css('padding-top') < '100px') {
+						$('body').css('padding-top', '+=245');
+					} else {
+						$('body').css('padding-top', '0');
+					}
+				  });
+				});
+
+			$(document).ready(function() {
+				$('#signup').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'glyphicon glyphicon-ok',
+						invalid: 'glyphicon glyphicon-remove',
+						validating: 'glyphicon glyphicon-refresh'
+					},
+					fields: {
+						firstName: {
+							row: '.col-xs-5',
+							validators: {
+								notEmpty: {
+									message: 'The first name is required'
+								},
+								regexp: {
+									regexp: /^[a-zA-Z\s]+$/,
+									message: 'The first name can only consist of alphabetical and space'
+								}
+							}
+						},
+						lastName: {
+							row: '.col-xs-5',
+							validators: {
+								notEmpty: {
+									message: 'The last name is required'
+								},
+								regexp: {
+									regexp: /^[a-zA-Z\s]+$/,
+									message: 'The last name can only consist of alphabetical and space'
+								}
+							}
+						},
+						cellPhone: {
+							row: '.col-xs-3',
+							validators: {
+								notEmpty: {
+									message: 'The cell phone number is required'
+								}
+							}
+						},
+						homePhone: {
+							row: '.col-xs-3',
+							validators: {
+								notEmpty: {
+									message: 'The home phone number is required'
+								}
+							}
+						},
+						officePhone: {
+							row: '.col-xs-3',
+							validators: {
+								notEmpty: {
+									message: 'The office phone number is required'
+								}
+							}
+						}
+					},
+					 email: {
+						 row: '.col-xs-6',
+						validators: {
+							notEmpty: {
+								message: 'The email address is required'
+							},
+							emailAddress: {
+								message: 'The input is not a valid email address'
+							}
+						}
+					},
+					password: {
+						row: '.col-xs-6',
+							validators: {
+								notEmpty: {
+									message: 'The password is required'
+								},
+								different: {
+									field: 'username',
+									message: 'The password cannot be the same as username'
+								}
+							}
+						},
+						gender: {
+							validators: {
+								notEmpty: {
+									message: 'The gender is required'
+								}
+							}
+						},
+						birthday: {
+							row: '.col-xs-5',
+							validators: {
+								notEmpty: {
+									message: 'The date of birth is required'
+								},
+								date: {
+									format: 'YYYY/MM/DD',
+									message: 'The date of birth is not valid'
+								}
+							}
+						}
+				 });
+			});
+			</script>
+    
+    
+    
+         <!--   (Login)-->
+    
+      <script>
+		$(document).ready(function() {
+			$('#loginForm').formValidation({
+				framework: 'bootstrap',
+				excluded: [':disabled'],
+				icon: {
+					valid: 'glyphicon glyphicon-ok',
+					invalid: 'glyphicon glyphicon-remove',
+					validating: 'glyphicon glyphicon-refresh'
+				},
+				fields: {
+					username: {
+						validators: {
+							notEmpty: {
+								message: 'The username is required'
+							}
+						}
+					},
+					password: {
+						validators: {
+							notEmpty: {
+								message: 'The password is required'
+							}
+						}
+					}
+				}
+			});
+		});
+		</script>
+		
+    
+ 					
+    
+  </body>
