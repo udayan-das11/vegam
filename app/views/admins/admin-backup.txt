@@ -222,7 +222,7 @@
                     
                     
                    <div>
-                      <a href="#"  rel="" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#citiesModal">	
+                      <a href="#"  rel=""  data-toggle="modal" data-target="#citiesModal">	
 				       <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
 						<img class="img-responsive "><i class="fa fa-university fa-3x" style="color:#0CF"></i><br>Manage Cities
                         </div>
@@ -281,80 +281,36 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
 				<ul class="nav nav-pills">
-					  <li class="active"><a href="#tab1" data-toggle="tab">Add City</a></li>
-					  <li><a href="#tab2" data-toggle="tab">Edit City</a></li>
-					  <li><a href="#tab3" data-toggle="tab">Show All</a></li>
-				</ul>
+					  <li role="presentation" class="active"><a href="#">Add City</a></li>
+					  <li role="presentation"><a href="#">Edit City</a></li>
+					  <li role="presentation"><a href="#">Show All</a></li>
+						</ul>
 			</div>
 
              <div class="modal-body">
                 
-					        <div class="tab-content">
-					        <div class="tab-pane active" id="tab1">
-								<%= form_for @city, :html => {:class => 'form-horizontal'}, :url => {:controller => 'cities',:action =>"add" } do |f|%>
-						                    <div class="form-group">
-						                        <label class="col-xs-3 control-label">City Name</label>
-						                        <div class="col-xs-5">
-						                            <%= f.text_field :name,class:"form-control",placeholder:"City Name"%>
-						                        </div>
-						                    </div>
+                 <%= form_for @city, :html => {:class => 'form-horizontal', :id => 'citiesGroup'}, :url => {:controller => 'vegam',:action =>"signin" } do |f|%>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">City Name</label>
+                        <div class="col-xs-5">
+                            <%= f.text_field :name,class:"form-control",placeholder:"City Name"%>
+                        </div>
+                    </div>
 
-						                    <div class="form-group">
-						                        <label class="col-xs-3 control-label">Localities</label>
-						                        <div class="col-xs-5">
-						                            <li class="btn btn-info" onClick="addNewElement();">Add</li>
-						                        </div>
-						                    </div> 
-										    <div id='citiesGroup'>
-											</div>
-						                	<div class="modal-footer">
-													<div class="form-group">
-															<%=f.submit 'Submit', class:"btn btn-info"%>
-													</div>		
-											</div>
-									<% end %>		
-					        </div>
-							
-							
-							
-							
-					        <div class="tab-pane" id="tab2">
-					        	<%= form_for @city, :html => { :method => 'GET',:class => 'form-horizontal'}, :url => {:controller => 'cities',:action =>"show" } do |f|%>
-						                    <div class="form-group">
-						                        <label class="col-xs-3 control-label">City Name</label>
-						                        <div class="col-xs-5">
-
-													<%= f.collection_select :name, City.all,:id,:name ,{:include_blank => ''}, {:class => 'form-control', :id => 'mycity'} %>
-											  </div>
-												<li class="btn btn-info" onClick="callAjax();">Search</li>
-												 <div class="col-xs-5">
-													<% @locations.each do |temp_location| %>
-													        <p><%= temp_location.name %></p>
-													<% end %>		
-						                        </div>  
-						                    </div>
-								<% end %>
-						                    <div class="form-group">
-						                        <label class="col-xs-3 control-label">Localities</label>
-						                        <div class="col-xs-5">
-						                            <li class="btn btn-info" onClick="addNewElement();">Add</li>
-						                        </div>
-						                    </div> 
-										    <div id='citiesGroup'>
-											</div>
-						                	<div class="modal-footer">
-													<div class="form-group">
-															
-													</div>		
-											</div>
-											
-					        </div>
-							
-							<div class="tab-pane" id="tab3">
-					        	<p>Data 3.</p>
-					        </div>
-					  </div>
-				</div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">Localities</label>
+                        <div class="col-xs-5">
+                            <li class="btn btn-info" onClick="addNewElement();">Add</li>
+                        </div>
+                    </div>               				
+                
+              </div>
+			        <div class="modal-footer">
+							<div class="form-group">
+									<%=f.submit 'Submit', class:"btn btn-info"%>
+							</div>		
+					</div>
+			<% end %>		
             </div>
 
           </div>
@@ -544,38 +500,6 @@
 			newText.setAttribute('placeholder','Locality Name');
 			newdiv.appendChild(newText);
 			}
-			
-			
-			   function getCityID(){
-
-				   var sel = document.getElementById('mycity');
-				   var sv = sel.options[sel.selectedIndex].value;
-				   alert(sv);
-
-			}
-			
-			function callAjax() {
-				   var sel = document.getElementById('mycity');
-				   var sv = sel.options[sel.selectedIndex].value;
-			    $.ajax({
-			                 url: "<%= '/cities/show' %>", // Route to the Script Controller method
-			                type: "GET",
-			            dataType: "json",
-			                data: { city_id: sv }, // This goes to Controller in params hash, i.e. params[:file_name]
-			            complete: function() {},
-			             success: function(data, textStatus, xhr) {
-									alert(xhr);
-			                        // Do something with the response here
-			                        editor.setValue(data.file_content) // Show the file contents in our editor.
-			                                                           // editor is defined somewhere above 
-			                                                           // 'file_content' is the key we use to respond
-			                                                           // in the controller function below
-			                      },
-			               error: function() {
-			                        alert("Ajax error!")
-			                      }
-			    });
-}
 	</script>
  					
     
