@@ -1,9 +1,14 @@
+require 'net/https'
+require 'uri'
+require 'json'
+
 class VegamController < ApplicationController
   before_filter :authenticate_user, :only => [:myaccount] 
-  
+skip_before_filter :verify_authenticity_token  
   
   def index
    @user = User.new
+   @city  =City.all 
   end
 
   def signin
@@ -40,12 +45,57 @@ class VegamController < ApplicationController
 	     redirect_to :action => :index
 	 end  
   end
+ 
+  def fbauth
+    
+    puts params[:fblogin].to_s
+     
+
+# HTTPClient#get_content follows redirects and returns a string
+# HTTPClient#get takes a `:follow_redirect => true` option
+ url = 'https://graph.facebook.com/me?fields=email&access_token='+params[:fblogin].to_s;
+ uri = URI.parse(url.to_s)
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+puts uri.request_uri.to_s
+request = Net::HTTP::Get.new(uri.request_uri)
+
+response = http.request(request)
+puts response.body.to_s
+puts response.to_s
+
+ 
+
   
+
+if response.body.to_s.include? "email"
+  
+  puts JSON.parse(response.body.to_s)['email'];
+  puts User.find_by_email(JSON.parse(response.body.to_s)['email'])
+    user2 = User.find_by_email(JSON.parse(response.body.to_s)['email'])
+   puts "email" + 
+    unless user2.nil?
+  
+  
+ 
+  puts "came here "; 
+ session[:user] = user2.email;
+  end
+  end
+  respond_to do |format|
+     
+      format.json { render json: user2}
+    end
+  end
+ 
   def myaccount
     
     
   end
   
+   
+    
   end
+  
 
 
