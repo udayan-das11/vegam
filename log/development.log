@@ -21120,3 +21120,1496 @@ Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bd
 
 
 Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/workers/index.tml" for ::1 at 2015-07-16 02:12:47 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.3) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.3) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  C:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (188.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (176.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (408.0ms)
+
+
+Started GET "/workers/index.html" for ::1 at 2015-07-16 02:12:49 +0530
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.3) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.3) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  C:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (172.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (180.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (412.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (4.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateWorkers (20150715193141)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (100.0ms)[0m  [1mCREATE TABLE "workers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "city" varchar, "subcity" varchar, "peramadd" varchar, "phoneno" varchar, "email" varchar, "service" varchar, "contractbasis" varchar, "status" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150715193141"]]
+  [1m[36m (82.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_localities_on_service_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_localities_on_service_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_localities_on_city_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_localities_on_city_id' AND type='index'
+
+
+
+Started GET "/workers/index.html" for ::1 at 2015-07-16 02:16:27 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WorkersController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[35mWorker Load (4.0ms)[0m  SELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 228ms (ActiveRecord: 8.0ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Worker with 'id'=index):
+  app/controllers/workers_controller.rb:81:in `set_worker'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (200.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (184.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (420.0ms)
+
+
+Started GET "/workers" for ::1 at 2015-07-16 02:19:58 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WorkersController#index as HTML
+  [1m[35mWorker Load (0.0ms)[0m  SELECT "workers".* FROM "workers"
+  Rendered workers/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 5625ms (Views: 5539.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/workers" for ::1 at 2015-07-16 02:20:04 +0530
+Processing by WorkersController#index as HTML
+  [1m[36mWorker Load (1.3ms)[0m  [1mSELECT "workers".* FROM "workers"[0m
+  Rendered workers/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 1064ms (Views: 1059.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-3f8e8b1d88ce307fbf3c6b2c108924bf4ce343b0066da07ea157effc47561af6.css?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/scaffolds.self-0893f3f7ed1087dbeeebd7f28e16fae2a38b91e9267cd2d0424d835196eb616d.css?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/workers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/jquery.self-aedf0b4f9535e7b1d01d6a9ad81e6ecdb5b9a82acf17f3798645b7dbca2d86a1.js?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-db28b262ebd06e23f61d3a791a257fb00005847d2849aa05ec92ef6e6f616035.js?body=1" for ::1 at 2015-07-16 02:20:06 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-07-16 02:20:07 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:20:07 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for ::1 at 2015-07-16 02:20:07 +0530
+
+
+Started GET "/assets/iconset-glyphicon.self-b8bed227d615cc83597b1123941df805af4ae4a8835644724359ad929384e081.js?body=1" for ::1 at 2015-07-16 02:20:07 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for ::1 at 2015-07-16 02:20:07 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for ::1 at 2015-07-16 02:20:07 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:20:07 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:20:07 +0530
+
+
+Started GET "/assets/workers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:20:07 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-16 02:20:07 +0530
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:20:13 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (331.1ms)
+  Rendered workers/new.html.erb within layouts/application (432.9ms)
+Completed 500 Internal Server Error in 496ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `task_items_path' for #<#<Class:0x62b9380>:0x740bbd8>):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', task_items_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb___380234491_60839844'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (25.7ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (15.7ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (178.2ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (4.2ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (186.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.8ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (394.0ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:20:15 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (20.1ms)
+  Rendered workers/new.html.erb within layouts/application (92.1ms)
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `task_items_path' for #<#<Class:0x62b9380>:0x32c1be8>):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', task_items_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb___380234491_60839844'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (22.9ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (186.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (184.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (400.0ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:20:38 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (32.3ms)
+  Rendered workers/new.html.erb within layouts/application (55.5ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"workers"} missing required keys: [:id]):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', worker_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb___380234491_89801712'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (28.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (200.7ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (196.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (446.1ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:20:46 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (22.3ms)
+  Rendered workers/new.html.erb within layouts/application (73.2ms)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"workers"} missing required keys: [:id]):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', worker_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb___380234491_89801712'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (26.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (15.7ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (177.4ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (174.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (372.4ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:20:48 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (21.7ms)
+  Rendered workers/new.html.erb within layouts/application (40.2ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"workers"} missing required keys: [:id]):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', worker_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb___380234491_89801712'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (24.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (200.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (184.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (412.0ms)
+
+
+Started GET "/workers" for ::1 at 2015-07-16 02:25:30 +0530
+Processing by WorkersController#index as HTML
+  [1m[35mWorker Load (0.0ms)[0m  SELECT "workers".* FROM "workers"
+  Rendered workers/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 1144ms (Views: 1131.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for ::1 at 2015-07-16 02:25:32 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for ::1 at 2015-07-16 02:25:32 +0530
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-3f8e8b1d88ce307fbf3c6b2c108924bf4ce343b0066da07ea157effc47561af6.css?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/scaffolds.self-0893f3f7ed1087dbeeebd7f28e16fae2a38b91e9267cd2d0424d835196eb616d.css?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/workers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/jquery.self-aedf0b4f9535e7b1d01d6a9ad81e6ecdb5b9a82acf17f3798645b7dbca2d86a1.js?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-db28b262ebd06e23f61d3a791a257fb00005847d2849aa05ec92ef6e6f616035.js?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/iconset-glyphicon.self-b8bed227d615cc83597b1123941df805af4ae4a8835644724359ad929384e081.js?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for ::1 at 2015-07-16 02:25:33 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:25:34 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:25:34 +0530
+
+
+Started GET "/assets/workers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:25:34 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-16 02:25:34 +0530
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:25:38 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (26.1ms)
+  Rendered workers/new.html.erb within layouts/application (26.1ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"workers"} missing required keys: [:id]):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', worker_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb___380234491_89801712'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (25.8ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (170.4ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (17.7ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (15.7ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (15.7ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (166.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (15.7ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (383.6ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:25:40 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (22.9ms)
+  Rendered workers/new.html.erb within layouts/application (44.0ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"workers"} missing required keys: [:id]):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', worker_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb___380234491_89801712'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (24.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (184.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (176.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (396.0ms)
+
+
+Started GET "/workers" for ::1 at 2015-07-16 02:26:53 +0530
+Processing by WorkersController#index as HTML
+  [1m[36mWorker Load (4.0ms)[0m  [1mSELECT "workers".* FROM "workers"[0m
+  Rendered workers/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 1071ms (Views: 1049.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:26:57 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (20.9ms)
+  Rendered workers/new.html.erb within layouts/application (35.8ms)
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 2.1ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"workers"} missing required keys: [:id]):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', worker_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb___380234491_89801712'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (23.3ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.3ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (176.9ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.8ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.2ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (168.3ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (2.4ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (374.0ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:26:59 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (25.8ms)
+  Rendered workers/new.html.erb within layouts/application (45.5ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"workers"} missing required keys: [:id]):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', worker_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb___380234491_89801712'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (24.3ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (202.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (187.6ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (411.1ms)
+
+
+Started GET "/workers" for ::1 at 2015-07-16 02:29:27 +0530
+Processing by WorkersController#index as HTML
+  [1m[35mWorker Load (0.0ms)[0m  SELECT "workers".* FROM "workers"
+  Rendered workers/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 1092ms (Views: 1088.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for ::1 at 2015-07-16 02:29:29 +0530
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:29:29 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for ::1 at 2015-07-16 02:29:29 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-3f8e8b1d88ce307fbf3c6b2c108924bf4ce343b0066da07ea157effc47561af6.css?body=1" for ::1 at 2015-07-16 02:29:29 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for ::1 at 2015-07-16 02:29:29 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for ::1 at 2015-07-16 02:29:29 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for ::1 at 2015-07-16 02:29:29 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:29:29 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for ::1 at 2015-07-16 02:29:29 +0530
+
+
+Started GET "/assets/scaffolds.self-0893f3f7ed1087dbeeebd7f28e16fae2a38b91e9267cd2d0424d835196eb616d.css?body=1" for ::1 at 2015-07-16 02:29:29 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:29:29 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/workers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/jquery.self-aedf0b4f9535e7b1d01d6a9ad81e6ecdb5b9a82acf17f3798645b7dbca2d86a1.js?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-db28b262ebd06e23f61d3a791a257fb00005847d2849aa05ec92ef6e6f616035.js?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/iconset-glyphicon.self-b8bed227d615cc83597b1123941df805af4ae4a8835644724359ad929384e081.js?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/workers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-16 02:29:30 +0530
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:29:33 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (26.3ms)
+  Rendered workers/new.html.erb within layouts/application (26.3ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"workers"} missing required keys: [:id]):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', worker_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb___380234491_89801712'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (24.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (183.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (161.1ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (15.6ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (376.9ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:29:34 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (21.4ms)
+  Rendered workers/new.html.erb within layouts/application (43.4ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"workers"} missing required keys: [:id]):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', worker_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb___380234491_89801712'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (24.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (192.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (184.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (408.0ms)
+
+
+Started GET "/workers" for ::1 at 2015-07-16 02:31:00 +0530
+Processing by WorkersController#index as HTML
+  [1m[36mWorker Load (4.3ms)[0m  [1mSELECT "workers".* FROM "workers"[0m
+  Rendered workers/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1191ms (Views: 1168.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-3f8e8b1d88ce307fbf3c6b2c108924bf4ce343b0066da07ea157effc47561af6.css?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/scaffolds.self-0893f3f7ed1087dbeeebd7f28e16fae2a38b91e9267cd2d0424d835196eb616d.css?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/workers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/jquery.self-aedf0b4f9535e7b1d01d6a9ad81e6ecdb5b9a82acf17f3798645b7dbca2d86a1.js?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-db28b262ebd06e23f61d3a791a257fb00005847d2849aa05ec92ef6e6f616035.js?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-07-16 02:31:02 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:31:03 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for ::1 at 2015-07-16 02:31:03 +0530
+
+
+Started GET "/assets/iconset-glyphicon.self-b8bed227d615cc83597b1123941df805af4ae4a8835644724359ad929384e081.js?body=1" for ::1 at 2015-07-16 02:31:03 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for ::1 at 2015-07-16 02:31:03 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for ::1 at 2015-07-16 02:31:03 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:31:03 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:31:03 +0530
+
+
+Started GET "/assets/workers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:31:03 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-16 02:31:03 +0530
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:31:09 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (23.1ms)
+  Rendered workers/new.html.erb within layouts/application (35.4ms)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"workers"} missing required keys: [:id]):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', worker_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb___380234491_89801712'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (23.1ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.3ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (190.6ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (191.9ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (402.1ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:31:10 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (21.4ms)
+  Rendered workers/new.html.erb within layouts/application (41.9ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"workers"} missing required keys: [:id]):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', worker_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb___380234491_89801712'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (24.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (192.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (196.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (416.0ms)
+
+
+Started GET "/workers" for ::1 at 2015-07-16 02:36:21 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WorkersController#index as HTML
+  [1m[35mWorker Load (0.0ms)[0m  SELECT "workers".* FROM "workers"
+  Rendered workers/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 2358ms (Views: 2272.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:36:24 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for ::1 at 2015-07-16 02:36:24 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-3f8e8b1d88ce307fbf3c6b2c108924bf4ce343b0066da07ea157effc47561af6.css?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/scaffolds.self-0893f3f7ed1087dbeeebd7f28e16fae2a38b91e9267cd2d0424d835196eb616d.css?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/workers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/jquery.self-aedf0b4f9535e7b1d01d6a9ad81e6ecdb5b9a82acf17f3798645b7dbca2d86a1.js?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-db28b262ebd06e23f61d3a791a257fb00005847d2849aa05ec92ef6e6f616035.js?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/iconset-glyphicon.self-b8bed227d615cc83597b1123941df805af4ae4a8835644724359ad929384e081.js?body=1" for ::1 at 2015-07-16 02:36:25 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for ::1 at 2015-07-16 02:36:26 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for ::1 at 2015-07-16 02:36:26 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:36:26 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:36:26 +0530
+
+
+Started GET "/assets/workers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:36:26 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-16 02:36:26 +0530
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:36:42 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (158.9ms)
+  Rendered workers/new.html.erb within layouts/application (204.7ms)
+Completed 500 Internal Server Error in 255ms (ActiveRecord: 4.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"workers"} missing required keys: [:id]):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', worker_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb__688291815_90748584'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.7ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (21.7ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (177.8ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (179.3ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (364.5ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:36:44 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (27.1ms)
+  Rendered workers/new.html.erb within layouts/application (48.0ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"workers"} missing required keys: [:id]):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', worker_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb__688291815_90748584'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (20.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (188.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (188.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (412.0ms)
+
+
+Started GET "/workers" for ::1 at 2015-07-16 02:41:09 +0530
+Processing by WorkersController#index as HTML
+  [1m[36mWorker Load (4.0ms)[0m  [1mSELECT "workers".* FROM "workers"[0m
+  Rendered workers/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 1095ms (Views: 1067.1ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:41:11 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for ::1 at 2015-07-16 02:41:11 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for ::1 at 2015-07-16 02:41:11 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-3f8e8b1d88ce307fbf3c6b2c108924bf4ce343b0066da07ea157effc47561af6.css?body=1" for ::1 at 2015-07-16 02:41:11 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for ::1 at 2015-07-16 02:41:11 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for ::1 at 2015-07-16 02:41:11 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for ::1 at 2015-07-16 02:41:11 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:41:11 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for ::1 at 2015-07-16 02:41:11 +0530
+
+
+Started GET "/assets/scaffolds.self-0893f3f7ed1087dbeeebd7f28e16fae2a38b91e9267cd2d0424d835196eb616d.css?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/workers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/jquery.self-aedf0b4f9535e7b1d01d6a9ad81e6ecdb5b9a82acf17f3798645b7dbca2d86a1.js?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-db28b262ebd06e23f61d3a791a257fb00005847d2849aa05ec92ef6e6f616035.js?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/iconset-glyphicon.self-b8bed227d615cc83597b1123941df805af4ae4a8835644724359ad929384e081.js?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/workers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-16 02:41:12 +0530
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:41:14 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (26.0ms)
+  Rendered workers/new.html.erb within layouts/application (43.8ms)
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"workers"} missing required keys: [:id]):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', worker_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb__688291815_90748584'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (24.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (183.3ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (4.2ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.2ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (183.1ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (367.6ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:41:16 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (21.5ms)
+  Rendered workers/new.html.erb within layouts/application (44.4ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"workers"} missing required keys: [:id]):
+    3: 
+    4: <%= render 'form' %>
+    5: 
+    6: <%= link_to 'Back', worker_path %>
+  app/views/workers/new.html.erb:6:in `_app_views_workers_new_html_erb__688291815_90748584'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (28.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (196.2ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (192.1ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.9ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (433.9ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:45:28 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (180.0ms)
+  Rendered workers/new.html.erb within layouts/application (224.0ms)
+Completed 200 OK in 2590ms (Views: 2458.3ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:45:30 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (22.0ms)
+  Rendered workers/new.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 974ms (Views: 970.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/workers" for ::1 at 2015-07-16 02:45:31 +0530
+Processing by WorkersController#index as HTML
+  [1m[35mWorker Load (2.1ms)[0m  SELECT "workers".* FROM "workers"
+  Rendered workers/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 980ms (Views: 963.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:45:39 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (18.3ms)
+  Rendered workers/new.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 824ms (Views: 820.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:45:40 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (17.2ms)
+  Rendered workers/new.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 856ms (Views: 852.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/workers" for ::1 at 2015-07-16 02:45:49 +0530
+Processing by WorkersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lsfOpuqHkx3l7Dfjij9p4lwASNXWA/HnFVCMqRpAQFyTXKweSwHdjNy6CnxrB+ZpPA/Av9degIDowFuVYcyEvw==", "worker"=>{"name"=>"", "city"=>"", "subcity"=>"", "peramadd"=>"", "phoneno"=>"", "email"=>"", "service"=>"", "contractbasis"=>"", "status"=>""}, "commit"=>"Create Worker"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "workers" ("name", "city", "subcity", "peramadd", "phoneno", "email", "service", "contractbasis", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", ""], ["city", ""], ["subcity", ""], ["peramadd", ""], ["phoneno", ""], ["email", ""], ["service", ""], ["contractbasis", ""], ["status", ""], ["created_at", "2015-07-15 21:15:49.141577"], ["updated_at", "2015-07-15 21:15:49.141577"]]
+  [1m[36m (248.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/workers/1
+Completed 302 Found in 321ms (ActiveRecord: 252.3ms)
+
+
+Started GET "/workers/1" for ::1 at 2015-07-16 02:45:49 +0530
+Processing by WorkersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWorker Load (4.0ms)[0m  SELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (1.0ms)[0m  [1mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered workers/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 1150ms (Views: 1081.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/workers" for ::1 at 2015-07-16 02:45:58 +0530
+Processing by WorkersController#index as HTML
+  [1m[35mWorker Load (0.0ms)[0m  SELECT "workers".* FROM "workers"
+  Rendered workers/index.html.erb within layouts/application (28.5ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `permaddr' for #<Worker:0x7355bb0>):
+    19:       <td><%= worker.name %></td>
+    20:       <td><%= worker.city %></td>
+    21:       <td><%= worker.subcity %></td>
+    22:       <td><%= worker.permaddr %></td>
+    23:       <td><%= worker.phoneno %></td>
+    24:       <td><%= worker.email %></td>
+    25:       <td><%= worker.service %></td>
+  app/views/workers/index.html.erb:22:in `block in _app_views_workers_index_html_erb___678824587_81577812'
+  app/views/workers/index.html.erb:17:in `_app_views_workers_index_html_erb___678824587_81577812'
+  app/controllers/workers_controller.rb:8:in `index'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (26.1ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.2ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (170.7ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (160.3ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (4.2ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (351.9ms)
+
+
+Started GET "/workers" for ::1 at 2015-07-16 02:45:59 +0530
+Processing by WorkersController#index as HTML
+  [1m[36mWorker Load (1.2ms)[0m  [1mSELECT "workers".* FROM "workers"[0m
+  Rendered workers/index.html.erb within layouts/application (18.2ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 1.2ms)
+
+ActionView::Template::Error (undefined method `permaddr' for #<Worker:0x9863460>):
+    19:       <td><%= worker.name %></td>
+    20:       <td><%= worker.city %></td>
+    21:       <td><%= worker.subcity %></td>
+    22:       <td><%= worker.permaddr %></td>
+    23:       <td><%= worker.phoneno %></td>
+    24:       <td><%= worker.email %></td>
+    25:       <td><%= worker.service %></td>
+  app/views/workers/index.html.erb:22:in `block in _app_views_workers_index_html_erb___678824587_81577812'
+  app/views/workers/index.html.erb:17:in `_app_views_workers_index_html_erb___678824587_81577812'
+  app/controllers/workers_controller.rb:8:in `index'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (24.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.1ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (190.8ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (192.4ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (419.1ms)
+
+
+Started GET "/workers" for ::1 at 2015-07-16 02:47:46 +0530
+Processing by WorkersController#index as HTML
+  [1m[35mWorker Load (0.0ms)[0m  SELECT "workers".* FROM "workers"
+  Rendered workers/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 880ms (Views: 875.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:48:05 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (18.9ms)
+  Rendered workers/new.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 889ms (Views: 884.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/workers" for ::1 at 2015-07-16 02:48:13 +0530
+Processing by WorkersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PsMf84/lQpi9XNTGCHrtUNCzPHwLnXmWv2qRL+BYhyk7WH1LLmMMCYQK6VnpQmLbsLy0FgrACPFC+kYTm9RDyg==", "worker"=>{"name"=>"", "city"=>"", "subcity"=>"", "peramadd"=>"", "phoneno"=>"", "email"=>"", "service"=>"", "contractbasis"=>"", "status"=>""}, "commit"=>"Create Worker"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "workers" ("name", "city", "subcity", "peramadd", "phoneno", "email", "service", "contractbasis", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", ""], ["city", ""], ["subcity", ""], ["peramadd", ""], ["phoneno", ""], ["email", ""], ["service", ""], ["contractbasis", ""], ["status", ""], ["created_at", "2015-07-15 21:18:13.077381"], ["updated_at", "2015-07-15 21:18:13.077381"]]
+  [1m[36m (104.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/workers/2
+Completed 302 Found in 133ms (ActiveRecord: 108.7ms)
+
+
+Started GET "/workers/2" for ::1 at 2015-07-16 02:48:13 +0530
+Processing by WorkersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mWorker Load (3.0ms)[0m  SELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered workers/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 1056ms (Views: 1027.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/workers/2/edit" for ::1 at 2015-07-16 02:48:18 +0530
+Processing by WorkersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mWorker Load (0.0ms)[0m  SELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered workers/_form.html.erb (26.0ms)
+  Rendered workers/edit.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 920ms (Views: 918.9ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/workers/2" for ::1 at 2015-07-16 02:48:21 +0530
+Processing by WorkersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W8FuIfQ0JER7JyG9qeKkgL9RVO9/MeuPnmEO9XAKe2peWgyZVbJq1UJxHCJI2isL317chX5smuhj8dnJC4a/iQ==", "worker"=>{"name"=>"", "city"=>"", "subcity"=>"", "peramadd"=>"", "phoneno"=>"", "email"=>"", "service"=>"", "contractbasis"=>"", "status"=>""}, "commit"=>"Update Worker", "id"=>"2"}
+  [1m[36mWorker Load (0.0ms)[0m  [1mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/workers/2
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/workers/2" for ::1 at 2015-07-16 02:48:21 +0530
+Processing by WorkersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mWorker Load (0.0ms)[0m  SELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered workers/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 1047ms (Views: 1039.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/workers" for ::1 at 2015-07-16 02:48:25 +0530
+Processing by WorkersController#index as HTML
+  [1m[35mWorker Load (1.0ms)[0m  SELECT "workers".* FROM "workers"
+  Rendered workers/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 839ms (Views: 836.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/workers/new" for ::1 at 2015-07-16 02:48:29 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (18.0ms)
+  Rendered workers/new.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 876ms (Views: 873.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/workers" for ::1 at 2015-07-16 02:48:48 +0530
+Processing by WorkersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g9Ul9IZ+ilCrBD4PaIzFoi2uW5KyqOtBdt0DBWCxbRqGTkdMJ/jEwZJSA5CJtEopTaHT+LP1miaLTdQ5Gz2p+Q==", "worker"=>{"name"=>"swati", "city"=>"poornea", "subcity"=>"", "peramadd"=>"", "phoneno"=>"", "email"=>"", "service"=>"", "contractbasis"=>"", "status"=>"Ajit"}, "commit"=>"Create Worker"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "workers" ("name", "city", "subcity", "peramadd", "phoneno", "email", "service", "contractbasis", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "swati"], ["city", "poornea"], ["subcity", ""], ["peramadd", ""], ["phoneno", ""], ["email", ""], ["service", ""], ["contractbasis", ""], ["status", "Ajit"], ["created_at", "2015-07-15 21:18:48.551996"], ["updated_at", "2015-07-15 21:18:48.551996"]]
+  [1m[36m (223.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/workers/3
+Completed 302 Found in 257ms (ActiveRecord: 225.9ms)
+
+
+Started GET "/workers/3" for ::1 at 2015-07-16 02:48:48 +0530
+Processing by WorkersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mWorker Load (0.1ms)[0m  SELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered workers/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 1136ms (Views: 1121.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/workers" for ::1 at 2015-07-16 02:48:56 +0530
+Processing by WorkersController#index as HTML
+  [1m[35mWorker Load (0.0ms)[0m  SELECT "workers".* FROM "workers"
+  Rendered workers/index.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 863ms (Views: 863.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/workers/3" for ::1 at 2015-07-16 02:49:01 +0530
+Processing by WorkersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KNMEcVnA6uy1re269j+T4PV5iEzcA+zU0FKW9QCUun0tSGbJ+EakfYz70CUXBxxrlXYAJt1enbMtwkHJexh+ng==", "id"=>"3"}
+  [1m[36mWorker Load (0.0ms)[0m  [1mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (4.0ms)[0m  [1mDELETE FROM "workers" WHERE "workers"."id" = ?[0m  [["id", 3]]
+  [1m[35m (92.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/workers
+Completed 302 Found in 117ms (ActiveRecord: 96.0ms)
+
+
+Started GET "/workers" for ::1 at 2015-07-16 02:49:02 +0530
+Processing by WorkersController#index as HTML
+  [1m[36mWorker Load (2.0ms)[0m  [1mSELECT "workers".* FROM "workers"[0m
+  Rendered workers/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 1118ms (Views: 1112.3ms | ActiveRecord: 2.0ms)

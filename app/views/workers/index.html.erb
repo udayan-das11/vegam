@@ -1,0 +1,37 @@
+<h1>Listing all the task items</h1>
+
+<table border = '1'>
+  <tr>
+    <th class="col-md-1" id="box1">Name</th>
+    <th class="col-md-1" id="box1">City</th>
+    <th class="col-md-1"  id="box1">Area</th>
+    <th class="col-md-1"  id="box1">Address</th>
+    <th class="col-md-1"  id="box1">Mobile</th>
+    <th class="col-md-1"  id="box1">Email</th>
+    <th class="col-md-1"  id="box1">Services</th>
+    <th class="col-md-1"  id="box1">Contract Basis</th>
+    <th class="col-md-1"  id="box1">Status</th>
+    <th class="col-md-1"  id="box1">Edit/Delete</th>
+    15	  </tr>
+
+  <% @workers.each do |worker| %>
+      <tr>
+      <td><%= worker.name %></td>
+      <td><%= worker.city %></td>
+      <td><%= worker.subcity %></td>
+      <td><%= worker.peramadd %></td>
+      <td><%= worker.phoneno %></td>
+      <td><%= worker.email %></td>
+      <td><%= worker.service %></td>
+      <td><%= worker.contractbasis %></td>
+        <td><%= worker.status %></td>
+        <td><%= link_to 'Show', worker %></td>
+        <td><%= link_to 'Edit', edit_worker_path(worker) %></td>
+        <td><%= link_to 'Destroy', worker, :workerfirm => 'Are you sure?', :method => :delete %></td>
+  	  </tr>
+  <% end %>
+</table>
+
+	<br />
+
+	<%= link_to 'New Task item', new_worker_path %>
