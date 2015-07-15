@@ -20297,3 +20297,826 @@ Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bd
 
 
 Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-15 16:11:12 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-15 18:07:54 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VegamController#index as HTML
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered vegam/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 243ms (Views: 226.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-15 18:07:54 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-07-15 18:07:54 +0530
+
+
+Started POST "/vegam/fbauth" for 127.0.0.1 at 2015-07-15 18:08:05 +0530
+Processing by VegamController#fbauth as JSON
+  Parameters: {"fblogin"=>"CAANFYgsZCs2EBAMLCJbl7UNktbAt0EzjueVuklNEuZCqVhSm4ghzqJ1Ef5MkBbHZBgTY0t1EiD9OdZAbGzk6BHAoMdUGR4wIiDXsFJWP92h5BT2E5hylhSZAlWQNL1TCq1xyjszoaIGBmemELL9vehKBu6yzOOzYVP4RXG4db591B5ikzbyTQW6hwNfWZATPfgw3ASJ3HTluQLfQdtCZASA"}
+Can't verify CSRF token authenticity
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  actionpack (4.2.3) lib/action_controller/metal/request_forgery_protection.rb:181:in `handle_unverified_request'
+  actionpack (4.2.3) lib/action_controller/metal/request_forgery_protection.rb:209:in `handle_unverified_request'
+  actionpack (4.2.3) lib/action_controller/metal/request_forgery_protection.rb:204:in `verify_authenticity_token'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:430:in `block in make_lambda'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:162:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:162:in `block in halting'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:502:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:502:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:502:in `each'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:502:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:88:in `run_callbacks'
+  actionpack (4.2.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.3) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.3) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.3) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.3) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.3) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.3) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.3) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.3) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (19.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+Processing by VegamController#index as HTML
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 76ms (Views: 75.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-07-15 18:08:06 +0530
+
+
+Started POST "/vegam/fbauth" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+Processing by VegamController#fbauth as JSON
+  Parameters: {"fblogin"=>"CAANFYgsZCs2EBAC0K14DjRGwQo9gskUej4CeZC0yCrB5pZAOnns4wUAPuZCQZAZCd9kPszqEWIATZCXzQ7vcGzztvCGeZAi37S0rZAd1ZCRZC2NpVzkP8nKgl5IMlPPJeFrZCe5lQLCWOFR2dZCZAedhWX3Xnj7W8ZCDC2gmlHM1LSsRkBPfZAxv8Xz7hHTKXbTTvS0bDu4Ix2TtWZCYh1jQZCIk2DLb8m"}
+Can't verify CSRF token authenticity
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  actionpack (4.2.3) lib/action_controller/metal/request_forgery_protection.rb:181:in `handle_unverified_request'
+  actionpack (4.2.3) lib/action_controller/metal/request_forgery_protection.rb:209:in `handle_unverified_request'
+  actionpack (4.2.3) lib/action_controller/metal/request_forgery_protection.rb:204:in `verify_authenticity_token'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:430:in `block in make_lambda'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:162:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:162:in `block in halting'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:502:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:502:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:502:in `each'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:502:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:88:in `run_callbacks'
+  actionpack (4.2.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.3) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.3) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.3) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.3) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.3) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.3) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.3) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.3) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (16.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+Processing by VegamController#index as HTML
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered vegam/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 82ms (Views: 81.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-07-15 18:08:35 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-15 18:08:39 +0530
+Processing by VegamController#index as HTML
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 68ms (Views: 66.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-15 18:08:39 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-07-15 18:08:39 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+Processing by VegamController#index as HTML
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered vegam/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 67ms (Views: 66.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-07-15 18:08:52 +0530
+
+
+Started POST "/vegam/fbauth" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+Processing by VegamController#fbauth as JSON
+  Parameters: {"fblogin"=>"CAANFYgsZCs2EBAC8HdiEv309Fsff5NqbQWmzTIFy5ioZClsvSUTri2KLnW3jFAw47S14xJBPuBiqabZB7IBT9bs9PgZBQ2QRZB4vL41Gj2jEspQZB1yCT3FxyxiY33mVqa2dMIuLCDC6Kqc1vNXVS9ZCvPLCZC5vYvIn3I8OQ0RFRExZCvW22BL2FN6NScWNpZBqeh4RbGWrM9nLuNIqnGyZBZCfhB4FNWh6C4kZD"}
+Can't verify CSRF token authenticity
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms)
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  actionpack (4.2.3) lib/action_controller/metal/request_forgery_protection.rb:181:in `handle_unverified_request'
+  actionpack (4.2.3) lib/action_controller/metal/request_forgery_protection.rb:209:in `handle_unverified_request'
+  actionpack (4.2.3) lib/action_controller/metal/request_forgery_protection.rb:204:in `verify_authenticity_token'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:430:in `block in make_lambda'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:162:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:162:in `block in halting'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:502:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:502:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:502:in `each'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:502:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:88:in `run_callbacks'
+  actionpack (4.2.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.3) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.3) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.3) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.3) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.3) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.3) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.3) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.3) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (39.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (23.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (41.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+Processing by VegamController#index as HTML
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 54ms (Views: 53.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-15 18:09:21 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VegamController#index as HTML
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered vegam/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 194ms (Views: 177.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-15 18:11:25 +0530
+
+
+Started POST "/vegam/fbauth" for 127.0.0.1 at 2015-07-15 18:11:31 +0530
+Processing by VegamController#fbauth as JSON
+  Parameters: {"fblogin"=>"CAANFYgsZCs2EBAEv93g8YZBL4BpTCBKbOZAILeibw3phU0zpyyYZC92n1PU2qWjjRcFsREgc39vQx5pAXhQOwRWL1k7ZCw76uDy1TrtTrZCsyBwxwHRyAlo49v57EQhfJYPSnzGk85oSwz55a0Cpi6HKmkkt0E6yMw7zYUU8ZA06Oswjm4CI4RRnBWf8lt3zqu1ZC7XqLHJPr2VtZBE1XZBdcFTFo0DhV9DOAZD"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "kartikkhatri001@gmail.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "kartikkhatri001@gmail.com"]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 1598ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+Processing by VegamController#index as HTML
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 62ms (Views: 60.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-15 18:11:33 +0530
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-15 18:11:33 +0530

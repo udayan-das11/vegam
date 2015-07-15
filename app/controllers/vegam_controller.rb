@@ -4,7 +4,7 @@ require 'json'
 
 class VegamController < ApplicationController
   before_filter :authenticate_user, :only => [:myaccount] 
-skip_before_filter :verify_authenticity_token  
+skip_before_filter :verify_authenticity_token , :only => [:index ,:fbauth]   
   
   def index
    @user = User.new
