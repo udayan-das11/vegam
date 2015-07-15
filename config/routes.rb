@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   post 'cities/add'
   
   resources :location
+
   resources :contractors
   
   # The priority is based upon order of creation: first created -> highest priority.

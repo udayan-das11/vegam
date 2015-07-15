@@ -282,8 +282,8 @@
                 </button>
 				<ul class="nav nav-pills">
 					  <li class="active"><a href="#tab1" data-toggle="tab">Add City</a></li>
-					  <li><a href="#tab2" data-toggle="tab">Edit City</a></li>
-					  <li><a href="#tab3" data-toggle="tab">Show All</a></li>
+					  <li><a href="#tab2" data-toggle="tab">Add Location</a></li>
+					  <li><a href="#tab3" data-toggle="tab">Edit City</a></li>
 				</ul>
 			</div>
 
@@ -302,10 +302,10 @@
 						                    <div class="form-group">
 						                        <label class="col-xs-3 control-label">Localities</label>
 						                        <div class="col-xs-5">
-						                            <li class="btn btn-info" onClick="addNewElement();">Add</li>
+						                            <li class="btn btn-info" onClick="addNewElement('citiesGroup1');">Add</li>
 						                        </div>
 						                    </div> 
-										    <div id='citiesGroup'>
+										    <div id='citiesGroup1'>
 											</div>
 						                	<div class="modal-footer">
 													<div class="form-group">
@@ -316,9 +316,32 @@
 					        </div>
 							
 							
+							<div class="tab-pane" id="tab2">
+								<%= form_for @city, :html => {:class => 'form-horizontal'}, :url => {:controller => 'cities',:action =>"add" } do |f|%>
+						                    <div class="form-group">
+						                        <label class="col-xs-3 control-label">City Name</label>
+						                        <div class="col-xs-5">
+						                            <%= f.collection_select :name, City.all,:id,:name ,{:include_blank => ''}, {:class => 'form-control', :id => 'mycity2'} %>
+						                        </div>
+						                    </div>
+
+						                    <div class="form-group">
+						                        <label class="col-xs-3 control-label">Localities</label>
+						                        <div class="col-xs-5">
+						                            <li class="btn btn-info" onClick="addNewElement('citiesGroup2');">Add</li>
+						                        </div>
+						                    </div> 
+										    <div id='citiesGroup2'>
+											</div>
+						                	<div class="modal-footer">
+													<div class="form-group">
+															<%=f.submit 'Submit', class:"btn btn-info"%>
+													</div>		
+											</div>
+									<% end %>		
+					        </div>
 							
-							
-					        <div class="tab-pane" id="tab2">
+					        <div class="tab-pane" id="tab3">
 					        	<%= form_for @city, :html => { :method => 'GET',:class => 'form-horizontal'}, :url => {:controller => 'cities',:action =>"show" } do |f|%>
 						                    <div class="form-group">
 						                        <label class="col-xs-3 control-label">City Name</label>
@@ -326,22 +349,16 @@
 
 													<%= f.collection_select :name, City.all,:id,:name ,{:include_blank => ''}, {:class => 'form-control', :id => 'mycity'} %>
 											  </div>
+								<% end %>			  
 												<li class="btn btn-info" onClick="callAjax();">Search</li>
-												 <div class="col-xs-5">
-													<% @locations.each do |temp_location| %>
-													        <p><%= temp_location.name %></p>
-													<% end %>		
-						                        </div>  
-						                    </div>
-								<% end %>
-						                    <div class="form-group">
-						                        <label class="col-xs-3 control-label">Localities</label>
-						                        <div class="col-xs-5">
-						                            <li class="btn btn-info" onClick="addNewElement();">Add</li>
-						                        </div>
-						                    </div> 
-										    <div id='citiesGroup'>
+											<div class="form-group">
 											</div>
+											<div id="citiesEditTab" >
+						                    </div>  
+						                    </div>
+								
+						                   
+
 						                	<div class="modal-footer">
 													<div class="form-group">
 															
@@ -350,9 +367,7 @@
 											
 					        </div>
 							
-							<div class="tab-pane" id="tab3">
-					        	<p>Data 3.</p>
-					        </div>
+
 					  </div>
 				</div>
             </div>
@@ -524,9 +539,9 @@
 			var inival=0;
 
 
-			function addNewElement() {
+			function addNewElement(elementCityID) {
 			inival=inival+1; // Increment element number by 1
-			var ni = document.getElementById('citiesGroup');
+			var ni = document.getElementById(elementCityID);
 			var newdiv1 = document.createElement('div'); // Create dynamic element
 			newdiv1.setAttribute('class','form-group');
 			ni.appendChild(newdiv1);			
@@ -557,25 +572,45 @@
 			function callAjax() {
 				   var sel = document.getElementById('mycity');
 				   var sv = sel.options[sel.selectedIndex].value;
-			    $.ajax({
+				   $.ajax({
 			                 url: "<%= '/cities/show' %>", // Route to the Script Controller method
 			                type: "GET",
 			            dataType: "json",
-			                data: { city_id: sv }, // This goes to Controller in params hash, i.e. params[:file_name]
+			                data: { city_id: sv },
 			            complete: function() {},
-			             success: function(data, textStatus, xhr) {
-									alert(xhr);
-			                        // Do something with the response here
-			                        editor.setValue(data.file_content) // Show the file contents in our editor.
-			                                                           // editor is defined somewhere above 
-			                                                           // 'file_content' is the key we use to respond
-			                                                           // in the controller function below
+			             success: function(data) {
+									$('#citiesEditTab').empty()
+						            $.each(data.locations, function(i, location) {
+								            $('#citiesEditTab').append('<div class="form-group"><label class="col-xs-3 control-label"></label><label class="col-xs-3 control-label">'+ location.name + '</label><div class="col-xs-6"><li class="btn btn-info" id="deleteCity'+location.id+'" onClick="callDelete(this.id);">Delete</li></div></div>');
+								        });
+
 			                      },
 			               error: function() {
 			                        alert("Ajax error!")
 			                      }
 			    });
-}
+			}
+			
+			
+			function callDelete(locationID) {
+				   myID=locationID.replace('deleteCity','');
+				   alert(myID);
+				   $.ajax({
+			                 url: "<%= '/cities/update' %>", // Route to the Script Controller method
+			                type: "GET",
+			            dataType: "json",
+			                data: { locality_id: myID },
+			            complete: function() {},
+			             success: function(data) {
+									callAjax();
+
+			                      },
+			               error: function() {
+			                        alert("Ajax error!")
+			                      }
+			    });
+			}
+			
 	</script>
  					
     
