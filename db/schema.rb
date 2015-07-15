@@ -11,23 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713214309) do
+ActiveRecord::Schema.define(version: 20150714070738) do
 
   create_table "cities", force: :cascade do |t|
-    t.string   "cityId",     limit: 50, null: false
-    t.string   "cityName"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-  end
-
-  create_table "service_city_mappings", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "contractors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "subarea"
+    t.string   "permaddr"
+    t.integer  "phoneno"
+    t.string   "email"
+    t.string   "service"
+    t.string   "contarctbasis"
+    t.string   "status"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "localities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "rate"
+    t.integer  "city_id"
+    t.integer  "service_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "localities", ["city_id"], name: "index_localities_on_city_id"
+  add_index "localities", ["service_id"], name: "index_localities_on_service_id"
 
   create_table "services", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "description"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

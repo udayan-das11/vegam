@@ -73,7 +73,7 @@ if response.body.to_s.include? "email"
   puts JSON.parse(response.body.to_s)['email'];
   puts User.find_by_email(JSON.parse(response.body.to_s)['email'])
     user2 = User.find_by_email(JSON.parse(response.body.to_s)['email'])
-   puts "email" + 
+   puts "email" + user2.email
     unless user2.nil?
   
   
@@ -82,10 +82,10 @@ if response.body.to_s.include? "email"
  session[:user] = user2.email;
   end
   end
-  respond_to do |format|
-     
-      format.json { render json: user2}
-    end
+       
+ 
+    # that will mean to send a javascript code to client-side;
+     render :text => "OK"
   end
  
   def myaccount
