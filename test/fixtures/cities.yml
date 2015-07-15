@@ -9,3 +9,8 @@ one: {}
 #
 two: {}
 #  column: value
+one:
+  name: MyString
+
+two:
+  name: MyString

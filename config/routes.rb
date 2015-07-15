@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
 
- root 'vegam#index'
-get 'vegam/index'
+  root 'vegam#index'
+  get 'vegam/index'
 
   post 'vegam/signin'
 
@@ -11,7 +11,26 @@ get 'vegam/index'
   get 'admins/admin'
   get 'vegam/myaccount'
   
+ 
   post 'vegam/fbauth'
+  get 'services/add'
+
+  get 'services/update'
+
+  get 'services/show'
+
+  get 'cities/add'
+
+  get 'cities/update'
+
+  get 'cities/show'
+  
+  post 'cities/add'
+  
+  resources :location
+
+  resources :contractors
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

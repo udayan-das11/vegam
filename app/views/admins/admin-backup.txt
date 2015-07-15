@@ -222,7 +222,7 @@
                     
                     
                    <div>
-                      <a href="#"  rel="" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#citiesModal">	
+                      <a href="#"  rel=""  data-toggle="modal" data-target="#citiesModal">	
 				       <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
 						<img class="img-responsive "><i class="fa fa-university fa-3x" style="color:#0CF"></i><br>Manage Cities
                         </div>
@@ -281,95 +281,36 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
 				<ul class="nav nav-pills">
-					  <li class="active"><a href="#tab1" data-toggle="tab">Add City</a></li>
-					  <li><a href="#tab2" data-toggle="tab">Add Location</a></li>
-					  <li><a href="#tab3" data-toggle="tab">Edit City</a></li>
-				</ul>
+					  <li role="presentation" class="active"><a href="#">Add City</a></li>
+					  <li role="presentation"><a href="#">Edit City</a></li>
+					  <li role="presentation"><a href="#">Show All</a></li>
+						</ul>
 			</div>
 
              <div class="modal-body">
                 
-					        <div class="tab-content">
-					        <div class="tab-pane active" id="tab1">
-								<%= form_for @city, :html => {:class => 'form-horizontal'}, :url => {:controller => 'cities',:action =>"add" } do |f|%>
-						                    <div class="form-group">
-						                        <label class="col-xs-3 control-label">City Name</label>
-						                        <div class="col-xs-5">
-						                            <%= f.text_field :name,class:"form-control",placeholder:"City Name"%>
-						                        </div>
-						                    </div>
+                 <%= form_for @city, :html => {:class => 'form-horizontal', :id => 'citiesGroup'}, :url => {:controller => 'vegam',:action =>"signin" } do |f|%>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">City Name</label>
+                        <div class="col-xs-5">
+                            <%= f.text_field :name,class:"form-control",placeholder:"City Name"%>
+                        </div>
+                    </div>
 
-						                    <div class="form-group">
-						                        <label class="col-xs-3 control-label">Localities</label>
-						                        <div class="col-xs-5">
-						                            <li class="btn btn-info" onClick="addNewElement('citiesGroup1');">Add</li>
-						                        </div>
-						                    </div> 
-										    <div id='citiesGroup1'>
-											</div>
-						                	<div class="modal-footer">
-													<div class="form-group">
-															<%=f.submit 'Submit', class:"btn btn-info"%>
-													</div>		
-											</div>
-									<% end %>		
-					        </div>
-							
-							
-							<div class="tab-pane" id="tab2">
-								<%= form_for @city, :html => {:class => 'form-horizontal'}, :url => {:controller => 'cities',:action =>"add" } do |f|%>
-						                    <div class="form-group">
-						                        <label class="col-xs-3 control-label">City Name</label>
-						                        <div class="col-xs-5">
-						                            <%= f.collection_select :name, City.all,:id,:name ,{:include_blank => ''}, {:class => 'form-control', :id => 'mycity2'} %>
-						                        </div>
-						                    </div>
-
-						                    <div class="form-group">
-						                        <label class="col-xs-3 control-label">Localities</label>
-						                        <div class="col-xs-5">
-						                            <li class="btn btn-info" onClick="addNewElement('citiesGroup2');">Add</li>
-						                        </div>
-						                    </div> 
-										    <div id='citiesGroup2'>
-											</div>
-						                	<div class="modal-footer">
-													<div class="form-group">
-															<%=f.submit 'Submit', class:"btn btn-info"%>
-													</div>		
-											</div>
-									<% end %>		
-					        </div>
-							
-					        <div class="tab-pane" id="tab3">
-					        	<%= form_for @city, :html => { :method => 'GET',:class => 'form-horizontal'}, :url => {:controller => 'cities',:action =>"show" } do |f|%>
-						                    <div class="form-group">
-						                        <label class="col-xs-3 control-label">City Name</label>
-						                        <div class="col-xs-5">
-
-													<%= f.collection_select :name, City.all,:id,:name ,{:include_blank => ''}, {:class => 'form-control', :id => 'mycity'} %>
-											  </div>
-								<% end %>			  
-												<li class="btn btn-info" onClick="callAjax();">Search</li>
-											<div class="form-group">
-											</div>
-											<div id="citiesEditTab" >
-						                    </div>  
-						                    </div>
-								
-						                   
-
-						                	<div class="modal-footer">
-													<div class="form-group">
-															
-													</div>		
-											</div>
-											
-					        </div>
-							
-
-					  </div>
-				</div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">Localities</label>
+                        <div class="col-xs-5">
+                            <li class="btn btn-info" onClick="addNewElement();">Add</li>
+                        </div>
+                    </div>               				
+                
+              </div>
+			        <div class="modal-footer">
+							<div class="form-group">
+									<%=f.submit 'Submit', class:"btn btn-info"%>
+							</div>		
+					</div>
+			<% end %>		
             </div>
 
           </div>
@@ -539,9 +480,9 @@
 			var inival=0;
 
 
-			function addNewElement(elementCityID) {
+			function addNewElement() {
 			inival=inival+1; // Increment element number by 1
-			var ni = document.getElementById(elementCityID);
+			var ni = document.getElementById('citiesGroup');
 			var newdiv1 = document.createElement('div'); // Create dynamic element
 			newdiv1.setAttribute('class','form-group');
 			ni.appendChild(newdiv1);			
@@ -559,58 +500,6 @@
 			newText.setAttribute('placeholder','Locality Name');
 			newdiv.appendChild(newText);
 			}
-			
-			
-			   function getCityID(){
-
-				   var sel = document.getElementById('mycity');
-				   var sv = sel.options[sel.selectedIndex].value;
-				   alert(sv);
-
-			}
-			
-			function callAjax() {
-				   var sel = document.getElementById('mycity');
-				   var sv = sel.options[sel.selectedIndex].value;
-				   $.ajax({
-			                 url: "<%= '/cities/show' %>", // Route to the Script Controller method
-			                type: "GET",
-			            dataType: "json",
-			                data: { city_id: sv },
-			            complete: function() {},
-			             success: function(data) {
-									$('#citiesEditTab').empty()
-						            $.each(data.locations, function(i, location) {
-								            $('#citiesEditTab').append('<div class="form-group"><label class="col-xs-3 control-label"></label><label class="col-xs-3 control-label">'+ location.name + '</label><div class="col-xs-6"><li class="btn btn-info" id="deleteCity'+location.id+'" onClick="callDelete(this.id);">Delete</li></div></div>');
-								        });
-
-			                      },
-			               error: function() {
-			                        alert("Ajax error!")
-			                      }
-			    });
-			}
-			
-			
-			function callDelete(locationID) {
-				   myID=locationID.replace('deleteCity','');
-				   alert(myID);
-				   $.ajax({
-			                 url: "<%= '/cities/update' %>", // Route to the Script Controller method
-			                type: "GET",
-			            dataType: "json",
-			                data: { locality_id: myID },
-			            complete: function() {},
-			             success: function(data) {
-									callAjax();
-
-			                      },
-			               error: function() {
-			                        alert("Ajax error!")
-			                      }
-			    });
-			}
-			
 	</script>
  					
     

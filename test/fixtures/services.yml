@@ -9,3 +9,12 @@ one: {}
 #
 two: {}
 #  column: value
+one:
+  name: MyString
+  description: MyString
+  image: MyString
+
+two:
+  name: MyString
+  description: MyString
+  image: MyString
