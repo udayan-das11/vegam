@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Warehouse:</strong>
+  <%= @item_wh_transac.warehouse.name %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @item_wh_transac.item.name %>
+</p>
+
+<p>
+  <strong>Transac date:</strong>
+  <%= @item_wh_transac.transac_date %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @item_wh_transac.amount.to_s + " " + @item_wh_transac.item.uom %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @item_wh_transac.price.to_s + " $" unless @item_wh_transac.price.nil? %>
+</p>
+
+<p>
+  <strong>Transac type:</strong>
+  <%= @item_wh_transac.transac_type %>
+</p>
+
+<p>
+  <strong>Reference stockout usage:</strong>
+  <% @transac = ItemWhTransac.all.where("id=?", @item_wh_transac.reference_stockout_usage) %>
+  <% unless @transac.empty? %>
+  <% @transac.each do |value| %>
+  <%= value.item.name + "(" + value.amount.to_s + " "+ value.item.uom + ") " + value.transac_type + " " +value.transac_date.to_s %>
+  <% end %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Responsible person:</strong>
+  <%= @item_wh_transac.responsible_person %>
+</p>
+
+<%= link_to 'Edit', edit_item_wh_transac_path(@item_wh_transac) %> |
+<%= link_to 'Back', item_wh_transacs_path %>

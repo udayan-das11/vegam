@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'homepage/index'
 
+  resources :item_wh_transacs
+
+  resources :items
+
+  resources :warehouses
   resources :workers
   root 'vegam#index'
   get 'vegam/index'

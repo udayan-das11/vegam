@@ -1,0 +1,122 @@
+<%= form_for(@item_wh_transac) do |f| %>
+  <% if @item_wh_transac.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item_wh_transac.errors.count, "error") %> prohibited this item_wh_transac from being saved:</h2>
+
+      <ul>
+      <% @item_wh_transac.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :warehouse_id %><br>
+    <%= f.select :warehouse_id, options_for_select(@warehouse.map { |value| [ value.name + "-" + value.location, value.id ]}, :selected => f.object.id), {:include_blank => true}, {:class => "warehouse_select"} %> 
+  </div>
+  <div class="field">
+    <%= f.label :item_id %><br>
+    <%= f.select :item_id, options_for_select(@item.map { |value| [ value.name +  " (" + value.uom + ")", value.id ]}, :selected => f.object.id), {:include_blank => true}, {:class => "item_select"} %> 
+  </div>
+  <div class="field">
+    <table class="transaction">
+      <tr>
+        <td>
+           <%= f.label :transac_type %><br>
+            <%= f.select :transac_type, [['Stock In', 'Stock In'], ['Stock Out', 'Stock Out'], ['Usage', 'Usage'], ['Return', 'Return'],['Initial', 'Initial'], ['Adjustment', 'Adjustment'], ['Purchase','Purchase']],{ include_blank: true }, { class: 'transac_type' } %>
+        </td>
+        <td>
+          <div class="field" id="reference_to">
+            <%= f.label "Reference to" %><br>
+            <%= f.select :reference_stockout_usage, options_for_select(@all_usage_stockout.map { |value| [ value.item.name + "(" + value.amount.to_s + " "+ value.item.uom + ") " + value.transac_type + " " +value.transac_date.to_s + " From " + value.warehouse.name, value.id ]}, :selected => f.object.id), { include_blank: true} %> 
+          </div>
+          <div class="field" id="destination">
+            <%= f.label "Destination" %><br>
+            <%= f.select :destination, options_for_select(@warehouse.map { |value| [ value.name + "-" + value.location, value.id ]}, :selected => f.object.id), {:include_blank => true}, {} %> 
+          </div>
+        </td>
+      </tr>
+    </table>
+   
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price, :placeholder => "Dollars ($) only" %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.text_area :note %>
+  </div>
+  <div class="field">
+    <%= f.label :transac_date %><br>
+    <%= f.date_select :transac_date %>
+  </div>
+  <div class="field">
+    <%= f.label :responsible_person %><br>
+    <%= f.select :responsible_person, [['Labor 1', 'Labor 1'], ['Labor 2', 'Labor 2'], ['Labor 3', 'Labor 3'], ['Labor 4', 'Labor 4'], ['Labor 5', 'Labor 5']], { include_blank: true }, { class: 'chosen-select' } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<script type="text/javascript">
+$(document).ready(function() {
+    if($(".warehouse_select").val() === "") {
+      $(".item_select").attr('disabled', true);
+    }
+    else {
+      $(".item_select").attr('disabled', false);
+    }
+   
+    if($(".transac_type").val() == "Stock In" || $(".transac_type").val() == "Return" ){
+       $("#reference_to").css("display","inline");
+    }
+    else {
+      //$("#reference_to").css("visibility","hidden");
+      $("#reference_to").css("display","none");
+    }
+   
+    if($(".transac_type").val() == "Stock Out"){
+       $("#destination").css("display","inline");
+    }
+    else {
+      //$("#reference_to").css("visibility","hidden");
+      $("#destination").css("display","none");
+    }
+   
+    $('.transac_type').change(
+      function() {
+         if($(".transac_type").val() == "Stock In" || $(".transac_type").val() == "Return" ){
+          $("#reference_to").css("display","inline");
+        }
+        else {
+          $("#reference_to").css("display","none");
+        }
+         if($(".transac_type").val() == "Stock Out"){
+             $("#destination").css("display","inline");
+          }
+          else {
+            //$("#reference_to").css("visibility","hidden");
+            $("#destination").css("display","none");
+          }
+      }
+    );
+    
+    $('.warehouse_select').change(
+      function() {
+        if($(".warehouse_select").val() === "") {
+          $(".item_select").attr('disabled', true);
+        }
+        else {
+          $(".item_select").attr('disabled', false);
+        }
+      }  
+    );    
+    
+} );
+</script>
