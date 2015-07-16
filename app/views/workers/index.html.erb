@@ -1,37 +1,142 @@
-<h1>Listing all the task items</h1>
+    <nav class="navbar navbar-inverse navbar-fixed-top" >
+      <div class="container-fluid">
+        <div class="col-md-5" >
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand nav"  href="#">VEGAM</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav" >
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Plumbing</a></li>
+                <li><a href="#">Electrical</a></li>
+                <li><a href="#">painting</a></li>
+                <li><a href="#">fitness</a></li>
+                <li><a href="#">Beauty</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cities<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Hyderabad</a></li>
+                <li><a href="#">Bangalore</a></li>
+                <li><a href="#">Delhi</a></li>
+                <li><a href="#">Chennai</a></li>
+                <li><a href="#">Mumbai</a></li>
+              </ul>
+            </li>
+            <li><a href="#">FAQ's</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li  data-toggle="modal" data-target="#loginModal"><a href="#">Login&nbsp;<i class="fa fa-user fa-1x"></i> </a></li>
+            <li  data-toggle="modal" data-target="#signup"><a href="#">Register&nbsp;<i class="fa fa-unlock fa-1x"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>  <!--(nav colse)-->
 
-<table border = '1'>
-  <tr>
-    <th class="col-md-1" id="box1">Name</th>
-    <th class="col-md-1" id="box1">City</th>
-    <th class="col-md-1"  id="box1">Area</th>
-    <th class="col-md-1"  id="box1">Address</th>
-    <th class="col-md-1"  id="box1">Mobile</th>
-    <th class="col-md-1"  id="box1">Email</th>
-    <th class="col-md-1"  id="box1">Services</th>
-    <th class="col-md-1"  id="box1">Contract Basis</th>
-    <th class="col-md-1"  id="box1">Status</th>
-    <th class="col-md-1"  id="box1">Edit/Delete</th>
-   </tr>
+              <!--side bar start-->
 
-  <% @workers.each do |worker| %>
-      <tr>
-      <td><%= worker.name %></td>
-      <td><%= worker.city %></td>
-      <td><%= worker.subcity %></td>
-      <td><%= worker.peramadd %></td>
-      <td><%= worker.phoneno %></td>
-      <td><%= worker.email %></td>
-      <td><%= worker.service %></td>
-      <td><%= worker.contractbasis %></td>
-        <td><%= worker.status %></td>
-        <td><%= link_to 'Show', worker %></td>
-        <td><%= link_to 'Edit', edit_worker_path(worker) %></td>
-        <td><%= link_to 'Destroy', worker, :workerfirm => 'Are you sure?', :method => :delete %></td>
-  	  </tr>
-  <% end %>
-</table>
+        <div class="container-fluid">
+          <div class="row" id="space" >
+            <div class="col-md-2">
+              <div class="row">
+                <div class="navbar-default sidebar" role="navigation" style="height:600px">
+                  <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                      <li class="sidebar-search">
+                                <div class="input-group custom-search-form">
+                                      <input type="text" class="form-control" placeholder="Search...">
+                                         <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">
+                                              <i class="fa fa-search"></i>
+                                            </button>
+                                        </span>
+                                </div>
 
-	<br />
+                      </li>
+                           <br>
+                      <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Manage Contractor<span class="fa arrow"></span></a>
+                      </li>
+                      <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Manage Service</a>
+                      </li>
+                      <li>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Manage City</a>
+                      </li>
+                      <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i>Manage Workforce<span class="fa arrow"></span></a>
+                      </li>
+                      <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Manage Inventry<span class="fa arrow"></span></a>
+                      </li>
+                      <li>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i>Manage Warehouse<span class="fa arrow"></span></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- /.sidebar-collapse -->
+                </div>
+                <!-- /.navbar-static-side -->
+              </div>
+            </div>    <!--side bar start-->
 
-	<%= link_to 'New Task item', new_worker_path %>
+            <!--side bar end-->
+
+
+            <!--Add worker start-->
+
+        <div class="col-md-10">
+          <table border = '1'>
+            <tr align="center">
+              <th class="col-md-1" id="box1">Name</th>
+              <th class="col-md-1" id="box1">City</th>
+              <th class="col-md-1"  id="box1">Area</th>
+              <th class="col-md-1"  id="box1">Address</th>
+              <th class="col-md-1"  id="box1">Mobile</th>
+              <th class="col-md-1"  id="box1">Email</th>
+              <th class="col-md-1"  id="box1">Services</th>
+              <th class="col-md-1"  id="box1">Contract Basis</th>
+              <th class="col-md-1"  id="box1">Status</th>
+              <th class="col-md-1"  id="box1">Edit/Delete</th>
+            </tr>
+
+            <% @workers.each do |worker| %>
+                <tr id="box1">
+                  <td align="center"><%= worker.name %></td>
+                  <td align="center"><%= worker.city %></td>
+                  <td align="center"><%= worker.subcity %></td>
+                  <td align="center"><%= worker.peramadd %></td>
+                  <td align="center"><%= worker.phoneno %></td>
+                  <td align="center"><%= worker.email %></td>
+                  <td align="center"><%= worker.service %></td>
+                  <td align="center"><%= worker.contractbasis %></td>
+                  <td align="center"><%= worker.status %></td>
+                  <td> <%= link_to '', (worker),:id =>'edit_show',:class => 'fa fa-eye fa-2x',:style =>'color:#C66'%>
+                      <%= link_to '', edit_worker_path(worker),:id =>'edit_show',:style =>'color:#C90',:class => 'fa fa-pencil fa-2x' %>
+                      <%= link_to '', worker, :workerfirm => 'Are you sure?',:style =>'color:red',:method => :delete,:id =>'edit_show',:class => 'fa fa-trash-o  fa-2x' %>
+                  </td>
+                </tr>
+            <% end %>
+          </table>
+
+          <br />
+
+         <button type="button" class="btn btn-sm btn-info"><%= link_to 'Add here', new_worker_path %></button>
+        </div>
+               <!--Add worker start-->
+
+     </div>
+    </div>
+
+
+
+
