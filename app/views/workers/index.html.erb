@@ -42,13 +42,13 @@
       </div>
     </nav>  <!--(nav colse)-->
 
-              <!--side bar start-->
+              <!--sidebar start-->
 
         <div class="container-fluid">
           <div class="row" id="space" >
             <div class="col-md-2">
               <div class="row">
-                <div class="navbar-default sidebar" role="navigation" style="height:600px">
+                <div class="navbar-default sidebar" role="navigation" style="height:700px">
                   <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                       <li class="sidebar-search">
@@ -62,7 +62,7 @@
                                 </div>
 
                       </li>
-                           <br>
+                           <br/>
                       <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Manage Contractor<span class="fa arrow"></span></a>
                       </li>
@@ -82,57 +82,96 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i>Manage Warehouse<span class="fa arrow"></span></a>
                       </li>
                     </ul>
-                  </div>
-                  <!-- /.sidebar-collapse -->
-                </div>
-                <!-- /.navbar-static-side -->
+                  </div> <!-- /.sidebar-collapse -->
+                </div>  <!-- /.navbar-static-side -->
               </div>
-            </div>    <!--side bar start-->
+            </div>
 
             <!--side bar end-->
 
 
             <!--Add worker start-->
 
-        <div class="col-md-10">
-          <table border = '1'>
-            <tr align="center">
-              <th class="col-md-1" id="box1">Name</th>
-              <th class="col-md-1" id="box1">City</th>
-              <th class="col-md-1"  id="box1">Area</th>
-              <th class="col-md-1"  id="box1">Address</th>
-              <th class="col-md-1"  id="box1">Mobile</th>
-              <th class="col-md-1"  id="box1">Email</th>
-              <th class="col-md-1"  id="box1">Services</th>
-              <th class="col-md-1"  id="box1">Contract Basis</th>
-              <th class="col-md-1"  id="box1">Status</th>
-              <th class="col-md-1"  id="box1">Edit/Delete</th>
-            </tr>
 
-            <% @workers.each do |worker| %>
-                <tr id="box1">
-                  <td align="center"><%= worker.name %></td>
-                  <td align="center"><%= worker.city %></td>
-                  <td align="center"><%= worker.subcity %></td>
-                  <td align="center"><%= worker.peramadd %></td>
-                  <td align="center"><%= worker.phoneno %></td>
-                  <td align="center"><%= worker.email %></td>
-                  <td align="center"><%= worker.service %></td>
-                  <td align="center"><%= worker.contractbasis %></td>
-                  <td align="center"><%= worker.status %></td>
-                  <td> <%= link_to '', (worker),:id =>'edit_show',:class => 'fa fa-eye fa-2x',:style =>'color:#C66'%>
-                      <%= link_to '', edit_worker_path(worker),:id =>'edit_show',:style =>'color:#C90',:class => 'fa fa-pencil fa-2x' %>
-                      <%= link_to '', worker, :workerfirm => 'Are you sure?',:style =>'color:red',:method => :delete,:id =>'edit_show',:class => 'fa fa-trash-o  fa-2x' %>
-                  </td>
-                </tr>
-            <% end %>
-          </table>
 
-          <br />
+        <div class="col-md-10" id="page_size">
+          <div id="page-wrapper">
+            <div class="row">
+                   <div>
+                      <h3 class="page-header">Add New Workers</h3>
+                   </div>
+                   <div class="panel panel-default">
+                      <div class="panel-heading" style="height:55px">
+                            <div class="col-md-5">
+                              <button type="button" class="btn btn-info"><%= link_to 'Add', new_worker_path,:class =>'fa fa-plus over'%></button>
+                            </div>
 
-         <button type="button" class="btn btn-sm btn-info"><%= link_to 'Add here', new_worker_path %></button>
-        </div>
-               <!--Add worker start-->
+                            <div class="col-md-3" align="right">
+                                 <div class="dataTable_lenght" id="dataTable-example_length">
+                                   <label>
+                                     <b>Show
+                                        <select name="dataTableexample" class="form-control_length" style="height: 30px;">
+                                          <option value="0"></option>
+                                          <option value="10">10</option>
+                                          <option value="20">20</option>
+                                          <option value="30">30</option>
+                                          <option value="40">40</option>
+                                          <option value="10">50</option>
+                                          <option value="10">100</option>
+                                        </select>
+                                     </b>
+                                   </label>
+                                 </div>
+                            </div>
+                            <div class="col-md-4" align="center">
+                              <div class="dataTable_filter" id="dataTable-example_filter">
+                                <label>Search:
+                                  <input type="search" class="form-group-sm input-sm" placeholder aria-controls="dataTable example">
+                                </label>
+                              </div>
+                            </div>
+                      </div>
+
+                   </div>
+                   <div>
+                        <table border = '1'>
+                        <tr align="center">
+                          <th class="col-md-1" id="form-design">Name</th>
+                          <th class="col-md-1" id="form-design">City</th>
+                          <th class="col-md-1"  id="form-design">Area</th>
+                          <th class="col-md-1"  id="form-design">Address</th>
+                          <th class="col-md-1"  id="form-design">Mobile</th>
+                          <th class="col-md-1"  id="form-design">Email</th>
+                          <th class="col-md-1"  id="form-design">Services</th>
+                          <th class="col-md-1"  id="form-design">Contract Basis</th>
+                          <th class="col-md-1"  id="form-design">Status</th>
+                          <th class="col-md-1"  id="form-design">Edit/Delete</th>
+                        </tr>
+
+                        <% @workers.each do |worker| %>
+                            <tr id="form-design">
+                              <td id="form-design"><%= worker.name %></td>
+                              <td id="form-design"><%= worker.city %></td>
+                              <td id="form-design"><%= worker.subcity %></td>
+                              <td id="form-design"><%= worker.peramadd %></td>
+                              <td id="form-design"><%= worker.phoneno %></td>
+                              <td id="form-design"><%= worker.email %></td>
+                              <td id="form-design"><%= worker.service %></td>
+                              <td id="form-design"><%= worker.contractbasis %></td>
+                              <td id="form-design"><%= worker.status %></td>
+                              <td> <%= link_to '', (worker),:id =>'edit_show',:class => 'fa fa-eye fa-2x',:style =>'color:#C66'%>
+                                  <%= link_to '', edit_worker_path(worker),:id =>'edit_show',:style =>'color:#C90',:class => 'fa fa-pencil fa-2x' %>
+                                  <%= link_to '', worker, :workerfirm => 'Are you sure?',:style =>'color:red',:method => :delete,:id =>'edit_show',:class => 'fa fa-trash-o  fa-2x' %>
+                              </td>
+                            </tr>
+                        <% end %>
+                      </table>
+                   </div>
+              </div>
+            </div><!-- row -->
+          </div> <!-- paper wrapper -->
+        </div>  <!-- col-10 -->
+               <!--Add worker end-->
 
      </div>
     </div>

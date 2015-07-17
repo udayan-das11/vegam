@@ -3,16 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
   #space{
     margin-top: 80px;
-    background-image:url(shutterstock_142028188.jpg);
   }
-  #box{
-    color:#FFF;
-    margin-left:30px;
-    margin-top:4px;
-    padding-left:25px;
-    padding-top:5px;
+  .fa:hover{
+    background-color:transparent;
+    color:#ffffff;
+    text-decoration: none;
   }
-  #box1{
+  #form-design{
     border:2px;
     border-style:solid;
     border-color:#0CF;
@@ -27,4 +24,8 @@
   }
   #edit_show{
     padding-left: 18px;
+  }
+  #page_size{
+    padding-left:25px;
+
   }
