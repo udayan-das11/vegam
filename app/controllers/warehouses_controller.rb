@@ -5,6 +5,7 @@ class WarehousesController < ApplicationController
   # GET /warehouses.json
   def index
     @warehouses = Warehouse.all
+    @warehouse = Warehouse.new
   end
 
   # GET /warehouses/1
@@ -19,6 +20,7 @@ class WarehousesController < ApplicationController
 
   # GET /warehouses/1/edit
   def edit
+    @warehouse = Warehouse.find(params[:id])
   end
 
   # POST /warehouses
