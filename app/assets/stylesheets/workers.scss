@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
   #space{
-    margin-top: 80px;
+    margin-top: 60px;
   }
   .fa:hover{
     background-color:transparent;
@@ -29,3 +29,44 @@
     padding-left:25px;
 
   }
+
+  //(edit page)
+ #top_background{
+   border-radius:9px;
+   background-color:rgba(215, 44, 42, 0.9);
+   padding-bottom: 10px;
+   padding-left:20px;
+   color: #ffffff;
+ }
+  i:hover{
+   background-color:transparent;
+   color:#00CCFF;
+   text-decoration: none;
+   font-family: verdana, arial, helvetica, sans-serif;
+  }
+ #bottom_background{
+   background-color:rgba(10, 10, 38, 0.1);
+   border-radius:6px;
+   margin-top:10px;
+   padding-left:50px;
+   padding-top:30px;
+   padding-bottom:10px;
+ }
+ #show_btn{
+  color: #080808;
+  text-decoration: none;
+ }
+ #show_btn:hover{
+   color: white;
+   background-color:transparent;
+   text-decoration: none;
+ }
+ #back_btn{
+  color: #080808;
+  text-decoration: none;
+ }
+ #back_btn:hover{
+  color: white;
+  background-color:transparent;
+  text-decoration: none;
+ }
