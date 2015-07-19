@@ -1,31 +1,37 @@
-<h1>Listing warehouses</h1>
+<%= render 'shared/sharedTop' %>
+<div class='row'>
+  <%= render 'shared/sharedside' %>
+  <div class="col-md-10">
+    <h1>Listing warehouses</h1>
 
-<table class='table' id='warehouse_table'>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th colspan="3">Action</th>
-    </tr>
-  </thead>
+    <table class='table table-striped ' id='warehouse_table'>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th colspan="3">Action</th>
+      </tr>
+      </thead>
 
-  <tbody>
-    <% @warehouses.each do |warehouse| %>
-      <%= render partial: 'table_row', locals: {warehouse: warehouse} %>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+      <% @warehouses.each do |warehouse| %>
+          <%= render partial: 'table_row', locals: {warehouse: warehouse} %>
+      <% end %>
+      </tbody>
+    </table>
 
-<br>
+    <%= link_to 'New Warehouse', '#new_warehouse_modal', 'data-toggle' => 'modal' %>
+  </div>
 
-<%= link_to 'New Warehouse', '#new_warehouse_modal', 'data-toggle' => 'modal' %>
+</div>
+
 
 <div class="modal fade" id="new_warehouse_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Create new person</h4>
+        <h4 class="modal-title" id="myModalLabel">Create new warehouse</h4>
       </div>
       <div class="modal-body">
         <%# Render the new person form (passing modal => true to enable remote => true) %>
