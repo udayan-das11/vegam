@@ -1,49 +1,145 @@
-<p id="notice"><%= notice %></p>
+        <nav class="navbar navbar-inverse navbar-fixed-top" >
+          <div class="container-fluid">
+            <div class="col-md-5" >
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand nav"  href="#">VEGAM</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav" >
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Plumbing</a></li>
+                    <li><a href="#">Electrical</a></li>
+                    <li><a href="#">painting</a></li>
+                    <li><a href="#">fitness</a></li>
+                    <li><a href="#">Beauty</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cities<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Hyderabad</a></li>
+                    <li><a href="#">Bangalore</a></li>
+                    <li><a href="#">Delhi</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Mumbai</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">FAQ's</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li  data-toggle="modal" data-target="#loginModal"><a href="#">Login&nbsp;<i class="fa fa-user fa-1x"></i> </a></li>
+                <li  data-toggle="modal" data-target="#signup"><a href="#">Register&nbsp;<i class="fa fa-unlock fa-1x"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>  <!--(nav colse)-->
 
-<p>
-  <strong>Name:</strong>
-  <%= @worker.name %>
-</p>
 
-<p>
-  <strong>City:</strong>
-  <%= @worker.city %>
-</p>
 
-<p>
-  <strong>Subcity:</strong>
-  <%= @worker.subcity %>
-</p>
+      <div class="container" id="space" >
+        <div class="row">
+          <div class="row" id="top_background">
+                <div class="col-md-4">
+                   <h2><a>Workers Details</a></h2>
+                </div>
+                <div class="col-md-8">
+                </div>
+          </div>
 
-<p>
-  <strong>Peramadd:</strong>
-  <%= @worker.peramadd %>
-</p>
+          <div id="bottom_background">
+            <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                          <label class="control-label col-md-2" for="email">Name:</label>
+                          <div class="col-sm-8">
+                            <input type="name" class="form-control" id="exet_disable"  placeholder="<%= @worker.name %>"disabled>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-2" for="city">City:</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="exet_disable"   placeholder="<%= @worker.city %>"disabled>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-2" for="subcity">Subcity:</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="exet_disable"  placeholder="<%= @worker.subcity %>"disabled>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-2" for="city">Peram.Add:</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="exet_disable"  placeholder="<%= @worker.peramadd %>"disabled>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-2" for="mobile">Mobile no.:</label>
+                          <div class="col-sm-8">
+                            <input type="tel" class="form-control" id="exet_disable"  placeholder="<%= @worker.phoneno %>"disabled>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-sm-2" for="email">Email:</label>
+                          <div class="col-sm-8">
+                            <input type="email" class="form-control" id="exet_disable"  placeholder="<%= @worker.email %>"disabled>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-2" for="service">Service:</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" placeholder="<%= @worker.service %>"disabled>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-2" for="Contract">Contract Basis:</label>
+                          <div class="col-sm-8">
+                            <input type="email" class="form-control"id="exet_disable"  placeholder="<%= @worker.contractbasis %>"disabled>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-2" for="status">Status:</label>
+                          <div class="col-sm-8">
+                            <input type="test" class="form-control"  id="exet_disable"  placeholder="<%= @worker.status %>"disabled>
+                          </div>
+                        </div>
 
-<p>
-  <strong>Phoneno:</strong>
-  <%= @worker.phoneno %>
-</p>
+                        <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-info" ><%= link_to 'Edit', edit_worker_path(@worker) %></button>
+                            <button type="submit" class="btn btn-default active"><%= link_to 'Back', workers_path %></button>
+                          </div>
+                        </div>
+            </form>
+            <div><p id="notice"><%= notice %></p></div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @worker.email %>
-</p>
+          </div>
+          </div>
+        </div>
+      </div>
 
-<p>
-  <strong>Service:</strong>
-  <%= @worker.service %>
-</p>
 
-<p>
-  <strong>Contractbasis:</strong>
-  <%= @worker.contractbasis %>
-</p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @worker.status %>
-</p>
 
-<%= link_to 'Edit', edit_worker_path(@worker) %> |
-<%= link_to 'Back', workers_path %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
