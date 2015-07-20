@@ -1,6 +1,6 @@
 class WorkersController < ApplicationController
-  before_action :set_worker, only: [:show, :edit, :update, :destroy]
 
+  before_action :set_worker, only: [:show, :edit, :update, :destroy]
   # GET /workers
   # GET /workers.json
   def index
@@ -33,6 +33,7 @@ class WorkersController < ApplicationController
 
   # GET /workers/1/edit
   def edit
+    @worker=Worker.find(params[:id])
   end
 
   # POST /workers

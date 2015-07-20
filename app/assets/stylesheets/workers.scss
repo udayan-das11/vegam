@@ -1,8 +1,10 @@
 // Place all the styles related to the Workers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+  //(workers page)
   #space{
-    margin-top: 60px;
+    margin-top: 70px;
   }
   .fa:hover{
     background-color:transparent;
@@ -33,24 +35,26 @@
   //(edit page)
  #top_background{
    border-radius:9px;
-   background-color:rgba(215, 44, 42, 0.9);
+   background-color:#00CCFF;
    padding-bottom: 10px;
    padding-left:20px;
+   padding-top:2px;
    color: #ffffff;
  }
-  i:hover{
+  a:hover{
    background-color:transparent;
-   color:#00CCFF;
+   color:white;
    text-decoration: none;
    font-family: verdana, arial, helvetica, sans-serif;
   }
  #bottom_background{
-   background-color:rgba(10, 10, 38, 0.1);
+   background-color:rgba(0,0,0,0.1);
    border-radius:6px;
    margin-top:10px;
-   padding-left:50px;
+   padding-left:60px;
    padding-top:30px;
    padding-bottom:10px;
+
  }
  #show_btn{
   color: #080808;
@@ -70,3 +74,37 @@
   background-color:transparent;
   text-decoration: none;
  }
+ #exet_disable{
+   background-color: #ffffff;
+ }
+
+
+     //(new worker page)
+
+  #top_img{
+    margin-top: 70px;
+    background-image: image-url('new_wrker_bg.jpg');
+    background-repeat: no-repeat;
+    width: 1000px;
+    height:400px;
+    border-radius:8px;
+  }
+  #back_col{
+    margin-top:314px;
+    margin-left:20px;
+    margin-right:20px;
+    background-color:rgba(0,0,0,0.1);
+    padding-top:40px;
+    padding-left:30px;
+    padding-right:10px;
+    padding-bottom:10px;
+  }
+  #text_col{
+    padding-top: 10px;
+    color: white;
+    font-family: helvetica, sans-serif;
+    font-size:50px
+  }
+  #text_col:hover{
+       color: #204d74;
+  }
