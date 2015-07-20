@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    @item=Item.new
   end
 
   # GET /items/1
@@ -37,12 +38,16 @@ class ItemsController < ApplicationController
     end
   end
 
+  def details
+    @item = Item.find(params[:item_id])
+  end
+
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
+        format.html { redirect_to (:back), notice: 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit }
