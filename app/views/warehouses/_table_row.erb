@@ -1,0 +1,8 @@
+<tr>
+  <td><%= warehouse.name %></td>
+  <td><%= warehouse.location %></td>
+  <td><%= link_to 'Show', warehouse_details_path(warehouse) , remote: true %></td>
+  <td><%= link_to 'Edit', edit_warehouse_path(warehouse) , remote: true %>
+  </td>
+  <td><%= link_to 'Destroy', warehouse, method: :delete, data: { confirm: 'Are you sure?' } ,:class=>:destroy%></td>
+</tr>

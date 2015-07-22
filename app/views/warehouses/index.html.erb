@@ -1,27 +1,54 @@
-<h1>Listing warehouses</h1>
+<div class='row' style="margin-bottom: 60px">
+<%= render 'shared/sharedTop' %>
+  </div>
+<div class='row'>
+  <%= render 'shared/sharedside' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th colspan="3">Action</th>
-    </tr>
-  </thead>
+  <div class="col-md-10" style="margin-left: 230px;">
+    <h1>Listing warehouses</h1>
 
-  <tbody>
-    <% @warehouses.each do |warehouse| %>
+    <table class='table table-hover table-bordered ' id='warehouse_table'>
+      <thead>
       <tr>
-        <td><%= warehouse.name %></td>
-        <td><%= warehouse.location %></td>
-        <td><%= link_to 'Show', warehouse %></td>
-        <td><%= link_to 'Edit', edit_warehouse_path(warehouse) %></td>
-        <td><%= link_to 'Destroy', warehouse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Location</th>
+        <th colspan="3">Action</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
+      <tbody>
+      <% @warehouses.each do |warehouse| %>
+          <%= render partial: 'table_row', locals: {warehouse: warehouse} %>
+      <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Warehouse', new_warehouse_path %>
+    <%= link_to 'New Warehouse', '#new_warehouse_modal', 'data-toggle' => 'modal', class: 'btn btn-default ' %>
+  </div>
+
+</div>
+
+
+<div class="modal fade" id="new_warehouse_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Create new warehouse</h4>
+      </div>
+      <div class="modal-body">
+        <%# Render the new person form (passing modal => true to enable remote => true) %>
+        <%= render 'form', modal: true %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="product-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div id="inner-product-modal" class="modal-content"></div>
+  </div>
+</div>

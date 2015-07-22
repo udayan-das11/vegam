@@ -1,8 +1,15 @@
+<%= render 'shared/sharedTop' %>
+<div class='row'>
+  <%= render 'shared/sharedside' %>
+  <div class="col-md-10">
+
 <h1>Homepage</h1>
-<table>
-	<tr>
-		<td><%= link_to "Warehouse", warehouses_path%></td>
-		<td><%= link_to "Transaction", item_wh_transacs_path%></td>
-		<td><%= link_to "Item", items_path %></td>
-	</tr>
-</table>
+        <table>
+            <tr>
+                <td><%= link_to "Warehouse", warehouses_path%></td>
+                <td><%= link_to "Transaction", item_wh_transacs_path%></td>
+                <td><%= link_to "Item", items_path %></td>
+            </tr>
+        </table>
+    </div>
+</div>

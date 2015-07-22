@@ -5,6 +5,7 @@ class WarehousesController < ApplicationController
   # GET /warehouses.json
   def index
     @warehouses = Warehouse.all
+    @warehouse = Warehouse.new
   end
 
   # GET /warehouses/1
@@ -12,6 +13,9 @@ class WarehousesController < ApplicationController
   def show
   end
 
+  def details
+    @warehouse = Warehouse.find(params[:warehouse_id])
+  end
   # GET /warehouses/new
   def new
     @warehouse = Warehouse.new
@@ -19,6 +23,7 @@ class WarehousesController < ApplicationController
 
   # GET /warehouses/1/edit
   def edit
+    @warehouse = Warehouse.find(params[:id])
   end
 
   # POST /warehouses
@@ -42,7 +47,7 @@ class WarehousesController < ApplicationController
   def update
     respond_to do |format|
       if @warehouse.update(warehouse_params)
-        format.html { redirect_to @warehouse, notice: 'Warehouse was successfully updated.' }
+        format.html { redirect_to (:back), notice: 'Warehouse was successfully updated.' }
         format.json { render :show, status: :ok, location: @warehouse }
       else
         format.html { render :edit }
@@ -62,13 +67,13 @@ class WarehousesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_warehouse
-      @warehouse = Warehouse.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_warehouse
+    @warehouse = Warehouse.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def warehouse_params
-      params.require(:warehouse).permit(:name, :location)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def warehouse_params
+    params.require(:warehouse).permit(:name, :location)
+  end
 end

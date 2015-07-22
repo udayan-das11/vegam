@@ -1,4 +1,6 @@
-<%= form_for(@warehouse) do |f| %>
+<% modal ||= false %>
+<% remote = modal ? true : false %>
+<%= form_for(@warehouse,remote: remote, html: {role: :form, 'data-model' => 'warehouse'}) do |f| %>
   <% if @warehouse.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@warehouse.errors.count, "error") %> prohibited this warehouse from being saved:</h2>
@@ -11,15 +13,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <div class="form-group">
+    <%= f.label :name ,  class: 'control-label'%><br>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
+    <div class="form-group">
+    <%= f.label :location, class: 'control-label' %><br>
+    <%= f.text_field :location, class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit', class: 'btn btn-default' %>
   </div>
 <% end %>
