@@ -54599,3 +54599,967 @@ ActionController::RoutingError (No route matches [GET] "/booking/css/font-awesom
   Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
   Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
   Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (25.3ms)
+  [1m[35mBooking Load (0.3ms)[0m  SELECT "bookings".* FROM "bookings"
+
+
+Started POST "/booking/doBooking" for 127.0.0.1 at 2015-07-22 13:11:42 +0530
+Processing by BookingController#doBooking as HTML
+  Parameters: {"email"=>"kartikkhatri01@gmail.com", "phoneno"=>"", "localityId"=>"5", "subServiceId"=>"1", "cityId"=>"2", "serviceId"=>"2", "comment"=>""}
+  [1m[35mServiceCityMapping Load (0.1ms)[0m  SELECT  "service_city_mappings".* FROM "service_city_mappings" WHERE "service_city_mappings"."service_id" = ? AND "service_city_mappings"."city_id" = ?  ORDER BY "service_city_mappings"."id" ASC LIMIT 1  [["service_id", 2], ["city_id", 2]]
+  [1m[36mLocality Load (0.1ms)[0m  [1mSELECT  "localities".* FROM "localities" WHERE "localities"."id" = ?  ORDER BY "localities"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mSubService Load (0.1ms)[0m  SELECT  "sub_services".* FROM "sub_services" WHERE "sub_services"."id" = ?  ORDER BY "sub_services"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bookings" ("locality_id", "email", "phoneno", "sub_service_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["locality_id", 5], ["email", "kartikkhatri01@gmail.com"], ["phoneno", ""], ["sub_service_id", 1], ["created_at", "2015-07-22 07:41:42.751814"], ["updated_at", "2015-07-22 07:41:42.751814"]]
+  [1m[36m (137.4ms)[0m  [1mcommit transaction[0m
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from doBooking at /home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam1/app/controllers/booking_controller.rb:40)
+  Rendered user_mailer/booking_email.html.erb within layouts/mailer (0.0ms)
+
+UserMailer#booking_email: processed outbound mail in 6.1ms
+
+Sent mail to kartikkhatri01@gmail.com (4075.5ms)
+Date: Wed, 22 Jul 2015 13:11:42 +0530
+From: vegamcorp@gmail.com
+To: kartikkhatri01@gmail.com
+Message-ID: <55af4936dcb15_15553fe5ae8fa7e01578c@kartikeya-Latitude-E5450.mail>
+Subject: Sample Email
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi </h1>
+    <p>
+ 	Hi , You have made a booking
+     </p>
+  </body>
+</html>
+  </body>
+</html>
+
+  [1m[35mWorkerSlMapping Load (0.3ms)[0m  SELECT DISTINCT "worker_sl_mappings"."worker_id" FROM "worker_sl_mappings" WHERE "worker_sl_mappings"."locality_id" = ?  [["locality_id", 5]]
+  [1m[36mWorker Load (0.3ms)[0m  [1mSELECT  "workers".* FROM "workers" WHERE (service_id in ('2') and id in (1,2))  ORDER BY count asc LIMIT 1[0m
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from doBooking at /home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam1/app/controllers/booking_controller.rb:49)
+  Rendered worker_mailer/work_email.html.erb within layouts/mailer (0.1ms)
+
+WorkerMailer#work_email: processed outbound mail in 4.5ms
+
+Sent mail to kartikkhatri01@gmail.com (3942.1ms)
+Date: Wed, 22 Jul 2015 13:11:47 +0530
+From: vegamcorp@gmail.com
+To: kartikkhatri01@gmail.com
+Message-ID: <55af493b1f5a_15553fe5ae8fa7e015859@kartikeya-Latitude-E5450.mail>
+Subject: Worker Mail
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi kaka</h1>
+    <p>
+ 	Hi , You have been booking for the following service.
+     </p>
+  </body>
+</html>
+  </body>
+</html>
+
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "workers" SET "count" = ?, "updated_at" = ? WHERE "workers"."id" = 1[0m  [["count", 3], ["updated_at", "2015-07-22 07:41:50.952321"]]
+  [1m[35m (139.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "bookings" SET "worker_id" = ?, "updated_at" = ? WHERE "bookings"."id" = 25  [["worker_id", 1], ["updated_at", "2015-07-22 07:41:51.096394"]]
+  [1m[36m (164.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8534ms (ActiveRecord: 445.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 13:11:51 +0530
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.1ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 748ms (Views: 727.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/warehouses.self-a45de1a6cbcf71bc8c13f279a68090588b3bf63285dee7eb03995d8f2cf80f25.css?body=1" for 127.0.0.1 at 2015-07-22 13:11:52 +0530
+
+
+Started GET "/assets/workers.self-2a529d8e1e85d08f72a12f3fbedb2270cf14836def8f409aafe50e92dfdd2918.css?body=1" for 127.0.0.1 at 2015-07-22 13:11:52 +0530
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 13:11:52 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (36.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.4ms)
+
+
+Started GET "/assets/workers.self-919495f57ce44d81de63a7d05296df03982159344afcd20d25a68fd651b88e88.js?body=1" for 127.0.0.1 at 2015-07-22 13:11:52 +0530
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 13:11:52 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 13:21:07 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.2ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 391ms (Views: 351.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 13:21:08 +0530
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.1ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 111ms (Views: 107.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 13:21:08 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (60.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.2ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 13:21:08 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-07-22 13:21:08 +0530
+
+
+Started POST "/booking/create" for 127.0.0.1 at 2015-07-22 13:21:14 +0530
+Processing by BookingController#booking as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bkJu06Bm/KgnTX4L4cmTsYr/RTKZr/j6hwyBQrgC0v3LXL9ZNBsZ8kEzKUyxRt9vVr8I0vbBZwUQP0n5RqNyQg==", "city"=>"2", "service"=>"2"}
+  [1m[35mLocality Load (0.1ms)[0m  SELECT "localities".* FROM "localities" WHERE "localities"."city_id" = ?  [["city_id", 2]]
+  [1m[36mSubService Load (0.1ms)[0m  [1mSELECT "sub_services".* FROM "sub_services" WHERE "sub_services"."service_id" = ?[0m  [["service_id", 2]]
+  Rendered booking/booking.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 122ms (Views: 113.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/booking/js/bootstrap.min.js" for 127.0.0.1 at 2015-07-22 13:21:14 +0530
+
+ActionController::RoutingError (No route matches [GET] "/booking/js/bootstrap.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.9ms)
+
+
+Started GET "/booking/css/bootstrap.min.css" for 127.0.0.1 at 2015-07-22 13:21:14 +0530
+
+ActionController::RoutingError (No route matches [GET] "/booking/css/bootstrap.min.css"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.1ms)
+
+
+Started GET "/booking/css/font-awesome.min.css" for 127.0.0.1 at 2015-07-22 13:21:14 +0530
+
+ActionController::RoutingError (No route matches [GET] "/booking/css/font-awesome.min.css"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (22.6ms)
+
+
+Started POST "/booking/doBooking" for 127.0.0.1 at 2015-07-22 13:21:21 +0530
+Processing by BookingController#doBooking as HTML
+  Parameters: {"email"=>"kartikkhatri01@gmail.com", "phoneno"=>"", "localityId"=>"5", "subServiceId"=>"1", "cityId"=>"2", "serviceId"=>"2", "comment"=>""}
+  [1m[35mServiceCityMapping Load (0.3ms)[0m  SELECT  "service_city_mappings".* FROM "service_city_mappings" WHERE "service_city_mappings"."service_id" = ? AND "service_city_mappings"."city_id" = ?  ORDER BY "service_city_mappings"."id" ASC LIMIT 1  [["service_id", 2], ["city_id", 2]]
+  [1m[36mLocality Load (0.2ms)[0m  [1mSELECT  "localities".* FROM "localities" WHERE "localities"."id" = ?  ORDER BY "localities"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mSubService Load (0.2ms)[0m  SELECT  "sub_services".* FROM "sub_services" WHERE "sub_services"."id" = ?  ORDER BY "sub_services"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bookings" ("locality_id", "email", "phoneno", "sub_service_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["locality_id", 5], ["email", "kartikkhatri01@gmail.com"], ["phoneno", ""], ["sub_service_id", 1], ["created_at", "2015-07-22 07:51:21.090875"], ["updated_at", "2015-07-22 07:51:21.090875"]]
+  [1m[36m (246.8ms)[0m  [1mcommit transaction[0m
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from doBooking at /home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam1/app/controllers/booking_controller.rb:40)
+  Rendered user_mailer/booking_email.html.erb within layouts/mailer (0.3ms)
+
+UserMailer#booking_email: processed outbound mail in 86.6ms
+
+Sent mail to kartikkhatri01@gmail.com (4026.9ms)
+Date: Wed, 22 Jul 2015 13:21:21 +0530
+From: vegamcorp@gmail.com
+To: kartikkhatri01@gmail.com
+Message-ID: <55af4b796b0e4_1a31afbaf422584@kartikeya-Latitude-E5450.mail>
+Subject: Sample Email
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi </h1>
+    <p>
+ 	Hi , You have made a booking
+     </p>
+  </body>
+</html>
+  </body>
+</html>
+
+  [1m[35mWorkerSlMapping Load (0.3ms)[0m  SELECT DISTINCT "worker_sl_mappings"."worker_id" FROM "worker_sl_mappings" WHERE "worker_sl_mappings"."locality_id" = ?  [["locality_id", 5]]
+  [1m[36mWorker Load (0.3ms)[0m  [1mSELECT  "workers".* FROM "workers" WHERE (service_id in ('2') and id in (1,2))  ORDER BY count asc LIMIT 1[0m
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from doBooking at /home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam1/app/controllers/booking_controller.rb:49)
+  Rendered worker_mailer/work_email.html.erb within layouts/mailer (0.3ms)
+
+WorkerMailer#work_email: processed outbound mail in 4.8ms
+
+Sent mail to kartikkhatri01@gmail.com (3924.2ms)
+Date: Wed, 22 Jul 2015 13:21:25 +0530
+From: vegamcorp@gmail.com
+To: kartikkhatri01@gmail.com
+Message-ID: <55af4b7d794e9_1a31afbaf422634@kartikeya-Latitude-E5450.mail>
+Subject: Worker Mail
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi ajit</h1>
+    <p>
+ 	Hi , You have been booking for the following service.
+     </p>
+  </body>
+</html>
+  </body>
+</html>
+
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "workers" SET "count" = ?, "updated_at" = ? WHERE "workers"."id" = 2[0m  [["count", 3], ["updated_at", "2015-07-22 07:51:29.422140"]]
+  [1m[35m (133.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "bookings" SET "worker_id" = ?, "updated_at" = ? WHERE "bookings"."id" = 26  [["worker_id", 2], ["updated_at", "2015-07-22 07:51:29.560915"]]
+  [1m[36m (147.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8640ms (ActiveRecord: 531.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 13:21:29 +0530
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.1ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 106ms (Views: 103.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 13:21:29 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.6ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 13:21:29 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 13:26:00 +0530
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.2ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 110ms (Views: 104.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 13:26:00 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (38.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.3ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 13:26:00 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 13:26:59 +0530
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.2ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 99ms (Views: 93.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 13:26:59 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.0ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 13:26:59 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 13:27:01 +0530
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.1ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 98ms (Views: 94.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 13:27:01 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (42.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (25.3ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 13:27:01 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 13:27:02 +0530
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.3ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.3ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 134ms (Views: 126.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 13:27:02 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.5ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 13:27:02 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 13:32:24 +0530
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.1ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.8ms)[0m  SELECT "services".* FROM "services"
+  Rendered vegam/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.1ms)
+
+SyntaxError (/home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam1/app/views/vegam/index.html.erb:226: syntax error, unexpected ':', expecting =>
+...y, "id", "cityName" , {prompt : "Select your city"}) ,  :cla...
+...                               ^
+/home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam1/app/views/vegam/index.html.erb:226: syntax error, unexpected '}', expecting ')'
+..., {prompt : "Select your city"}) ,  :class => "form-control ...
+...                               ^
+/home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam1/app/views/vegam/index.html.erb:226: syntax error, unexpected ',', expecting ')'
+...ss => "form-control input-lg" ,:style => "width:100%");@outp...
+...                               ^):
+  app/views/vegam/index.html.erb:226: syntax error, unexpected ':', expecting =>
+  app/views/vegam/index.html.erb:226: syntax error, unexpected '}', expecting ')'
+  app/views/vegam/index.html.erb:226: syntax error, unexpected ',', expecting ')'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (25.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 13:32:40 +0530
+Processing by VegamController#index as HTML
+  [1m[36mServiceCityMapping Load (0.1ms)[0m  [1mSELECT "service_city_mappings".* FROM "service_city_mappings"[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+  [1m[36mService Load (0.1ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered vegam/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 130ms (Views: 125.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 13:32:40 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (45.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.2ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 13:32:41 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 13:39:20 +0530
+Processing by VegamController#index as HTML
+  [1m[36mServiceCityMapping Load (0.3ms)[0m  [1mSELECT "service_city_mappings".* FROM "service_city_mappings"[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+  [1m[36mService Load (0.1ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  Rendered vegam/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms)
+
+SyntaxError (/home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam1/app/views/vegam/index.html.erb:227: syntax error, unexpected ',', expecting ')'
+...tput_buffer.append=( select(  , "city", @city {|p| [ p.cityN...
+...                               ^
+/home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam1/app/views/vegam/index.html.erb:227: syntax error, unexpected ',', expecting ')'
+...fer.append=( select(  , "city", @city {|p| [ p.cityName, p.i...
+...                               ^
+/home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam1/app/views/vegam/index.html.erb:227: syntax error, unexpected '}', expecting ')'
+...ity {|p| [ p.cityName, p.id ] }, {prompt: 'Select Person'}) ...
+...                               ^
+/home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam1/app/views/vegam/index.html.erb:227: syntax error, unexpected ')', expecting keyword_end
+...}, {prompt: 'Select Person'}) );@output_buffer.safe_append='
+...                               ^):
+  app/views/vegam/index.html.erb:227: syntax error, unexpected ',', expecting ')'
+  app/views/vegam/index.html.erb:227: syntax error, unexpected ',', expecting ')'
+  app/views/vegam/index.html.erb:227: syntax error, unexpected '}', expecting ')'
+  app/views/vegam/index.html.erb:227: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (22.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 13:40:02 +0530
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.1ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services"
+  Rendered vegam/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+SyntaxError (/home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam1/app/views/vegam/index.html.erb:226: syntax error, unexpected '{', expecting ')'
+...ect("post", "person_id", @city{|p| [ p.cityName, p.id ] }, {...
+...                               ^
+/home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam1/app/views/vegam/index.html.erb:226: syntax error, unexpected '}', expecting ')'
+...city{|p| [ p.cityName, p.id ] }, {prompt: 'Select Person'}) ...
+...                               ^
+/home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam1/app/views/vegam/index.html.erb:226: syntax error, unexpected ')', expecting keyword_end
+...}, {prompt: 'Select Person'}) );@output_buffer.safe_append='
+...                               ^):
+  app/views/vegam/index.html.erb:226: syntax error, unexpected '{', expecting ')'
+  app/views/vegam/index.html.erb:226: syntax error, unexpected '}', expecting ')'
+  app/views/vegam/index.html.erb:226: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 13:41:52 +0530
+Processing by VegamController#index as HTML
+  [1m[36mServiceCityMapping Load (0.2ms)[0m  [1mSELECT "service_city_mappings".* FROM "service_city_mappings"[0m
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered vegam/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 142ms (Views: 134.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 13:41:52 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.9ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 13:41:52 +0530

@@ -363,7 +363,7 @@
                     <div class='col-md-8'>
                       <div class='col-md-3'>
                         <div class='form-group internal'>
-                          <%= select_tag "localityId", options_from_collection_for_select(@locality, "id", "subCity") ,  :class => "form-control" %>
+                          <%= select_tag "localityId", content_tag(:option,'Select Your area',:value=>"") + options_from_collection_for_select(@locality, "id", "subCity") ,  :class => "form-control" %>
                            </div>
                        </div>
                       </div>
@@ -373,7 +373,7 @@
                     <div class='col-md-8'>
                       <div class='col-md-3'>
                         <div class='form-group internal'>
-                             <%= select_tag "subServiceId", options_from_collection_for_select(@subService, "id", "subServiceName") ,  :class => "form-control" %>
+                             <%= select_tag "subServiceId", content_tag(:option,'Select Specific Service',:value=>"") +options_from_collection_for_select(@subService, "id", "subServiceName") ,  :class => "form-control" %>
                       
                           </div>
                         </div>

@@ -223,8 +223,7 @@
 
                   <div class="form-group" >
                             <label class="sr-only" for="Enter city name"></label>
-                  <%= select_tag "city", options_from_collection_for_select(@city, "id", "cityName") ,  :class => "form-control input-lg" ,:style => "width:100%"%>
-
+                  <%= select_tag "city",content_tag(:option,'Select City',:value=>"") + options_from_collection_for_select(@city, "id", "cityName" ,  "Select your city") ,  :class => "form-control input-lg" ,:style => "width:100%"%>
                            </div>
                         
                 
