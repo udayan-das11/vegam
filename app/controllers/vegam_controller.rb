@@ -87,6 +87,12 @@ if response.body.to_s.include? "email"
   puts "came here "; 
  session[:user] = user2.email;
   end
+if user2.nil?
+  
+ @user3=  User.new(email:JSON.parse(response.body.to_s)['email'])
+  @user3.save
+   session[:user] = @user3.email;
+end
   end
        
  

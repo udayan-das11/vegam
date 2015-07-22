@@ -55563,3 +55563,1958 @@ ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
 
 
 Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 13:41:52 +0530
+
+
+Started POST "/booking/create" for 127.0.0.1 at 2015-07-22 14:30:06 +0530
+Processing by BookingController#booking as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P+3E/whC4aTNNTmuhPLmdqobabemD8JfzmbDh/Z4gCma8xV1nD8E/qtLbunUfaqodlskV8lhXaBZVQs8CNkglg==", "city"=>"2", "service"=>"2"}
+  [1m[36mLocality Load (0.2ms)[0m  [1mSELECT "localities".* FROM "localities" WHERE "localities"."city_id" = ?[0m  [["city_id", 2]]
+  [1m[35mSubService Load (0.1ms)[0m  SELECT "sub_services".* FROM "sub_services" WHERE "sub_services"."service_id" = ?  [["service_id", 2]]
+  Rendered booking/booking.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 113ms (Views: 112.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/booking/css/font-awesome.min.css" for 127.0.0.1 at 2015-07-22 14:30:06 +0530
+
+ActionController::RoutingError (No route matches [GET] "/booking/css/font-awesome.min.css"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (30.2ms)
+
+
+Started GET "/booking/js/bootstrap.min.js" for 127.0.0.1 at 2015-07-22 14:30:06 +0530
+
+ActionController::RoutingError (No route matches [GET] "/booking/js/bootstrap.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (28.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.3ms)
+
+
+Started GET "/booking/css/bootstrap.min.css" for 127.0.0.1 at 2015-07-22 14:30:06 +0530
+
+ActionController::RoutingError (No route matches [GET] "/booking/css/bootstrap.min.css"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.9ms)
+
+
+Started POST "/booking/doBooking" for 127.0.0.1 at 2015-07-22 14:32:26 +0530
+Processing by BookingController#doBooking as HTML
+  Parameters: {"email"=>"kartikkhatri01@gmail.com", "phoneno"=>"", "localityId"=>"5", "subServiceId"=>"1", "cityId"=>"2", "serviceId"=>"2", "comment"=>""}
+  [1m[36mServiceCityMapping Load (0.1ms)[0m  [1mSELECT  "service_city_mappings".* FROM "service_city_mappings" WHERE "service_city_mappings"."service_id" = ? AND "service_city_mappings"."city_id" = ?  ORDER BY "service_city_mappings"."id" ASC LIMIT 1[0m  [["service_id", 2], ["city_id", 2]]
+  [1m[35mLocality Load (0.2ms)[0m  SELECT  "localities".* FROM "localities" WHERE "localities"."id" = ?  ORDER BY "localities"."id" ASC LIMIT 1  [["id", 5]]
+  [1m[36mSubService Load (0.1ms)[0m  [1mSELECT  "sub_services".* FROM "sub_services" WHERE "sub_services"."id" = ?  ORDER BY "sub_services"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bookings" ("locality_id", "email", "phoneno", "sub_service_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["locality_id", 5], ["email", "kartikkhatri01@gmail.com"], ["phoneno", ""], ["sub_service_id", 1], ["created_at", "2015-07-22 09:02:26.540230"], ["updated_at", "2015-07-22 09:02:26.540230"]]
+  [1m[35m (200.9ms)[0m  commit transaction
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from doBooking at /home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam1/app/controllers/booking_controller.rb:40)
+  Rendered user_mailer/booking_email.html.erb within layouts/mailer (0.1ms)
+
+UserMailer#booking_email: processed outbound mail in 4.9ms
+
+Sent mail to kartikkhatri01@gmail.com (4107.5ms)
+Date: Wed, 22 Jul 2015 14:32:26 +0530
+From: vegamcorp@gmail.com
+To: kartikkhatri01@gmail.com
+Message-ID: <55af5c22b6c77_1a313fd2f8fd84682271a@kartikeya-Latitude-E5450.mail>
+Subject: Sample Email
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi </h1>
+    <p>
+ 	Hi , You have made a booking
+     </p>
+  </body>
+</html>
+  </body>
+</html>
+
+  [1m[36mWorkerSlMapping Load (0.2ms)[0m  [1mSELECT DISTINCT "worker_sl_mappings"."worker_id" FROM "worker_sl_mappings" WHERE "worker_sl_mappings"."locality_id" = ?[0m  [["locality_id", 5]]
+  [1m[35mWorker Load (0.2ms)[0m  SELECT  "workers".* FROM "workers" WHERE (service_id in ('2') and id in (1,2))  ORDER BY count asc LIMIT 1
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from doBooking at /home/kartikeya/Documents/Aptana_Studio_3_Workspace/vegam1/app/controllers/booking_controller.rb:49)
+  Rendered worker_mailer/work_email.html.erb within layouts/mailer (0.1ms)
+
+WorkerMailer#work_email: processed outbound mail in 7.0ms
+
+Sent mail to kartikkhatri01@gmail.com (3945.8ms)
+Date: Wed, 22 Jul 2015 14:32:30 +0530
+From: vegamcorp@gmail.com
+To: kartikkhatri01@gmail.com
+Message-ID: <55af5c26d3b2b_1a313fd2f8fd8468228f3@kartikeya-Latitude-E5450.mail>
+Subject: Worker Mail
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi kaka</h1>
+    <p>
+ 	Hi , You have been booking for the following service.
+     </p>
+  </body>
+</html>
+  </body>
+</html>
+
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "workers" SET "count" = ?, "updated_at" = ? WHERE "workers"."id" = 1  [["count", 4], ["updated_at", "2015-07-22 09:02:34.813145"]]
+  [1m[36m (204.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "bookings" SET "worker_id" = ?, "updated_at" = ? WHERE "bookings"."id" = 27[0m  [["worker_id", 1], ["updated_at", "2015-07-22 09:02:35.021597"]]
+  [1m[35m (123.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 8611ms (ActiveRecord: 530.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 14:32:35 +0530
+Processing by VegamController#index as HTML
+  [1m[36mServiceCityMapping Load (0.2ms)[0m  [1mSELECT "service_city_mappings".* FROM "service_city_mappings"[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+  [1m[36mService Load (0.1ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered vegam/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 109ms (Views: 104.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 14:32:35 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (56.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.8ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 14:32:35 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 21:01:12 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.1ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.4ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 453ms (Views: 409.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 21:01:13 +0530
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.1ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 117ms (Views: 112.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 21:01:13 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (70.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (36.0ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 21:01:13 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-07-22 21:01:13 +0530
+
+
+Started GET "/worker" for 127.0.0.1 at 2015-07-22 21:26:24 +0530
+
+ActionController::RoutingError (No route matches [GET] "/worker"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.7ms)
+
+
+Started GET "/worker/new" for 127.0.0.1 at 2015-07-22 21:26:28 +0530
+
+ActionController::RoutingError (No route matches [GET] "/worker/new"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.4ms)
+
+
+Started GET "/vegam/index" for 127.0.0.1 at 2015-07-22 21:27:10 +0530
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.1ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.6ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 112ms (Views: 105.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/vegam/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 21:27:11 +0530
+
+ActionController::RoutingError (No route matches [GET] "/vegam/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.1ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 21:27:11 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-07-22 21:27:11 +0530
+
+
+Started GET "/worker/new" for 127.0.0.1 at 2015-07-22 21:27:19 +0530
+
+ActionController::RoutingError (No route matches [GET] "/worker/new"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (30.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.7ms)
+
+
+Started GET "/workers/new" for 127.0.0.1 at 2015-07-22 21:27:51 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (252.1ms)
+  Rendered workers/new.html.erb within layouts/application (252.8ms)
+Completed 500 Internal Server Error in 262ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `service' for #<Worker:0x00000004ca9a50>):
+    56:                 <div class="form-group">
+    57:                   <div class="col-md-8">
+    58:                     <label class="control-label col-md-2"><%= f.label :service %></label>
+    59:                     <input type="text" class="form-control" <%= f.text_field :service %>
+    60:                   </div>
+    61:                 </div>
+    62:                 <div class="form-group">
+  app/views/workers/_form.html.erb:59:in `block in _app_views_workers__form_html_erb__2069018134288441970_29844460'
+  app/views/workers/_form.html.erb:1:in `_app_views_workers__form_html_erb__2069018134288441970_29844460'
+  app/views/workers/new.html.erb:11:in `_app_views_workers_new_html_erb__290817485330234355_29921300'
+  app/controllers/workers_controller.rb:28:in `new'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.2ms)
+
+
+Started GET "/workers/new" for 127.0.0.1 at 2015-07-22 21:29:04 +0530
+Processing by WorkersController#new as HTML
+  Rendered workers/_form.html.erb (3.1ms)
+  Rendered workers/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 103ms (Views: 103.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/new_wrker_bg.jpg" for 127.0.0.1 at 2015-07-22 21:29:05 +0530
+
+ActionController::RoutingError (No route matches [GET] "/images/new_wrker_bg.jpg"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (32.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (25.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 22:32:58 +0530
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.1ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 107ms (Views: 103.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 22:32:58 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.2ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 22:32:58 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-07-22 22:32:58 +0530
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-22 22:33:18 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M6/6Mm6f31VwWMistn0nrzND4cfCg16+LjM/uoBFg4U1EGQE+T25ztuwu6/oRVbtTvcy6TxVsIr9cxlsCV2CzA==", "user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", ""]]
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.1ms)
+
+TypeError (no implicit conversion of nil into String):
+  app/controllers/vegam_controller.rb:24:in `+'
+  app/controllers/vegam_controller.rb:24:in `signin'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (21.8ms)
+
+
+Started POST "/vegam/signin" for 127.0.0.1 at 2015-07-22 22:34:59 +0530
+Processing by VegamController#signin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M6/6Mm6f31VwWMistn0nrzND4cfCg16+LjM/uoBFg4U1EGQE+T25ztuwu6/oRVbtTvcy6TxVsIr9cxlsCV2CzA==", "user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", ""]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `password' for nil:NilClass):
+  app/controllers/vegam_controller.rb:24:in `signin'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.7ms)
+
+
+Started POST "/vegam/fbauth" for 127.0.0.1 at 2015-07-22 22:40:25 +0530
+Processing by VegamController#fbauth as JSON
+  Parameters: {"fblogin"=>"CAANFYgsZCs2EBAOI25qjGe9hEeZAhkb9PehwImfu0lcTxqUNzm1M0ZCRYOUmn9ngizTIZA0zTAw12LphKIDQjYVcHJyGS247wvtRu0rZBvMJkkzG0ZBy1h5ENmkWOY1ZAZBwn7xXCtOBHgKpcAHN6F9rIiYV7ZBW8LxWZCZAtZBximZBm13LmQYg8kZAadmh8FSdyh5iKdHMPaWPRkgbSg41I0TEgY"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "kartikkhatri001@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "kartikkhatri001@gmail.com"]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 859ms (Views: 25.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 22:40:26 +0530
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.2ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 126ms (Views: 104.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap-iconpicker.self-3f8e8b1d88ce307fbf3c6b2c108924bf4ce343b0066da07ea157effc47561af6.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:26 +0530
+
+
+Started GET "/assets/booking.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/homepage.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/item_wh_transacs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/metisMenu.min.self-39a68158cd09f5740df90344edf98bf0dec5b8b07d6f8c5e1faed3f2bbf208f2.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/warehouses.self-a45de1a6cbcf71bc8c13f279a68090588b3bf63285dee7eb03995d8f2cf80f25.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/workers.self-2a529d8e1e85d08f72a12f3fbedb2270cf14836def8f409aafe50e92dfdd2918.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/scaffolds.self-7daf57441823280e1ffb0bc48fd47443ebf5cb27c3fd68a19df8dbe0c5d429e9.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/jquery.self-aedf0b4f9535e7b1d01d6a9ad81e6ecdb5b9a82acf17f3798645b7dbca2d86a1.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/booking.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-db28b262ebd06e23f61d3a791a257fb00005847d2849aa05ec92ef6e6f616035.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/homePageJsonParse.self-9169f2f6f780f51fa15b2e51fddbd81683f2771972acb4a21c8ec705eb556e28.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/homepage.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/iconset-glyphicon.self-b8bed227d615cc83597b1123941df805af4ae4a8835644724359ad929384e081.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/item_wh_transacs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/warehouses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/workers.self-919495f57ce44d81de63a7d05296df03982159344afcd20d25a68fd651b88e88.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (32.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.3ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 22:40:27 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 22:49:36 +0530
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.1ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 114ms (Views: 110.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 22:49:36 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.7ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 22:49:36 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-07-22 22:49:36 +0530
+
+
+Started POST "/vegam/fbauth" for 127.0.0.1 at 2015-07-22 22:49:43 +0530
+Processing by VegamController#fbauth as JSON
+  Parameters: {"fblogin"=>"CAANFYgsZCs2EBAMVZATi6HZBZBgnHZCFKOphVuDHJ1xtCRtTw0h8ya57NzPENBpCmM2KiqDp7mrmgp6uuibom8v19ResyvO8gorjHKhwm1SkbjuPAlvA2x1hEfZCag3ZAQPZA4JsJZCG8HWP7sPAldLfsLAVPZAmv0QYrVvUlzFYxkKZA08jrMr4wSW4PytEpex0t1nLtUI8Bu4vPyiWuYCff1t"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "kartikkhatri001@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "kartikkhatri001@gmail.com"]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 795ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.2ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.3ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 107ms (Views: 99.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/booking.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-3f8e8b1d88ce307fbf3c6b2c108924bf4ce343b0066da07ea157effc47561af6.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/homepage.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/item_wh_transacs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/metisMenu.min.self-39a68158cd09f5740df90344edf98bf0dec5b8b07d6f8c5e1faed3f2bbf208f2.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/scaffolds.self-7daf57441823280e1ffb0bc48fd47443ebf5cb27c3fd68a19df8dbe0c5d429e9.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/workers.self-2a529d8e1e85d08f72a12f3fbedb2270cf14836def8f409aafe50e92dfdd2918.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/warehouses.self-a45de1a6cbcf71bc8c13f279a68090588b3bf63285dee7eb03995d8f2cf80f25.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/jquery.self-aedf0b4f9535e7b1d01d6a9ad81e6ecdb5b9a82acf17f3798645b7dbca2d86a1.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/booking.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-db28b262ebd06e23f61d3a791a257fb00005847d2849aa05ec92ef6e6f616035.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/homePageJsonParse.self-9169f2f6f780f51fa15b2e51fddbd81683f2771972acb4a21c8ec705eb556e28.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/homepage.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/iconset-glyphicon.self-b8bed227d615cc83597b1123941df805af4ae4a8835644724359ad929384e081.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/item_wh_transacs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/warehouses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/workers.self-919495f57ce44d81de63a7d05296df03982159344afcd20d25a68fd651b88e88.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (28.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (25.2ms)
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 22:49:44 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 22:53:47 +0530
+Processing by VegamController#index as HTML
+  [1m[35mServiceCityMapping Load (0.1ms)[0m  SELECT "service_city_mappings".* FROM "service_city_mappings"
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered vegam/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 120ms (Views: 100.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/booking.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-3f8e8b1d88ce307fbf3c6b2c108924bf4ce343b0066da07ea157effc47561af6.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/homepage.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/item_wh_transacs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/metisMenu.min.self-39a68158cd09f5740df90344edf98bf0dec5b8b07d6f8c5e1faed3f2bbf208f2.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/scaffolds.self-7daf57441823280e1ffb0bc48fd47443ebf5cb27c3fd68a19df8dbe0c5d429e9.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/warehouses.self-a45de1a6cbcf71bc8c13f279a68090588b3bf63285dee7eb03995d8f2cf80f25.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/workers.self-2a529d8e1e85d08f72a12f3fbedb2270cf14836def8f409aafe50e92dfdd2918.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/jquery.self-aedf0b4f9535e7b1d01d6a9ad81e6ecdb5b9a82acf17f3798645b7dbca2d86a1.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (32.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.9ms)
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/booking.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-db28b262ebd06e23f61d3a791a257fb00005847d2849aa05ec92ef6e6f616035.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/homePageJsonParse.self-9169f2f6f780f51fa15b2e51fddbd81683f2771972acb4a21c8ec705eb556e28.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/homepage.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/iconset-glyphicon.self-b8bed227d615cc83597b1123941df805af4ae4a8835644724359ad929384e081.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/item_wh_transacs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/workers.self-919495f57ce44d81de63a7d05296df03982159344afcd20d25a68fd651b88e88.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/warehouses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 22:53:48 +0530
+
+
+Started POST "/vegam/fbauth" for 127.0.0.1 at 2015-07-22 22:54:02 +0530
+Processing by VegamController#fbauth as JSON
+  Parameters: {"fblogin"=>"CAANFYgsZCs2EBAEU3c1l8KtWJpppwjQHQfcowAIgmaGqqCjOs4KZB0UM8b5QEJuIcoeDijxI8xisQXGclSed9UcZBZAeraixiDjIZCbFCz5ViXuMuFlwCOtjKVdFjd5ZAaKOGSeGllO1GZCZCTb7gUbPboHevgowaLtgPqoSJ52Xduib4WRbT4pZBOmjGzZCZATSBSgt5RXnVzXZAZCMhuxY2JJA4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "kartikkhatri001@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "kartikkhatri001@gmail.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "kartikkhatri001@gmail.com"], ["created_at", "2015-07-22 17:24:09.490523"], ["updated_at", "2015-07-22 17:24:09.490523"]]
+  [1m[35m (217.1ms)[0m  commit transaction
+Completed 500 Internal Server Error in 6990ms (ActiveRecord: 217.5ms)
+
+NameError (undefined local variable or method `user3' for #<VegamController:0x00000002723010>):
+  app/controllers/vegam_controller.rb:94:in `fbauth'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (14.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (22.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 22:54:09 +0530
+Processing by VegamController#index as HTML
+  [1m[36mServiceCityMapping Load (0.1ms)[0m  [1mSELECT "service_city_mappings".* FROM "service_city_mappings"[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+  [1m[36mService Load (0.4ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered vegam/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 113ms (Views: 106.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:09 +0530
+
+
+Started GET "/assets/booking.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (27.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.5ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.4ms)
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-3f8e8b1d88ce307fbf3c6b2c108924bf4ce343b0066da07ea157effc47561af6.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/homepage.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/item_wh_transacs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/metisMenu.min.self-39a68158cd09f5740df90344edf98bf0dec5b8b07d6f8c5e1faed3f2bbf208f2.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/scaffolds.self-7daf57441823280e1ffb0bc48fd47443ebf5cb27c3fd68a19df8dbe0c5d429e9.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/warehouses.self-a45de1a6cbcf71bc8c13f279a68090588b3bf63285dee7eb03995d8f2cf80f25.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/workers.self-2a529d8e1e85d08f72a12f3fbedb2270cf14836def8f409aafe50e92dfdd2918.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/jquery.self-aedf0b4f9535e7b1d01d6a9ad81e6ecdb5b9a82acf17f3798645b7dbca2d86a1.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/booking.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-db28b262ebd06e23f61d3a791a257fb00005847d2849aa05ec92ef6e6f616035.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/homePageJsonParse.self-9169f2f6f780f51fa15b2e51fddbd81683f2771972acb4a21c8ec705eb556e28.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/homepage.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/iconset-glyphicon.self-b8bed227d615cc83597b1123941df805af4ae4a8835644724359ad929384e081.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/item_wh_transacs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/warehouses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/workers.self-919495f57ce44d81de63a7d05296df03982159344afcd20d25a68fd651b88e88.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 22:54:10 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 22:54:33 +0530
+Processing by VegamController#index as HTML
+  [1m[36mServiceCityMapping Load (0.1ms)[0m  [1mSELECT "service_city_mappings".* FROM "service_city_mappings"[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+  [1m[36mService Load (0.1ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered vegam/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 126ms (Views: 106.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:33 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:33 +0530
+
+
+Started GET "/assets/booking.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:33 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:33 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-3f8e8b1d88ce307fbf3c6b2c108924bf4ce343b0066da07ea157effc47561af6.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/item_wh_transacs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/homepage.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/metisMenu.min.self-39a68158cd09f5740df90344edf98bf0dec5b8b07d6f8c5e1faed3f2bbf208f2.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/scaffolds.self-7daf57441823280e1ffb0bc48fd47443ebf5cb27c3fd68a19df8dbe0c5d429e9.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/warehouses.self-a45de1a6cbcf71bc8c13f279a68090588b3bf63285dee7eb03995d8f2cf80f25.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/workers.self-2a529d8e1e85d08f72a12f3fbedb2270cf14836def8f409aafe50e92dfdd2918.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/jquery.self-aedf0b4f9535e7b1d01d6a9ad81e6ecdb5b9a82acf17f3798645b7dbca2d86a1.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-db28b262ebd06e23f61d3a791a257fb00005847d2849aa05ec92ef6e6f616035.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/booking.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/homePageJsonParse.self-9169f2f6f780f51fa15b2e51fddbd81683f2771972acb4a21c8ec705eb556e28.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/homepage.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/iconset-glyphicon.self-b8bed227d615cc83597b1123941df805af4ae4a8835644724359ad929384e081.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/item_wh_transacs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/warehouses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/workers.self-919495f57ce44d81de63a7d05296df03982159344afcd20d25a68fd651b88e88.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (30.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.7ms)
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 22:54:34 +0530
+
+
+Started POST "/vegam/fbauth" for 127.0.0.1 at 2015-07-22 22:54:39 +0530
+Processing by VegamController#fbauth as JSON
+  Parameters: {"fblogin"=>"CAANFYgsZCs2EBAI8ZCQYX4SA5IpEexGxI4eamY1p9i3avzE14MVWybyUf12oESzZCtIneMgk4U10LmrDpOzOgj937bLqpzSb4ppgGUaF3FeE2C7nnejZCZC9WhlVO9WIpb8HaTDJ3Dx3IZBQ3kf2CZASbTIfaq0XdoudmH6GsQMZBE3jHfs4cCqhjjdVqZBg9BdSXtpWLZC9ZB4CTtLFCijHEW6"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "kartikkhatri001@gmail.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "kartikkhatri001@gmail.com"]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 795ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 22:54:39 +0530
+Processing by VegamController#index as HTML
+  [1m[36mServiceCityMapping Load (0.2ms)[0m  [1mSELECT "service_city_mappings".* FROM "service_city_mappings"[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT "cities".* FROM "cities"
+  [1m[36mService Load (0.1ms)[0m  [1mSELECT "services".* FROM "services"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered vegam/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 113ms (Views: 107.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/booking.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/bootstrap-multiselect.self-693750a001ead5338a1f3c9c82e36c3be0cd6e1a6d5b33f632e7e55562e4dbf3.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/bootstrap-switch.min.self-030928071d20f0cc0a1a0de04071793aec1539c8dacfcd6ebedaae5a809afb90.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-3f8e8b1d88ce307fbf3c6b2c108924bf4ce343b0066da07ea157effc47561af6.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/bootstrap-datepicker3.min.self-842684a277a16c884be764fed26e56448431633531c77b08eddeb7908a8b184f.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/bootstrap.self-dd8ac08e17487e70c109f7c6bd9417ddb3750e7a11c3bd0c8043bfc6294bc6d3.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/font-awesome.self-b6fed9cf2c062bad3fe02fb2c471b85a97f947fbca7b9c7fa773dbebc5f27762.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/homepage.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/item_wh_transacs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/metisMenu.min.self-39a68158cd09f5740df90344edf98bf0dec5b8b07d6f8c5e1faed3f2bbf208f2.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/scaffolds.self-7daf57441823280e1ffb0bc48fd47443ebf5cb27c3fd68a19df8dbe0c5d429e9.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/services.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/vegam.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/warehouses.self-a45de1a6cbcf71bc8c13f279a68090588b3bf63285dee7eb03995d8f2cf80f25.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/workers.self-2a529d8e1e85d08f72a12f3fbedb2270cf14836def8f409aafe50e92dfdd2918.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/jquery.self-aedf0b4f9535e7b1d01d6a9ad81e6ecdb5b9a82acf17f3798645b7dbca2d86a1.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/CityService.self-b014fe707aa0472fff26610acb886f442e60100c0d31b08b7b818f4a6beb30f9.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/booking.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/bootstrap-iconpicker.self-db28b262ebd06e23f61d3a791a257fb00005847d2849aa05ec92ef6e6f616035.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/homePageJsonParse.self-9169f2f6f780f51fa15b2e51fddbd81683f2771972acb4a21c8ec705eb556e28.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/homepage.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/html5shiv.min.self-5f363538a5170f44944c530d6a941f6431d97d17793e1c3bb8717b9592f627e9.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/iconset-glyphicon.self-b8bed227d615cc83597b1123941df805af4ae4a8835644724359ad929384e081.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/item_wh_transacs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/respond.min.self-8306093ccce666c01dab405fac0d16596a1d1cf38aa0ba919d4831261662cdbb.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/services.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/vegam.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/warehouses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/workers.self-919495f57ce44d81de63a7d05296df03982159344afcd20d25a68fd651b88e88.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+
+Started GET "/jquery-1.11.3.min.js" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
+
+ActionController::RoutingError (No route matches [GET] "/jquery-1.11.3.min.js"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/kartikeya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (9.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.7ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.4ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/kartikeya/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.9ms)
+
+
+Started GET "/assets/home_page.jpg" for 127.0.0.1 at 2015-07-22 22:54:40 +0530
