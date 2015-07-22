@@ -1,4 +1,5 @@
 class ServiceCityMapping < ActiveRecord::Base
-  has_many :citys
+has_many :city  
    has_many :services
+
 end

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>VEGAM</title>
+    
+	<!-- Bootstrap -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/datepicker.min.css' rel='stylesheet' type='text/css'">
+    <link href="css/bootstrap-switch.css' rel='stylesheet' type='text/css'">
+    <link href="css/bootstrap-multiselect.css' rel='stylesheet' type='text/css'">
+ 
+  
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+     <script>
+    $(function() {
+  $('button.navbar-toggle').click(function() {
+    if ($('body').css('padding-top') < '100px') {
+        $('body').css('padding-top', '+=245');
+    } else {
+        $('body').css('padding-top', '0');
+    }
+  });
+});
+</script>
+    
+       <style>
+   
+	#search{
+		background-image:url(images/home_page.jpg);
+		background-repeat:no-repeat;
+		background-size:cover;
+		height:600px;
+		}
+	#inner{
+		padding-left:25px;
+   		padding-bottom:30px;
+    	background-color:rgba(190,190,190,0.6);
+		margin-top:250px;
+		box-shadow: 10px 10px 5px #666;
+		border-radius:9px;
+		}
+	#cont{
+		padding-top:10px;
+		border-radius:6px;
+		margin-left:20px;
+		background-color:#FFF;
+		height:100px;
+		width:100px;
+		}
+   #space{
+		margin-top:100px;
+	}
+   .container {
+ 	 transition: padding 500;
+	}
+
+	.container-is-open {
+	  padding-top:200px;
+	}
+   </style>
+ </head>
+  <body>
+  
+  <div>
+ 		<nav class="navbar navbar-inverse navbar-fixed-top" >
+                  <div class="container-fluid">
+                    <div class="col-md-5" >
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                      </button>
+                      <a class="navbar-brand" href="#">VEGAM</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                      <ul class="nav navbar-nav" >
+                         <li><a href="#">Home</a></li>
+                         <li class="dropdown">
+                                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
+                                  <ul class="dropdown-menu">
+                                    <li><a href="#">Plumbing</a></li>
+                                    <li><a href="#">Electrical</a></li>
+                                    <li><a href="#">painting</a></li>
+                                    <li><a href="#">fitness</a></li>
+                                    <li><a href="#">Beauty</a></li>
+                                </ul>
+                         </li>
+                         <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cities<span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Hyderabad</a></li>
+                                <li><a href="#">Bangalore</a></li>
+                                <li><a href="#">Delhi</a></li>
+                                <li><a href="#">Chennai</a></li>
+                                <li><a href="#">Mumbai</a></li>
+                            </ul>
+                         </li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                         <li  data-toggle="modal" data-target="#loginModal"><a href="#">Login&nbsp;<i class="fa fa-user fa-1x"></i> </a></li>
+                        <li  data-toggle="modal" data-target="#signup"><a href="#">Register&nbsp;<i class="fa fa-unlock fa-1x"></i></a></li>
+                       </ul>
+                   </div>
+                </div>
+              </nav>   
+          
+          
+           				   <!--  ( Create )-->
+              
+              <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+              <div class="modal-dialog">
+               <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">SignUp</h4>
+                 </div>
+    
+                 <div class="modal-body">     
+                      <form id="signup" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">Full name</label>
+                    
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" name="firstName" placeholder="First name" />
+                            </div>
+    
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" name="lastName" placeholder="Last name" />
+                            </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">Phone number</label>
+                    
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" name="cellPhone" placeholder="Cell" />
+                            </div>
+                    
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">Email Id</label>
+                    
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" name="Example@.com" placeholder="Example@.com" />
+                            </div>
+                         </div>
+                        
+                         <div class="form-group">
+                            <label class="col-xs-3 control-label">Password</label>
+                                <div class="col-xs-6">
+                                    <input type="password" class="form-control" name="password" />
+                                </div>
+                         </div>
+                        
+                          <div class="form-group">
+                                <label class="col-xs-3 control-label">Re-Enter Password</label>
+                                <div class="col-xs-6">
+                                    <input type="password" class="form-control" name="Re-enter password" />
+                                </div>
+                          </div>
+                        
+                         <div class="form-group">
+                             <label class="col-xs-3 control-label">Gender</label>
+                               <div class="col-xs-5">
+                                   <div class="radio">
+                                        <label>
+                                            <input type="radio" name="gender" value="male" /> Male
+                                        </label>
+                                   </div>
+                                   <div class="radio">
+                                        <label>
+                                            <input type="radio" name="gender" value="female" /> Female
+                                        </label>
+                                   </div>
+                                   <div class="radio">
+                                        <label>
+                                            <input type="radio" name="gender" value="other" /> Other
+                                        </label>
+                                   </div>
+                              </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">Date of birth</label>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" name="birthday" placeholder="YYYY/MM/DD" />
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-xs-3 col-xs-offset-3">
+                            <button type="submit" class="btn btn-link">Update profile</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-xs-5 col-xs-offset-3">
+                                <button type="submit" class="btn btn-info">Register</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </div>
+                       </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>    <!--  ( Create )-->
+
+
+             <!-- (  Login  )-->
+         
+         
+         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+   		  <div class="modal-dialog">
+           <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Login</h4>
+             </div>
+
+             <div class="modal-body">
+                
+                <form id="loginForm" method="post" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">Username</label>
+                        <div class="col-xs-5">
+                            <input type="text" class="form-control" name="username" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">Password</label>
+                        <div class="col-xs-5">
+                            <input type="password" class="form-control" name="password"/>
+                        </div>
+                    </div>
+                    
+                  
+                    <div class="form-group">
+                        <div class="col-xs-3 col-xs-offset-3">
+                        <button type="submit" class="btn btn-link">Forget Password</button>
+                        <button type="submit" class="btn btn-link">Connect with facebook&nbsp;<i class="fa fa-facebook-official fa-1x"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-xs-5 col-xs-offset-3">
+                            <button type="submit" class="btn btn-info">Login</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>		<!-- (  Login  )-->
+          
+                <!-- (  request page )-->
+                
+          <div class='container'id="space">
+            <div class='panel panel-info dialog-panel'>
+              <div class='panel-heading'>
+                <h4 style="color:#FFF">Book your services</h4>
+              </div>
+              <div class='panel-body'>
+                <form class='form-horizontal' role='form' action="/booking/doBooking" method="POST">
+                  <div class='form-group'>
+                    <label class='control-label col-md-2 col-md-offset-2' for='id_title'>Name</label>
+                    <div class='col-md-8'>
+                      <div class='col-md-2'>
+                        <div class='form-group internal'>
+                          <select class='form-control' id='id_title'>
+                            <option>Mr</option>
+                            <option>Ms</option>
+                            <option>Mrs</option>
+                            <option>Miss</option>
+                            <option>Dr</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class='col-md-3 indent-small'>
+                        <div class='form-group internal'>
+                          <input class='form-control' id='name' placeholder='First Name' type='text'>
+                        </div>
+                      </div>
+                      <div class='col-md-3 indent-small'>
+                        <div class='form-group internal'>
+                          <input class='form-control' id='id_last_name' placeholder='Last Name' type='text'>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='form-group'>
+                    <label class='control-label col-md-2 col-md-offset-2' for='Address'>Address</label>
+                    <div class='col-md-6'>
+                      <div class='form-group'>
+                        <div class='col-md-11'>
+                          <input class='form-control' id='address' placeholder='Address' type='text'>
+                        </div>
+                      </div>
+                     </div>
+                    </div> 
+                        
+                    
+                    
+                    <div class='form-group'>
+                    <label class='control-label col-md-2 col-md-offset-2' for='Pin'>Pin</label>
+                    <div class='col-md-6'>
+                      <div class='form-group'>
+                        <div class='col-md-11'>
+                          <input class='form-control' id='Pin' placeholder='Pin' type='text'>
+                        </div>
+                      </div>
+                     </div>
+                    </div>
+                    
+                  <div class='form-group'>
+                    <label class='control-label col-md-2 col-md-offset-2' for='id_email'>Email id</label>
+                    <div class='col-md-6'>
+                      <div class='form-group'>
+                        <div class='col-md-11'>
+                          <input class='form-control' id='email' name="email" placeholder='Examlple@.com' type='text'>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class='form-group'>
+                     <label class='control-label col-md-2 col-md-offset-2' for='id_email'>Contact</label>
+                        <div class='col-md-6'>
+                          <div class='form-group'>
+                            <div class='col-md-11'>
+                              <input class='form-control' id='phoneno' name="phoneno" placeholder='Mobile' type='text'>
+                            </div>
+                          </div>
+                          
+                     </div>
+                   </div>
+                   
+                   <div class='form-group'>
+                    <label class='control-label col-md-2 col-md-offset-2' for='City'>Select your Area</label>
+                    <div class='col-md-8'>
+                      <div class='col-md-3'>
+                        <div class='form-group internal'>
+                          <%= select_tag "localityId", options_from_collection_for_select(@locality, "id", "subCity") ,  :class => "form-control" %>
+                           </div>
+                       </div>
+                      </div>
+                    </div>
+                   <div class='form-group'>
+                    <label class='control-label col-md-2 col-md-offset-2' for='City'>Select Specific Service</label>
+                    <div class='col-md-8'>
+                      <div class='col-md-3'>
+                        <div class='form-group internal'>
+                             <%= select_tag "subServiceId", options_from_collection_for_select(@subService, "id", "subServiceName") ,  :class => "form-control" %>
+                      
+                          </div>
+                        </div>
+                      </div>
+                      
+                   </div>
+                      <input id="cityId" name="cityId" type="hidden" value=<%= @cityId %> />
+                      <input id="serviceId" type="hidden" name="serviceId" value=<%= @serviceId %> />
+                  <div class='form-group'>
+                    <label class='control-label col-md-2 col-md-offset-2' for='id_comments'>Comments</label>
+                    <div class='col-md-6'>
+                      <textarea class='form-control' id='comment' name='comment' placeholder='Additional comments' rows='3'></textarea>
+                    </div>
+                  </div>
+                  <div class='form-group'>
+                    <div class='col-md-offset-4 col-md-3'>
+                      <button class='btn-lg btn-info' type='submit'>Request Reservation</button>
+                    </div>
+                    <div class='col-md-3'>
+                      <button class='btn-lg btn-default' style='float:right' type='submit'>Cancel</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+   
+   
+  </body>
+</html>

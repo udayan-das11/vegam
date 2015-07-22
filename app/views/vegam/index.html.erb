@@ -1,4 +1,7 @@
-<body>
+ <head>
+ 	<script src="jquery-1.11.3.min.js"></script>
+ </head>
+ <body>
 	<div id="fb-root"></div>
   <div class="img-responsive" id="search">  
   
@@ -30,7 +33,7 @@
                          <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cities<span class="caret"></span></a>
                              <select  name="cityName" id="cityName" class="dropdown-menu">
-                              	<% cities_array = City.all.map { |city| [city.cityName, city.cityId] } %>
+                              	<% cities_array = City.all.map { |city| [city.cityName, city.id] } %>
                             <%= options_for_select(cities_array) %>
                               </select>
                                
@@ -215,36 +218,25 @@
              <div class="col-md-2" ></div>
               <div class="col-md-8" id="inner">
                 <h2 align="center" style="color:#FFF"><strong>Service @t your door Step</strong></h2>
-                  <form class="form-inline form-s1 formproject" role="form" id="search-theme-form" style="margin-left:29px">
-                            
+              
+              <%= form_tag "/booking/create", :class => 'form-inline form-s1 formproject' , :style => "margin-left:29px"  do %>
+
+                  <div class="form-group" >
+                            <label class="sr-only" for="Enter city name"></label>
+                  <%= select_tag "city", options_from_collection_for_select(@city, "id", "cityName") ,  :class => "form-control input-lg" ,:style => "width:100%"%>
+
+                           </div>
+                        
+                
                             <div class="form-group" style="width:50%">
                                 <label class="sr-only"  for="Select Service"></label>
-                                  <select id="combobox" class="form-control input-lg" name="project" style="width:100%">
-                                     <option value="35" text = "Select service">Select Service</option>
-                                     <option>Electrical</option>
-                                     <option>Plumbing</option>
-                                     <option>Home clean</option>
-                                     <option>Painting</option>
-                                     <option>fitness</option>
-                                     <option>Computer Repair</option>
-                                  </select>
-                          </div>
-                          
-                          <div class="form-group" >
-                            <label class="sr-only" for="Enter city name"></label>
-                              <select class="form-control input-lg" id="sel2">
-                                 <option value="35" text = "Select City" >Select City</option> 
-                                <option>Hyderabad</option>
-                                <option>Bangalore</option>
-                                <option>Delhi</option>
-                                <option>Chennai</option>
-                                <option>Mumbai</option>
-                                <option>Delhi</option>
-                                <option>Delhi</option>
-                              </select>
+             <select name="service" id="service" class="form-control input-lg" style="width:100%">
+            	<option value="">Select Your Service</option> 
+            	</select>
                            </div>
+                          
                         <button type="submit" class="btn-s1 btn btn-info btn-lg">Search</button>
-                 </form>
+                 <% end %>
                  <br>
               
         	  <div class="row">
@@ -305,13 +297,52 @@
 /          </div>
      </div>
   </div>
-     
+<input  type="hidden" name="jsonService" value='<%= raw @jsonService %>' id="jsonService"/>
+<input  type="hidden" name="jsonSCMapping" value='<%= raw @jsonSCMapping %>'id="jsonSCMapping"/>
+<input  type="hidden" name="jsonCity" value= '<%= raw @jsonCity %>'  id="jsonCity"/>
               
-               
-     
+      
       			<!-- (signup)-->
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>. 
+    <script src="//code.jquery.com/jquerybing&quot;, &quot;description&quot;=&gt;nil, &quot;image&quot;=&gt;nil, &quot;created_at&quot;=&gt;&quot;2015-07-18T18:31:04.933Z&quot;, &quot;updated_at&quot;=&gt;&quot;2015-07-18T18:31:04.933Z&quot;}, {&quot;id&quot;=&gt;2, &quot;name&quot;=&gt;&quot;Beauty&quot;, &quot;description&quot;=&gt;nil, &quot;image&quot;=&gt;nil, &quot;created_at&quot;=&gt;&quot;2015-07-20T19:32:42.168Z&quot;, &quot;updated_at&quot;=&gt;&quot;2015-07-20T19:32:42.168Z&quot;}, {&quot;id&quot;=&gt;3, &quot;name&quot;=&gt;&quot;Ac repair&quot;, &quot;description&quot;=&gt;nil, &quot;image&quot;=&gt;nil, &quot;created_at&quot;=&gt;&quot-1.11.3.min.js"></script>. 
     <script src="//connect.facebook.net/en_US/all.js"></script>
+    <script>
+    			$(document).ready(function() {
+    				$("#city").change(function(){
+
+var jsonSCMapping1 = $('#jsonSCMapping').val();
+var jsonService1 = $('#jsonService').val();
+var jsonSCMapping2 = JSON.parse(''+ jsonSCMapping1 +'');
+var jsonService2= JSON.parse(''+ jsonService1 +'');
+var options="<option value=''>Select Your Service</option>";
+for (var i = 0; i < jsonSCMapping2.length; i++) {
+	var cityId =$('#city').val();
+    var counter = jsonSCMapping2[i];
+ 	if(cityId == counter.city_id)
+    {
+    	console.log("cityId" + cityId);
+    	console.log("counterCityID" + counter.city_id);
+    for (var j = 0; j < jsonService2.length; j++) {
+    	console.log("service_id" + counter.service_id);
+    	console.log("jsonservice" + jsonService2[j].id);
+	if(counter.service_id == jsonService2[j].id)
+{ 	console.log("came here");
+options = options + "<option value="+counter.service_id+" >"+jsonService2[j].name+"</option>";
+  }
+    		
+    }
+    
+
+  }
+  }
+  	console.log("came here" +options);
+  $("#service").html(options);
+    			});
+});    	
+    	
+    	
+    </script>
+    
+    
     <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -344,7 +375,7 @@
 					type:		'POST',
 					dataType:	'JSON',
 					success:	function(res){
-					alert("ss");
+					console.log("ss");
 					
 						location.reload();
 					},		
@@ -487,6 +518,7 @@
     
       <script>
 		$(document).ready(function() {
+		 
 			$('#loginForm').formValidation({
 				framework: 'bootstrap',
 				excluded: [':disabled'],

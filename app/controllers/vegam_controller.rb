@@ -9,6 +9,13 @@ skip_before_filter :verify_authenticity_token , :only => [:index ,:fbauth]
   def index
    @user = User.new
    @city  =City.all 
+   @servicecityMapping = ServiceCityMapping.all
+    @jsonSCMapping = @servicecityMapping.to_json
+   @service = Service.all
+   @jsonCity = @city.to_json
+   @jsonService = @service.to_json.to_s
+  puts @jsonService
+  
   end
 
   def signin
@@ -73,7 +80,6 @@ if response.body.to_s.include? "email"
   puts JSON.parse(response.body.to_s)['email'];
   puts User.find_by_email(JSON.parse(response.body.to_s)['email'])
     user2 = User.find_by_email(JSON.parse(response.body.to_s)['email'])
-   puts "email" + user2.email
     unless user2.nil?
   
   

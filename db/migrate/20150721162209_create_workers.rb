@@ -1,5 +1,5 @@
 class CreateWorkers < ActiveRecord::Migration
-  def change
+def change
     create_table :workers do |t|
       t.string :name
       t.string :city
@@ -7,9 +7,10 @@ class CreateWorkers < ActiveRecord::Migration
       t.string :peramadd
       t.string :phoneno
       t.string :email
-      t.string :service
+      t.references :service, index: true, foreign_key: true
       t.string :contractbasis
       t.string :status
+      t.integer :count
 
       t.timestamps null: false
     end
