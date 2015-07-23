@@ -1,5 +1,11 @@
-<h1>Listing item_wh_transacs</h1>
-<table>
+<div class='row' style="margin-bottom: 60px">
+  <%= render 'shared/sharedTop' %>
+</div>
+<div class='row'>
+  <%= render 'shared/sharedside' %>
+  <div class="col-md-10" style="margin-left: 230px;">
+<h1>Listing item_wh_transacs
+<table class='table table-hover table-bordered ' id='warehouse_table'>
   <thead>
     <tr>
       <%= form_tag item_wh_transacs_path, :role => 'form', :method => 'get' do %>
@@ -46,10 +52,10 @@
   <tbody>
     <% @item_wh_transacs.each do |item_wh_transac| %>
       <tr>
-        <td><%= item_wh_transac.warehouse.name %></td>
-        <td><%= item_wh_transac.item.name %></td>
+        <td><%=  %></td>
+
         <td><%= item_wh_transac.transac_date %></td>
-        <td><%= item_wh_transac.amount.to_s + " " + item_wh_transac.item.uom %></td>
+        <td><%= item_wh_transac.amount.to_s + " "  %></td>
         <td><%= item_wh_transac.price.to_s + " $" unless item_wh_transac.price.nil? %></td>
         <td><%= item_wh_transac.transac_type %></td>
         <td>
@@ -72,3 +78,5 @@
 <br>
 
 <%= link_to 'New Item wh transac', new_item_wh_transac_path %>
+</div>
+</div>

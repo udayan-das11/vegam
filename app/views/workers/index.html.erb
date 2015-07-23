@@ -94,7 +94,7 @@
 
 
 
-        <div class="col-md-10" id="page_size">
+         <div class="col-md-10" id="page_size">
           <div id="page-wrapper">
             <div class="row">
                    <div>
@@ -149,21 +149,7 @@
                         </tr>
 
                         <% @workers.each do |worker| %>
-                            <tr id="form-design">
-                              <td id="form-design"><%= worker.name %></td>
-                              <td id="form-design"><%= worker.city %></td>
-                              <td id="form-design"><%= worker.subcity %></td>
-                              <td id="form-design"><%= worker.peramadd %></td>
-                              <td id="form-design"><%= worker.phoneno %></td>
-                              <td id="form-design"><%= worker.email %></td>
-                              <td id="form-design"><%= worker.service %></td>
-                              <td id="form-design"><%= worker.contractbasis %></td>
-                              <td id="form-design"><%= worker.status %></td>
-                              <td> <%= link_to '', (worker),:id =>'edit_show',:class => 'fa fa-eye fa-2x',:style =>'color:#C66'%>
-                                  <%= link_to '', edit_worker_path(worker),:id =>'edit_show',:style =>'color:#C90',:class => 'fa fa-pencil fa-2x' %>
-                                  <%= link_to '', worker, :workerfirm => 'Are you sure?',:style =>'color:red',:method => :delete,:id =>'edit_show',:class => 'fa fa-trash-o  fa-2x' %>
-                              </td>
-                            </tr>
+                              <%= render partial: 'table_row', locals: {worker: worker} %>
                         <% end %>
                       </table>
                    </div>
@@ -178,4 +164,8 @@
 
 
 
-
+    <div id="product-modal" class="modal fade">
+      <div class="modal-dialog">
+        <div id="inner-product-modal" class="modal-content"></div>
+      </div>
+    </div>
