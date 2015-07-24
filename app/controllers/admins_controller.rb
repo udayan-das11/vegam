@@ -9,7 +9,7 @@ class AdminsController < ApplicationController
     redirect_to :controller=>"contractors" ,:action => "new"
   end
 
-  def jobs
+  def  jobs
   end
   
   def admin
