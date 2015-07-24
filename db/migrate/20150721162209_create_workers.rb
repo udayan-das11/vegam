@@ -7,6 +7,7 @@ def change
       t.string :peramadd
       t.string :phoneno
       t.string :email
+
       t.references :service, index: true, foreign_key: true
       t.string :contractbasis
       t.string :status
