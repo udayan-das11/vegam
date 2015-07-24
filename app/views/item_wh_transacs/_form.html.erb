@@ -46,7 +46,7 @@
   </div>
   <div class="field">
     <%= f.label :price %><br>
-    <%= f.text_field :price, :placeholder => "Dollars ($) only" %>
+    <%= f.text_field :price, :placeholder => "Rupees only" %>
   </div>
   <div class="field">
     <%= f.label :note %><br>
@@ -56,10 +56,11 @@
     <%= f.label :transac_date %><br>
     <%= f.date_select :transac_date %>
   </div>
-  <div class="field">
-    <%= f.label :responsible_person %><br>
-    <%= f.select :responsible_person, [['Labor 1', 'Labor 1'], ['Labor 2', 'Labor 2'], ['Labor 3', 'Labor 3'], ['Labor 4', 'Labor 4'], ['Labor 5', 'Labor 5']], { include_blank: true }, { class: 'chosen-select' } %>
-  </div>
+
+    <div class="field" >
+      <%= f.label :responsible_person %><br>
+      <%= f.select :responsible_person, options_for_select(@worker.map { |value| [ value.name ]}, :selected => f.object.id), {:include_blank => true}, {} %>
+    </div>
   <div class="actions">
     <%= f.submit %>
   </div>
