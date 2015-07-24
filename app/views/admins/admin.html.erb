@@ -1,51 +1,9 @@
 <body>
   <div class="img-responsive" id="search">  
   
-            <nav class="navbar navbar-inverse navbar-fixed-top">
-                  <div class="container-fluid">
-                    <div class="col-md-5" >
-                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span> 
-                      </button>
-                      <a class="navbar-brand" href="#">Welcome <%= session[:user].to_s %></a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                      <ul class="nav navbar-nav" >
-                         <li><a href="#">Home</a></li>
-                         <li class="dropdown">
-                                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
-                                  <ul class="dropdown-menu">
-                                    <li><a href="#">Plumbing</a></li>
-                                    <li><a href="#">Electrical</a></li>
-                                    <li><a href="#">painting</a></li>
-                                    <li><a href="#">fitness</a></li>
-                                    <li><a href="#">Beauty</a></li>
-                                    <li><a href="#"></a></li>
-                                  </ul>
-                         </li>
-                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cities<span class="caret"></span></a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Hyderabad</a></li>
-                                <li><a href="#">Bangalore</a></li>
-                                <li><a href="#">Delhi</a></li>
-                                <li><a href="#">Chennai</a></li>
-                                <li><a href="#">Mumbai</a></li>
-                                <li><a href="#"></a></li>
-                              </ul>
-                         </li>
-                        <li><a href="#">FAQ's</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                         <li  data-toggle="modal" data-target="#loginModal"><a href="#">Login&nbsp;<i class="fa fa-user fa-1x"></i> </a></li>
-                        <li  data-toggle="modal" data-target="#signup"><a href="#">Register&nbsp;<i class="fa fa-unlock fa-1x"></i></a></li>
-                       </ul>
-                   </div>
-                </div>
-              </nav>   
+            <div class='row' style="margin-bottom: 60px">
+			<%= render 'shared/sharedTop' %>
+			  </div>
           
           
            				   <!--  ( Create )-->
