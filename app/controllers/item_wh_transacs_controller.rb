@@ -93,6 +93,7 @@ class ItemWhTransacsController < ApplicationController
     def get_reference_desti
       @warehouse = Warehouse.all
       @item = Item.all
+      @worker=Worker.all
       @all_usage_stockout = ItemWhTransac.all.where("transac_type=? OR transac_type=?","Stock Out","Usage")
     end
     # Use callbacks to share common setup or constraints between actions.
