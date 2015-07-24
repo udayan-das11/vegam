@@ -1,22 +1,23 @@
 class CitiesController < ApplicationController
   def add
     numLocations=params.size-6;
-	if (City.exists?(params[:city][:name]))
+	if (City.exists?(params[:city][:cityName]))
 		  	for i in 1..numLocations
 			    locationField="Location"+i.to_s;
-				@location=Locality.new(name:params[locationField],city_id:params[:city][:name]);
-				if (@location.name && !@location.name.blank?)
+				@location=Locality.new(subCity:params[locationField],city_id:params[:city][:cityName]);
+				puts('$$$$$'+@location.subCity.to_s)
+				if (@location.subCity && !@location.subCity.blank?)
 				  @location.save;
 				end  
 			end
 	else
-		@city = City.new(name:params[:city][:name]);
+		@city = City.new(cityName:params[:city][:cityName]);
 		if (@city.save) 
-		  city2=City.find_by_name(@city.name);
+		  city2=City.find_by_cityName(@city.cityName);
 		  	for i in 1..numLocations
 			    locationField="Location"+i.to_s;
-				@location=Locality.new(name:params[locationField],city_id:city2.id);
-				if (@location.name && !@location.name.blank?)
+				@location=Locality.new(subCity:params[locationField],city_id:city2.id);
+				if (@location.subCity && !@location.subCity.blank?)
 				  @location.save;
 				end  
 			end

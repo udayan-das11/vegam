@@ -331,7 +331,7 @@
 						                    <div class="form-group">
 						                        <label class="col-xs-3 control-label">City Name</label>
 						                        <div class="col-xs-5">
-						                            <%= f.text_field :name,class:"form-control",placeholder:"City Name"%>
+						                            <%= f.text_field :cityName,class:"form-control",placeholder:"City Name"%>
 						                        </div>
 						                    </div>
 
@@ -357,7 +357,7 @@
 						                    <div class="form-group">
 						                        <label class="col-xs-3 control-label">City Name</label>
 						                        <div class="col-xs-5">
-						                            <%= f.collection_select :name, City.all,:id,:name ,{:include_blank => ''}, {:class => 'form-control', :id => 'mycity2'} %>
+						                            <%= f.collection_select :cityName, City.all,:id,:cityName ,{:include_blank => ''}, {:class => 'form-control', :id => 'mycity2'} %>
 						                        </div>
 						                    </div>
 
@@ -383,7 +383,7 @@
 						                        <label class="col-xs-3 control-label">City Name</label>
 						                        <div class="col-xs-5">
 
-													<%= f.collection_select :name, City.all,:id,:name ,{:include_blank => ''}, {:class => 'form-control', :id => 'mycity'} %>
+													<%= f.collection_select :cityName, City.all,:id,:cityName ,{:include_blank => ''}, {:class => 'form-control', :id => 'mycity'} %>
 											  </div>
 								<% end %>			  
 												<li class="btn btn-info" onClick="callAjax();">Search</li>
@@ -646,7 +646,7 @@
 			             success: function(data) {
 									$('#citiesEditTab').empty()
 						            $.each(data.locations, function(i, location) {
-								            $('#citiesEditTab').append('<div class="form-group"><label class="col-xs-3 control-label"></label><label class="col-xs-3 control-label">'+ location.name + '</label><div class="col-xs-6"><li class="btn btn-info" id="deleteCity'+location.id+'" onClick="callDelete(this.id);">Delete</li></div></div>');
+								            $('#citiesEditTab').append('<div class="form-group"><label class="col-xs-3 control-label"></label><label class="col-xs-3 control-label">'+ location.subCity + '</label><div class="col-xs-6"><li class="btn btn-info" id="deleteCity'+location.id+'" onClick="callDelete(this.id);">Delete</li></div></div>');
 								        });
 
 			                      },
