@@ -44,7 +44,7 @@ class ItemWhTransacsController < ApplicationController
       if @item_wh_transac.save
         if @item_wh_transac.transac_type == "Stock Out" || @item_wh_transac.transac_type == "Usage" || @item_wh_transac.transac_type == "Initial"
           @item_wh_transac.reference_stockout_usage = nil
-          if @item_wh_transac.amount > 0
+          if @item_wh_transac.amount > 0 && @item_wh_transac.amount!=nil
             @item_wh_transac.amount = @item_wh_transac.amount * (-1)
           end
           @item_wh_transac.save

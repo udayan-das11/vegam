@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
   //(workers page)
+
   #space{
     margin-top: 70px;
   }
@@ -25,7 +26,10 @@
 
   }
   #edit_show{
-    padding-left: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: medium;
+
   }
   #page_size{
     padding-left:25px;
@@ -51,7 +55,7 @@
    background-color:rgba(0,0,0,0.1);
    border-radius:6px;
    margin-top:10px;
-   padding-left:60px;
+
    padding-top:30px;
    padding-bottom:10px;
 

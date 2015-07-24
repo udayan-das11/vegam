@@ -4,10 +4,16 @@ Rails.application.routes.draw do
 
   resources :item_wh_transacs
 
-  resources :items
+  resources :items do
+    get 'details'
+  end
 
-  resources :warehouses
-  resources :workers
+  resources :warehouses do
+    get 'details'
+  end
+  resources :workers do
+    get 'details'
+  end
   root 'vegam#index'
   get 'vegam/index'
 

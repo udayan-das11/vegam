@@ -1,0 +1,8 @@
+<tr>
+  <td><%= item.name %></td>
+  <td><%= item.category %></td>
+  <td><%= item.uom %></td>
+  <td><%= link_to 'Show',  item_details_path(item) , remote: true %></td>
+  <td><%= link_to 'Edit', edit_item_path(item) ,remote: true %></td>
+  <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

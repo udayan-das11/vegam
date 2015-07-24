@@ -2,12 +2,12 @@
 
 <p>
   <strong>Warehouse:</strong>
-  <%= @item_wh_transac.warehouse.name %>
+  <%= !@item_wh_transac.warehouse.nil?  ? @item_wh_transac.warehouse.name : ' ABCD' %>
 </p>
 
 <p>
   <strong>Item:</strong>
-  <%= @item_wh_transac.item.name %>
+  <%= !@item_wh_transac.item.nil? ? @item_wh_transac.item.name : 'Abcd' %>
 </p>
 
 <p>
@@ -17,7 +17,7 @@
 
 <p>
   <strong>Amount:</strong>
-  <%= @item_wh_transac.amount.to_s + " " + @item_wh_transac.item.uom %>
+  <%= @item_wh_transac.amount.to_s  %>
 </p>
 
 <p>

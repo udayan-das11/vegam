@@ -1,90 +1,84 @@
-<%= form_for(@worker) do |f| %>
-  <% if @worker.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@worker.errors.count, "error") %> prohibited this worker from being saved:</h2>
+<% modal ||= false %>
+<% remote = modal ? true : false %>
+<%= form_for(@worker,remote: remote, html: {role: :form, 'data-model' => 'worker'}) do |f| %>
+    <% if @worker.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@worker.errors.count, "error") %> prohibited this worker from being saved:</h2>
 
-      <ul>
-      <% @worker.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% @worker.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
 
 
-       <!--(new or form page)-->
-    <div class="container">
-      <div class="row">
+    <!--(new or form page)-->
 
-            <div class="col-md-12">
-                <div class="form-group">
-                  <div class="col-md-8">
-                      <label class="control-label col-md-2"><%= f.label :name %> </label>
-                      <input type="text" class="form-control" <%= f.text_field :name %>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-md-8">
-                    <label class="control-label col-md-2"><%= f.label :city %></label>
-                    <input type="text" class="form-control" <%= f.text_field :city %>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-md-8">
-                    <label class="control-label col-md-2"><%= f.label :Subcity %></label>
-                    <input type="text" class="form-control" <%= f.text_field :subcity %>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-md-8">
-                    <label class="control-label col-md-2"><%= f.label :Peramadd %></label>
-                    <input type="text" class="form-control" <%= f.text_field :peramadd %>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-md-8">
-                    <label class="control-label col-md-2"><%= f.label :phoneno %></label>
-                    <input type="text" class="form-control" <%= f.text_field :phoneno %>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-md-8">
-                    <label class="control-label col-md-2"><%= f.label :email %></label>
-                    <input type="text" class="form-control" <%= f.text_field :email %>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-md-8">
-                    <label class="control-label col-md-2"><%= f.label :service %></label>
-                    <input type="text" class="form-control" <%= f.text_field :service_id %>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-md-8">
-                    <label class="control-label col-md-2"><%= f.label :contractbasis %></label>
-                    <input type="text" class="form-control" <%= f.text_field :contractbasis %>
-                  </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-8">
-                      <label class="control-label col-md-2"><%= f.label :status %></label>
-                      <input type="text" class="form-control" <%= f.text_field :status %>
-                    </div>
-                </div>
 
-                <div class="form-group">
-                    <div class="col-md-12">
-                      <button type="button" class="btn btn-info" ><%= link_to 'Back',workers_path, :id => "back_btn" %></button> |
-                      <%= f.submit 'Click to update',:class=>'btn btn-default ' %> |
-                      <button type="button" class="btn btn-info"><%= link_to 'Show', @worker,:id => "show_btn"%></button>
-                    </div>
-                </div>
-            </div>
+      <div class="form-group">
+
+          <label class="control-label col-md-2"><%= f.label :name %> </label>
+          <input type="text" class="form-control" <%= f.text_field :name %>
+
       </div>
+      <div class="form-group">
+
+          <label class="control-label col-md-2"><%= f.label :city %></label>
+          <input type="text" class="form-control" <%= f.text_field :city %>
+
+      </div>
+      <div class="form-group">
+
+          <label class="control-label col-md-2"><%= f.label :Subcity %></label>
+          <input type="text" class="form-control" <%= f.text_field :subcity %>
+
+      </div>
+      <div class="form-group">
+
+          <label class="control-label col-md-2"><%= f.label :Peramadd %></label>
+          <input type="text" class="form-control" <%= f.text_field :peramadd %>
+
+      </div>
+      <div class="form-group">
+
+          <label class="control-label col-md-2"><%= f.label :phoneno %></label>
+          <input type="text" class="form-control" <%= f.text_field :phoneno %>
+
+      </div>
+      <div class="form-group">
+
+          <label class="control-label col-md-2"><%= f.label :email %></label>
+          <input type="text" class="form-control" <%= f.text_field :email %>
+
+      </div>
+
+      <div class="form-group">
+
+          <label class="control-label col-md-2"><%= f.label :contractbasis %></label>
+          <input type="text" class="form-control" <%= f.text_field :contractbasis %>
+
+      </div>
+      <div class="form-group">
+
+          <label class="control-label col-md-2"><%= f.label :status %></label>
+          <input type="text" class="form-control" <%= f.text_field :status %>
+          <br>
+
+      </div>
+
+   <div class="form-group">
+
+    <div class="actions">
+      <%= f.submit 'Submit', class: 'btn btn-info' %>
     </div>
+
+   </div>
+
 <% end %>
 
-                             <!--(new or form End page)-->
+<!--(new or form End page)-->
 
 
 

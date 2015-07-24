@@ -5,6 +5,7 @@ class WorkersController < ApplicationController
   # GET /workers.json
   def index
     @workers = Worker.all
+    @worker = Worker.new
     respond_to do |format|
             format.html # index.html.erb
             format.xml  { render :xml => @workers }
@@ -14,12 +15,7 @@ class WorkersController < ApplicationController
   # GET /workers/1
   # GET /workers/1.json
   def show
-    @worker = Worker.find(params[:id])
 
-    	    respond_to do |format|
-      	      format.html # show.html.erb
-      	      format.xml  { render :xml => @worker }
-      	    end
   end
 
   # GET /workers/new
@@ -57,13 +53,17 @@ class WorkersController < ApplicationController
   def update
     respond_to do |format|
       if @worker.update(worker_params)
-        format.html { redirect_to @worker, notice: 'Worker was successfully updated.' }
+        format.html {redirect_to (:back), notice: 'Worker was successfully updated.' }
         format.json { render :show, status: :ok, location: @worker }
       else
         format.html { render :edit }
         format.json { render json: @worker.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def details
+    @worker = Worker.find(params[:worker_id])
   end
 
   # DELETE /workers/1
@@ -84,6 +84,6 @@ class WorkersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
-      params.require(:worker).permit(:name, :city, :subcity, :peramadd, :phoneno, :email, :service, :contractbasis, :status)
+      params.require(:worker).permit(:name, :city, :subcity, :peramadd, :phoneno, :email, :contractbasis, :status)
     end
 end
