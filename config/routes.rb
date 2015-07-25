@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'leads/index'
+
   get 'homepage/index'
 
   resources :item_wh_transacs
@@ -39,6 +41,8 @@ Rails.application.routes.draw do
   get 'cities/show'
   
   post 'cities/add'
+  
+  post 'services/add'
   
   resources :location
 

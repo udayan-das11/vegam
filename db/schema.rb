@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150721173608) do
+ActiveRecord::Schema.define(version: 20150725121434) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "service_city_mapping_id"
@@ -100,11 +100,13 @@ ActiveRecord::Schema.define(version: 20150721173608) do
 
   create_table "service_locality_mappings", force: :cascade do |t|
     t.integer  "service_id"
+    t.integer  "city_id"
     t.integer  "locality_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
+  add_index "service_locality_mappings", ["city_id"], name: "index_service_locality_mappings_on_city_id"
   add_index "service_locality_mappings", ["locality_id"], name: "index_service_locality_mappings_on_locality_id"
   add_index "service_locality_mappings", ["service_id"], name: "index_service_locality_mappings_on_service_id"
 

@@ -241,7 +241,7 @@
                                 <div class="modal-body">
                                   <div class="row">
                                     <div class="col-md-4">
-                                      <img class="img-responsive "><i class="fa fa-university fa-3x" id="iconSample"></i>
+                                      <img class="img-responsive "><i class="fa fa-university fa-5x" id="iconSample"></i>
                                       <br/>
 
                                       <br/>
@@ -251,10 +251,16 @@
                                     <div class="col-md-8">
                                       <div class="form-group">
                                         <div class="col-sm-10">
-                                          <input type="text" class="form-control"  placeholder="Name"><br/>
-                                          <input type="text" class="form-control" id="pwd" placeholder="city"><br/>
-                                          <input type="text" class="form-control" id="pwd" placeholder="id"><br/>
-                                          <button class="btn btn-info btn-xs">Blue</button>
+										  	<%= form_for @city, :html => {:class => 'form-horizontal'}, :url => {:controller => 'services',:action =>"add" } do |f|%>
+											        <%= f.text_field :cityName,class:"form-control",placeholder:"Service Name",id:"servicename"%></br>
+						                            <%= f.collection_select :cityName, City.all,:id,:cityName ,{:include_blank => ''}, {:class => 'form-control', :id => 'mycity3', onChange:'populateLocations(this.selectedIndex);'} %></br>
+						                            <select id="LocationsBox" class='form-control'>
+													
+												    </select></br>
+													<div align="right">
+													<li class="btn btn-info" , onClick="createService();">Add</li>
+													</div>
+										 <% end %>
                                         </div>
                                       </div>
                                     </div>
@@ -548,9 +554,10 @@
 			var inival=0;
 			var selectedicon;
 			$('#saveModalIconPickerButton').on('change', function(e) { 
-			    selectedicon=e.icon;
+			    
 				var sel = document.getElementById('iconSample');
-				sel.setAttribute('class','fa '+selectedicon+' fa-3x');
+				sel.setAttribute('class','fa '+e.icon+' fa-3x');
+				selectedicon='fa '+e.icon+' fa-3x';
 				
 			});
 			$('#saveModalIconPickerButton').iconpicker({ 
@@ -625,7 +632,57 @@
 			    });
 			}
 			
+			function createService() {
+				   var sel = document.getElementById('mycity3');
+				   var city = sel.options[sel.selectedIndex].value;
+				   var sel1 = document.getElementById('LocationsBox');
+				   var location = sel1.options[sel1.selectedIndex].value;
+				   var servicename = document.getElementById('servicename').value;
+				   
+				   $.ajax({
+			                 url: "<%= '/services/add' %>", // Route to the Script Controller method
+			                type: "GET",
+			            dataType: "json",
+			                data: { city_id: city, location_id: location ,service_name: servicename,icon_name:selectedicon},
+			            complete: function() {},
+			             success: function(data) {
+										alert(data.status)
+			                      },
+			               error: function() {
+			                        alert("Ajax error!")
+			                      }
+			    });
+			}
 			
+			function populateLocations(cityID) {
+				var sel = document.getElementById('mycity3');
+				var sv = sel.options[sel.selectedIndex].value;
+				var x = document.getElementById("LocationsBox");
+				x.options.length=0;
+				x.selectedIndex=-1;
+				$.ajax({
+				        
+			                 url: "<%= '/cities/show' %>", // Route to the Script Controller method
+			                type: "GET",
+			            dataType: "json",
+			                data: { city_id: sv },
+			            complete: function() {},
+			             success: function(data) {
+
+									var temp=0;
+						            $.each(data.locations, function(i, location) {
+											var option = document.createElement("option");
+											option.value = location.id;
+											option.text = location.subCity;
+											x.add(option,i);
+											temp++;
+								        });
+			                      },
+			               error: function() {
+			                        alert("Ajax error!")
+			                      }
+			    });
+			}
 			function callDelete(locationID) {
 				   myID=locationID.replace('deleteCity','');
 				   $.ajax({

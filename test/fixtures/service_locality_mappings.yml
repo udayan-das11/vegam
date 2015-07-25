@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  city_id: 
   service_id: 
+  city_id: 
+  locality_id: 
 
 two:
-  city_id: 
   service_id: 
+  city_id: 
+  locality_id: 
