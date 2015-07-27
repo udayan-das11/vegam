@@ -1,82 +1,118 @@
-<div class='row' style="margin-bottom: 60px">
-  <%= render 'shared/sharedTop' %>
-</div>
-<div class='row'>
-  <%= render 'shared/sharedside' %>
-  <div class="col-md-10" style="margin-left: 230px;">
-<h1>Listing item_wh_transacs</h1>
-<table class='table table-hover table-bordered ' id='warehouse_table'>
-  <thead>
-    <tr>
-      <%= form_tag item_wh_transacs_path, :role => 'form', :method => 'get' do %>
-        <td>
-          Warehouse
-          <span><%= select_tag :warehouse_filter, options_for_select(@warehouse.map { |value| [ value.name + "-" + value.location, value.id ]}, :selected => params[:warehouse_filter]), {:include_blank => true} %></span>
-        </td>
-        <td >
-          Item
-          <span><%= select_tag :item_filter, options_for_select(@item.map { |value| [ value.name +  " (" + value.uom + ")", value.id ]}, :selected => params[:item_filter]), {:include_blank => true}%></span>
-        </td>
-        <td >
-          Transac Type
-          <span><%= select_tag :transac_type_filter, options_for_select([['Stock In', 'Stock In'], ['Stock Out', 'Stock Out'], ['Usage', 'Usage'], ['Return', 'Return'],['Initial', 'Initial'], ['Adjustment', 'Adjustment'], ['Purchase','Purchase']], :selected => params[:transac_type_filter]), {:include_blank => true}%></span>
-        </td>
-        <!--<td colspan="7">
-          <div>
-            Transac Date From
-            <span><%= date_select(:transac_start, params[:transac_start]) %></span>
-          </div>
-          <div>
-            Transac Date To &nbsp;&nbsp;&nbsp; 
-            <span><%= date_select(:transac_end, params[:transac_end]) %></span>
-          </div>
-        </td>-->
-        <td>
-          <%= submit_tag("Filter") %>
-        </td>
-      <% end %>
-    </tr>
-    <tr>
-      <th>Warehouse</th>
-      <th>Item</th>
-      <th>Transac date</th>
-      <th>Amount</th>
-      <th>Price</th>
-      <th>Transac type</th>
-      <th>Reference</th>
-      <th>Responsible person</th>
-      <th colspan="3">Action</th>
-    </tr>
-  </thead>
+    <div class='row' style="margin-bottom: 60px">
+      <%= render 'shared/sharedTop' %>
+    </div>
 
-  <tbody>
-    <% @item_wh_transacs.each do |item_wh_transac| %>
-      <tr>
-        <td><%=  %></td>
+ <div class='row'>
+      <%= render 'shared/sharedside' %>
 
-        <td><%= item_wh_transac.transac_date %></td>
-        <td><%= item_wh_transac.amount.to_s + " "  %></td>
-        <td><%= item_wh_transac.price.to_s + " $" unless item_wh_transac.price.nil? %></td>
-        <td><%= item_wh_transac.transac_type %></td>
-        <td>
-          <% @transac = ItemWhTransac.all.where("id=?", item_wh_transac.reference_stockout_usage) %>
-            <% unless @transac.empty? %>
-            <% @transac.each do |value| %>
-            <%= value.item.name + "(" + value.amount.to_s + " "+ value.item.uom + ") " + value.transac_type + " " +value.transac_date.to_s %>
-            <% end %>
-            <% end %>
-        </td>
-        <td><%= item_wh_transac.responsible_person %></td>
-        <td><%= link_to 'Show', item_wh_transac %></td>
-        <td><%= link_to 'Edit', edit_item_wh_transac_path(item_wh_transac) %></td>
-        <td><%= link_to 'Destroy', item_wh_transac, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+   <div class="col-md-10" style="margin-left:230px;">
 
-<%= link_to 'New Item wh transac', new_item_wh_transac_path %>
-</div>
-</div>
+
+
+
+        <!--(Heading)-->
+
+            <div align="center">
+              <h1><b>Add items with transcation </b></h1>
+            </div>
+
+            <!--(End Heading)-->
+
+            <!--(add button)-->
+
+            <div>
+              <%= link_to '', new_item_wh_transac_path, class:'btn btn-info', id:'add-btn' %>
+            </div>
+
+           <!--(end add button)-->
+
+
+
+              <!--(filter table)-->
+
+        <div  id="date-table">
+           <table >
+                  <tr>
+                    <%= form_tag item_wh_transacs_path, :role => 'form', :method => 'get' do %>
+                        <td style="padding-left:20px ">
+                          Warehouse
+                          <span><%= select_tag :warehouse_filter, options_for_select(@warehouse.map { |value| [ value.name + "-" + value.location, value.id ]}, :selected => params[:warehouse_filter]), {:include_blank => true} %></span>
+                        </td>
+                        <td style="padding-left:20px ">
+                          Item
+                          <span><%= select_tag :item_filter, options_for_select(@item.map { |value| [ value.name +  " (" + value.uom + ")", value.id ]}, :selected => params[:item_filter]), {:include_blank => true}%></span>
+                        </td>
+                        <td style="padding-left:20px ">
+                          Transac Type
+                          <span><%= select_tag :transac_type_filter, options_for_select([['Stock In', 'Stock In'], ['Stock Out', 'Stock Out'], ['Usage', 'Usage'], ['Return', 'Return'],['Initial', 'Initial'], ['Adjustment', 'Adjustment'], ['Purchase','Purchase']], :selected => params[:transac_type_filter]), {:include_blank => true}%></span>
+                        </td>
+                        <td style="padding-left:40px ">
+                          <span ><%= submit_tag("Filter")%></span>
+                        </td>
+                    <% end %>
+                  </tr>
+           </table>
+        </div>
+
+              <!--(end filter table)-->
+
+              <!--(Date table)-->
+
+              <div id="date-table1" align="right">
+                <table  style=" width:100%;">
+                  <tr>
+                    <td><b>Transaction Date</b></td>
+                    <td>From&nbsp;<%= date_select(:transac_start, params[:transac_start]) %></td>
+                    <td> To&nbsp;<%= date_select(:transac_end, params[:transac_end]) %></td>
+                  </tr>
+                </table>
+              </div>
+
+              <!--(End date table)-->
+
+              <!--(table)-->
+
+        <div >
+          <table class='table  table-hover table-bordered ' id='warehouse_table'>
+               <tbody>
+                  <tr style="background-color: #1ba7e2">
+                    <th>Warehouse</th>
+                    <th>Item</th>
+                    <th>Transac date</th>
+                    <th>Amount</th>
+                    <th>Price</th>
+                    <th>Transac type</th>
+                    <th>Reference</th>
+                    <th>Responsible person</th>
+                    <th colspan="3">Action</th>
+                  </tr>
+
+                  <% @item_wh_transacs.each do |item_wh_transac| %>
+                      <tr>
+                        <td><%=  %></td>
+
+                        <td><%= item_wh_transac.transac_date %></td>
+                        <td><%= item_wh_transac.amount.to_s + " "  %></td>
+                        <td><%= item_wh_transac.price.to_s + " $" unless item_wh_transac.price.nil? %></td>
+                        <td><%= item_wh_transac.transac_type %></td>
+                        <td>
+                          <% @transac = ItemWhTransac.all.where("id=?", item_wh_transac.reference_stockout_usage) %>
+                          <% unless @transac.empty? %>
+                              <% @transac.each do |value| %>
+                                  <%= value.item.name + "(" + value.amount.to_s + " "+ value.item.uom + ") " + value.transac_type + " " +value.transac_date.to_s %>
+                              <% end %>
+                          <% end %>
+                        </td>
+                        <td><%= item_wh_transac.responsible_person %></td>
+                        <td><%= item_wh_transac.responsible_person %></td>
+                        <td><%= link_to 'Show', item_wh_transac %>
+                        <%= link_to 'Edit', edit_item_wh_transac_path(item_wh_transac) %>
+                        <%= link_to 'Destroy', item_wh_transac, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+                      </tr>
+                  <% end %>
+                  </tbody>
+          </table>
+        </div> <!--( end table)-->
+     </div>
+ </div>
