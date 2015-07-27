@@ -7,6 +7,7 @@ class VegamController < ApplicationController
 skip_before_filter :verify_authenticity_token , :only => [:index ,:fbauth]   
   
   def index
+   @services = Service.all
    @user = User.new
    @city  =City.all 
    @servicecityMapping = ServiceCityMapping.all

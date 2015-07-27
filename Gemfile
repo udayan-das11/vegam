@@ -50,3 +50,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'composite_primary_keys'
 gem 'responders', '~> 2.0'
+gem 'will_paginate-bootstrap'

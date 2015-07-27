@@ -1,0 +1,49 @@
+
+<div id="filterrific_results">
+
+  <div>
+
+  </div>
+  
+  <table class='table table-hover table-bordered ' id='leads_table'>
+      <thead>
+      <tr>
+        <th>From</th>
+        <th>Subject</th>
+        <th colspan="3">Action</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @emails_paginated.zip(@message_ids_paginated).each do |email,message_id|  %>
+         <tr id=<% message_id %>>
+			  <td><%= email.from[0].name %></td>
+			  <td><%= email.subject %></td>
+			  <td><li class="btn btn-info" onClick="showEmailBody(<%= message_id %>);">Show</li></td>
+			  
+		</tr>
+      <% end %>
+      </tbody>
+    </table>
+
+</div>
+<%= will_paginate @emails_paginated , renderer: BootstrapPagination::Rails %>
+<script>
+			function showEmailBody(messageID) {
+				   alert(messageID)
+				   $.ajax({
+			                 url: "<%= '/leads/showBody' %>", // Route to the Script Controller method
+			                type: "GET",
+			            dataType: "json",
+			                data: { message_id: messageID },
+			            complete: function() {},
+			             success: function(data) {
+									alert(data.msg_body)
+
+			                      },
+			               error: function() {
+			                        alert("Ajax error!")
+			                      }
+			    });
+			}
+</script>

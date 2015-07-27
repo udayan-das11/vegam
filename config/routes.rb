@@ -43,6 +43,8 @@ Rails.application.routes.draw do
   post 'cities/add'
   
   post 'services/add'
+  get 'leads/showBody'
+  get 'leads/showBody2'
   
   resources :location
 
