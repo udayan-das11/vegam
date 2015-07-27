@@ -17,10 +17,11 @@
       <tbody>
       <% @emails_paginated.zip(@message_ids_paginated).each do |email,message_id|  %>
          <tr id=<% message_id %>>
-			  <td><%= email.from[0].name %></td>
+		      <% sender_email = email.from[0].mailbox+'@'+email.from[0].host %>
+			  <td><%= sender_email %></td>
 			  <td><%= email.subject %></td>
 			  <td><li class="btn btn-info" onClick="showEmailBody(<%= message_id %>);">Show</li></td>
-			  
+			  <td><li class="btn btn-info" onClick="deleteMail(<%= message_id %>);">Delete</li></td>
 		</tr>
       <% end %>
       </tbody>
@@ -33,6 +34,24 @@
 				   alert(messageID)
 				   $.ajax({
 			                 url: "<%= '/leads/showBody' %>", // Route to the Script Controller method
+			                type: "GET",
+			            dataType: "json",
+			                data: { message_id: messageID },
+			            complete: function() {},
+			             success: function(data) {
+									alert(data.msg_body)
+
+			                      },
+			               error: function() {
+			                        alert("Ajax error!")
+			                      }
+			    });
+			}
+			
+						function deleteMail(messageID) {
+				   alert(messageID)
+				   $.ajax({
+			                 url: "<%= '/leads/deleteMail' %>", // Route to the Script Controller method
 			                type: "GET",
 			            dataType: "json",
 			                data: { message_id: messageID },

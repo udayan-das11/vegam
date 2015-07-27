@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   post 'services/add'
   get 'leads/showBody'
   get 'leads/showBody2'
-  
+  get 'leads/deleteMail'
   resources :location
 
   resources :workers

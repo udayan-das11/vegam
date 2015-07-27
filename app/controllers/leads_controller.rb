@@ -18,7 +18,9 @@ class LeadsController < ApplicationController
 	  @message_ids = []
 	  imap.search(["NOT", "DELETED"]).each do |message_id|
 		  puts('%%%%%%%%%')
-		  envelope = imap.fetch(message_id, "ENVELOPE")[0].attr["ENVELOPE"]
+		  my_attrs = imap.fetch(message_id, "ENVELOPE")[0]
+		  envelope = my_attrs.attr["ENVELOPE"]		  
+		  puts('###'+message_id.to_s+' '+envelope.subject+'  '+envelope.message_id)
 		  @emails.push(envelope)
 		  @message_ids.push(message_id)
 		end
@@ -32,6 +34,7 @@ class LeadsController < ApplicationController
 	imap.examine('INBOX')
 	msg = imap.fetch(params[:message_id].to_i, "(UID RFC822.SIZE ENVELOPE BODY[TEXT])")[0]
     body = msg.attr["BODY[TEXT]"]
+	puts(body)
 	respond_to do |format|
     format.html
     format.js {} 
@@ -50,11 +53,31 @@ class LeadsController < ApplicationController
 		                          :enable_ssl => true
 	 end
 	@conversations =	Mail.find(:what => :first, :count => 10, :order => :asc, :keys=>'UID '+params[:message_id]) 
+	mail = @conversations[0]
 	respond_to do |format|
     format.html
     format.js {} 
     format.json { 
-       render json: {:msg_body => @conversations[0].body.decoded}
+       render json: {:msg_body => mail.parts[0].body.decoded}
+     } 
+    end	 
+  end
+    def deleteMail
+	puts(params[:message_id])
+	imap = Net::IMAP.new('imap.gmail.com', 993, true, nil, false)
+    imap.login('vegamcorp@gmail.com', 'Vegam@123')
+	imap.examine('INBOX')
+	msg = imap.fetch(params[:message_id].to_i, "(UID RFC822.SIZE ENVELOPE BODY[TEXT])")[0]
+	puts('*** '+msg.attr['ENVELOPE'].subject)
+	imap.uid_copy(params[:message_id].to_i, '[Gmail]/Trash')
+	imap.select("INBOX")
+	imap.store(params[:message_id].to_i, '+FLAGS', [:Deleted])
+	imap.expunge()
+	respond_to do |format|
+    format.html
+    format.js {} 
+    format.json { 
+       render json: {:msg_body => 'deleted'}
      } 
     end	 
   end
