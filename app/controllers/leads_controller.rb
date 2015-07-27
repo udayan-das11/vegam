@@ -11,7 +11,6 @@ class LeadsController < ApplicationController
 	#	                          :enable_ssl => true
 	 #end
 	#    @conversations =	Mail.all                                        
-	  puts('#################'+@conversations.length.to_s)
 	  imap = Net::IMAP.new('imap.gmail.com', 993, true, nil, false)
       imap.login('vegamcorp@gmail.com', 'Vegam@123')
 	  imap.examine('INBOX')
