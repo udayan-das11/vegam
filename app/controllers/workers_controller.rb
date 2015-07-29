@@ -40,9 +40,7 @@ class WorkersController < ApplicationController
     @worker = Worker.new(worker_params)
     @city =City.find(params[:worker][:city])
     puts("***************Debugging******************")
-    puts(params[:subcity])
     @locality=Locality.find(params[:subcity])
-    puts(@locality.subCity)
     @worker.city=@city.cityName
     @worker.subcity=@locality.subCity
     respond_to do |format|
