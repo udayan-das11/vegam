@@ -38,6 +38,7 @@ class CitiesController < ApplicationController
   end
 
   def show
+
      @locations = Locality.where("city_id = ?", params[:city_id])
 	 respond_to do |format|
      format.html

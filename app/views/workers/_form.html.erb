@@ -26,7 +26,7 @@
 
     <div class="form-group">
       <%= f.label :city %><br>
-      <%= f.select :city, options_for_select(@cities.map { |value| [ value.cityName,value.id ]}, :selected => f.object.name), {:include_blank => true},{:class => 'form-control', :id => 'mycity3', onChange:'populateLocations(this.selectedIndex);'} %>
+      <%= f.select :city, options_for_select(@cities.map { |value| [ value.cityName,value.id ]}, :selected => f.object.name), {:include_blank => 'Please select'},{:class => 'form-control', :id => 'mycity3', onChange:'populateLocations(this.selectedIndex);'} %>
 
     </div>
       <div class="form-group">
@@ -57,7 +57,7 @@
       </div>
     <div class="field" >
       <%= f.label :servicename %><br>
-      <%= f.select :servicename, options_for_select(@services.map { |value| [ value.name ]}, :selected => f.object.id), {:include_blank => true} %>
+      <%= f.select :servicename, options_for_select(@services.map { |value| [ value.name ]}, :selected => f.object.id), {:include_blank => 'true'},{:prompt => 'Select Person'} %>
     </div>
       <div class="form-group">
 
@@ -102,7 +102,7 @@
                 var temp=0;
                 $.each(data.locations, function(i, location) {
                     if(location.id==svLoc){
-                        document.getElementById('new').value=svLoc; k
+                        document.getElementById('new').value=svLoc;
                         alert(location.subCity);
                     }
 

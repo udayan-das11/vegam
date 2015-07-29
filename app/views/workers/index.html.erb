@@ -101,3 +101,9 @@
         <div id="inner-product-modal" class="modal-content"></div>
       </div>
     </div>
+<script>
+    $('#new_item_modal').on('hidden.bs.modal', function(){
+    $(this).find('form')[0].reset();
+        var x = document.getElementById("LocationsBox");
+        x.options.length=0;
+});</script>
