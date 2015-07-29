@@ -23,18 +23,20 @@
           <input type="text" class="form-control" <%= f.text_field :name %>
 
       </div>
+
+    <div class="form-group">
+      <%= f.label :city %><br>
+      <%= f.select :city, options_for_select(@cities.map { |value| [ value.cityName,value.id ]}, :selected => f.object.name), {:include_blank => true},{:class => 'form-control', :id => 'mycity3', onChange:'populateLocations(this.selectedIndex);'} %>
+
+    </div>
       <div class="form-group">
 
-          <label class="control-label col-md-2"><%= f.label :city %></label>
-          <input type="text" class="form-control" <%= f.text_field :city %>
+          <label class="control-label col-md-2"><%= f.label :subcity %></label>
+        <select id="LocationsBox" class = "form-control"></select>
+
 
       </div>
-      <div class="form-group">
 
-          <label class="control-label col-md-2"><%= f.label :Subcity %></label>
-          <input type="text" class="form-control" <%= f.text_field :subcity %>
-
-      </div>
       <div class="form-group">
 
           <label class="control-label col-md-2"><%= f.label :Peramadd %></label>
@@ -53,13 +55,17 @@
           <input type="text" class="form-control" <%= f.text_field :email %>
 
       </div>
-
+    <div class="field" >
+      <%= f.label :servicename %><br>
+      <%= f.select :servicename, options_for_select(@services.map { |value| [ value.name ]}, :selected => f.object.id), {:include_blank => true} %>
+    </div>
       <div class="form-group">
 
           <label class="control-label col-md-2"><%= f.label :contractbasis %></label>
           <input type="text" class="form-control" <%= f.text_field :contractbasis %>
 
       </div>
+    <%= hidden_field_tag(:subcity, nil,{:id=> 'new'}) %>
       <div class="form-group">
 
           <label class="control-label col-md-2"><%= f.label :status %></label>
@@ -77,7 +83,70 @@
    </div>
 
 <% end %>
+<script>
+  var sv;
 
+    $( "#LocationsBox" ).change(function() {
+        var sel = document.getElementById('LocationsBox');
+
+        var svLoc = sel.options[sel.selectedIndex].value;
+        $.ajax({
+
+            url: "<%= '/cities/show' %>", // Route to the Script Controller method
+            type: "GET",
+            dataType: "json",
+            data: { city_id: sv },
+            complete: function() {},
+            success: function(data) {
+
+                var temp=0;
+                $.each(data.locations, function(i, location) {
+                    if(location.id==svLoc){
+                        document.getElementById('new').value=svLoc; k
+                        alert(location.subCity);
+                    }
+
+                });
+            },
+            error: function() {
+                alert("Ajax error!")
+            }
+        });
+
+    });
+  function getIdLocations(){
+      alert(document.getElementById('LocationsBox').options[sel.selectedIndex].value)
+  }
+    function populateLocations(cityID) {
+
+        var sel = document.getElementById('mycity3');
+         sv = sel.options[sel.selectedIndex].value;
+        var x = document.getElementById("LocationsBox");
+        x.options.length=0;
+        x.selectedIndex=-1;
+        $.ajax({
+
+            url: "<%= '/cities/show' %>", // Route to the Script Controller method
+            type: "GET",
+            dataType: "json",
+            data: { city_id: sv },
+            complete: function() {},
+            success: function(data) {
+
+                var temp=0;
+                $.each(data.locations, function(i, location) {
+                    var option = document.createElement("option");
+                    option.value = location.id;
+                    option.text = location.subCity;
+                    x.add(option,i);
+                });
+            },
+            error: function() {
+                alert("Ajax error!")
+            }
+        });
+    }
+</script>
 <!--(new or form End page)-->
 
 

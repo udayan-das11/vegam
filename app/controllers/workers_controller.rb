@@ -6,6 +6,8 @@ class WorkersController < ApplicationController
   def index
     @workers = Worker.all
     @worker = Worker.new
+    @services=Service.all
+    @cities=City.all
     respond_to do |format|
             format.html # index.html.erb
             format.xml  { render :xml => @workers }
@@ -36,7 +38,9 @@ class WorkersController < ApplicationController
   # POST /workers.json
   def create
     @worker = Worker.new(worker_params)
+    @city =City.find(params[:worker][:city])
 
+    @worker.city=@city.cityName
     respond_to do |format|
       if @worker.save
         format.html { redirect_to @worker, notice: 'Worker was successfully created.' }
@@ -54,7 +58,7 @@ class WorkersController < ApplicationController
     respond_to do |format|
       if @worker.update(worker_params)
         format.html {redirect_to (:back), notice: 'Worker was successfully updated.' }
-        format.json { render :show, status: :ok, location: @worker }
+        format.json { render :show, status:  :ok, location: @worker }
       else
         format.html { render :edit }
         format.json { render json: @worker.errors, status: :unprocessable_entity }
@@ -79,11 +83,13 @@ class WorkersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_worker
+      @services=Service.all
+      @cities=City.all
       @worker = Worker.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
-      params.require(:worker).permit(:name, :city, :subcity, :peramadd, :phoneno, :email, :contractbasis, :status)
+      params.require(:worker).permit(:name, :city, :servicename,:subcity, :peramadd, :phoneno, :email, :contractbasis, :status)
     end
 end

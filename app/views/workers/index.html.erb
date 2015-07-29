@@ -59,14 +59,14 @@
                           <th class="col-md-1"  id="form-design">Address</th>
                           <th class="col-md-1"  id="form-design">Mobile</th>
                           <th class="col-md-1"  id="form-design">Email</th>
-
+                          <th class="col-md-1"  id="form-design">Service</th>
                           <th class="col-md-1"  id="form-design">Contract Basis</th>
                           <th class="col-md-1"  id="form-design">Status</th>
                           <th class="col-md-1"  id="form-design">Edit/Delete</th>
                         </tr>
 
                         <% @workers.each do |worker| %>
-                              <%= render partial: 'table_row', locals: {worker: worker} %>
+                              <%= render partial: 'table_row', locals: {worker: worker,:myobject => @city} %>
                         <% end %>
                       </table>
                    </div>
