@@ -57,7 +57,7 @@
       </div>
     <div class="field" >
       <%= f.label :servicename %><br>
-      <%= f.select :servicename, options_for_select(@services.map { |value| [ value.name ]}, :selected => f.object.id), {:include_blank => 'true'},{:prompt => 'Select Person'} %>
+      <%= f.select :servicename, options_for_select(@services.map { |value| [ value.name ]}, :selected => f.object.id), {:include_blank => 'Select Service'},{:class => 'form-control'} %>
     </div>
       <div class="form-group">
 
