@@ -1,3 +1,36 @@
 // Place all the styles related to the item_wh_transacs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+  h1{
+    font-family:Imprint MT Shadow;
+    background-color:#00897f;
+    font-size:40px;
+    height:50px;
+    width: 500px;
+    color: white;
+    border-radius:8px;
+  }
+ #add-btn{
+   background: image-url('add-btn.jpg');
+   height:50px;
+   width:50px;
+   margin-left:40px;
+ }
+ #date-table{
+   margin-bottom:10px;
+   margin-top:10px;
+   padding-left:10px;
+   padding-right:10px;
+   background-color:#caaf00;
+   border-radius:8px;
+   height:50px;
+   padding-top:15px;
+   font-weight:bold;
+
+ }
+ #date-table1{
+  margin-bottom:10px;
+  margin-top:10px;
+  padding-left:10px;
+ }

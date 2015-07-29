@@ -11,60 +11,81 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :warehouse_id %><br>
-    <%= f.select :warehouse_id, options_for_select(@warehouse.map { |value| [ value.name + "-" + value.location, value.id ]}, :selected => f.object.id), {:include_blank => true}, {:class => "warehouse_select"} %> 
-  </div>
-  <div class="field">
-    <%= f.label :item_id %><br>
-    <%= f.select :item_id, options_for_select(@item.map { |value| [ value.name +  " (" + value.uom + ")", value.id ]}, :selected => f.object.id), {:include_blank => true}, {:class => "item_select"} %> 
-  </div>
-  <div class="field">
-    <table class="transaction">
-      <tr>
-        <td>
-           <%= f.label :transac_type %><br>
-            <%= f.select :transac_type, [['Stock In', 'Stock In'], ['Stock Out', 'Stock Out'], ['Usage', 'Usage'], ['Return', 'Return'],['Initial', 'Initial'], ['Adjustment', 'Adjustment'], ['Purchase','Purchase']],{ include_blank: true }, { class: 'transac_type' } %>
-        </td>
-        <td>
-          <div class="field" id="reference_to">
-            <%= f.label "Reference to" %><br>
-            <%= f.select :reference_stockout_usage, options_for_select(@all_usage_stockout.map { |value| [ value.item.name + "(" + value.amount.to_s + " "+ value.item.uom + ") " + value.transac_type + " " +value.transac_date.to_s + " From " + value.warehouse.name, value.id ]}, :selected => f.object.id), { include_blank: true} %> 
-          </div>
-          <div class="field" id="destination">
-            <%= f.label "Destination" %><br>
-            <%= f.select :destination, options_for_select(@warehouse.map { |value| [ value.name + "-" + value.location, value.id ]}, :selected => f.object.id), {:include_blank => true}, {} %> 
-          </div>
-        </td>
-      </tr>
-    </table>
-   
-  </div>
-  <div class="field">
-    <%= f.label :amount %><br>
-    <%= f.text_field :amount %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price, :placeholder => "Rupees only" %>
-  </div>
-  <div class="field">
-    <%= f.label :note %><br>
-    <%= f.text_area :note %>
-  </div>
-  <div class="field">
-    <%= f.label :transac_date %><br>
-    <%= f.date_select :transac_date %>
-  </div>
+   <!-- top end-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
 
-    <div class="field" >
-      <%= f.label :responsible_person %><br>
-      <%= f.select :responsible_person, options_for_select(@worker.map { |value| [ value.name ]}, :selected => f.object.id), {:include_blank => true}, {} %>
+    <div class="col-md-3">
+
+      <div class="field">
+        <%= f.label :warehouse_id %><br>
+        <%= f.select :warehouse_id, options_for_select(@warehouse.map { |value| [ value.name + "-" + value.location, value.id ]}, :selected => f.object.id), {:include_blank => true}, {:class => "form-control"} %>
+      </div>
+
+      <div class="field">
+        <%= f.label :item_id %><br>
+        <%= f.select :item_id, options_for_select(@item.map { |value| [ value.name +  " (" + value.uom + ")", value.id ]}, :selected => f.object.id), {:include_blank => true}, {:class => "form-control"} %>
+      </div>
+
+           <div class="field">
+              <%= f.label :transac_type %><br>
+              <%= f.select :transac_type, [['Stock In', 'Stock In'], ['Stock Out', 'Stock Out'], ['Usage', 'Usage'], ['Return', 'Return'],['Initial', 'Initial'], ['Adjustment', 'Adjustment'], ['Purchase','Purchase']],{ include_blank: true }, { class: 'form-control' } %>
+
+                    <div  id="reference_to">
+                      <%= f.label "Reference to" %><br>
+                      <%= f.select :reference_stockout_usage, options_for_select(@all_usage_stockout.map { |value| [ value.item.name + "(" + value.amount.to_s + " "+ value.item.uom + ") " + value.transac_type + " " +value.transac_date.to_s + " From " + value.warehouse.name, value.id ]}, :selected => f.object.id), { include_blank: true} , { class: 'form-control' } %>
+                    </div>
+
+                    <div class="field" id="destination">
+                      <%= f.label "Destination" %><br>
+                      <%= f.select :destination, options_for_select(@warehouse.map { |value| [ value.name + "-" + value.location, value.id ]}, :selected => f.object.id), {:include_blank => true}, {:class => "form-control"} %>
+                    </div>
+                   </div>
+
+                  <div class="field">
+                    <%= f.label :amount %><br>
+                    <%= f.text_field :amount,:class =>"form-control" %>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :price %><br>
+                    <%= f.text_field :price, :placeholder => "Rupees only" ,:class =>"form-control"%>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :note %><br>
+                    <%= f.text_area :note,:class =>"form-control" %>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :transac_date %><br>
+                    <%= f.date_select :transac_date %>
+                  </div>
+
+                  <div class="field" >
+                    <%= f.label :responsible_person %><br>
+                    <%= f.select :responsible_person, options_for_select(@worker.map { |value| [ value.name ]}, :selected => f.object.id), {:include_blank => true},{ class: 'form-control' } %>
+                  </div>
+
+                  <div class="actions">
+                    <%= f.submit 'name of button here', :class => 'btn btn-info'%>
+
+                      <%= link_to 'Back', item_wh_transacs_path,:class => 'btn btn-info' %>
+
+                  </div>
+
+
+
+              <% end %>
     </div>
-  <div class="actions">
-    <%= f.submit %>
+
+    <div class="col-md-7"></div>
   </div>
-<% end %>
+</div>
+
+
+
 <script type="text/javascript">
 $(document).ready(function() {
     if($(".warehouse_select").val() === "") {
