@@ -46,6 +46,7 @@ Rails.application.routes.draw do
   get 'leads/showBody'
   get 'leads/showBody2'
   get 'leads/deleteMail'
+  get 'vegam/signout'
   resources :location
 
   resources :workers

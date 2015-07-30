@@ -1,6 +1,4 @@
-<head xmlns="http://www.w3.org/1999/html">
- 	<script src="jquery-1.11.3.min.js"></script>
- </head>
+  
  <body>
 
   <div class="img-responsive" id="search">
@@ -42,8 +40,18 @@
                         <li><a href="#">FAQ's</a></li>
                         <li><a href="#">Contact Us</a></li>
                         <li><a href="#">Careers</a></li>
-                         <li  data-toggle="modal" data-target="#loginModal"><a href="#">Login&nbsp;<i class="fa fa-user fa-1x"></i> </a></li>
-                        <li  data-toggle="modal" data-target="#signup"><a href="#">Register&nbsp;<i class="fa fa-unlock fa-1x"></i></a></li>
+                        <input type ='hidden' id="loggedin" value=<% session[:isloggedIn] %> />
+                <% if session[:isloggedIn].nil? %>
+         <li  data-toggle="modal" data-target="#loginModal"><a href="#">Login&nbsp;<i class="fa fa-user fa-1x"></i> </a></li>
+                        <li  data-toggle="modal" data-target="#signup"><a href="#">Register&nbsp;<i class="fa fa-unlock fa-1x"></i></a></li>       
+    <% else %>                       
+         
+                        <li  data-toggle="modal" data-target="#ologinModal"><a href="/vegam/signout">SignOut&nbsp;<i class="fa fa-user fa-1x"></i> </a></li>
+	<% end %>
+
+         
+         
+                       
                        </ul>
                    </div>
                 </div>

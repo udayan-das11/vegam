@@ -17,6 +17,7 @@ skip_before_filter :verify_authenticity_token , :only => [:index ,:fbauth]
    @jsonService = @service.to_json.to_s
   puts @jsonService
   
+  
   end
 
   def signin
@@ -27,6 +28,7 @@ skip_before_filter :verify_authenticity_token , :only => [:index ,:fbauth]
 		 if (Digest::SHA1.hexdigest(params[:user][:password].to_s) == user2.password.to_s)
 		  puts "pwd match"
 		   session[:user]=user2.email
+		   session[:isloggedIn] = true
 		   if (user2.email=="admin")
 				redirect_to :controller=>"admins" ,:action => "admin"
 		    elsif session[:requestUrl].nil?
@@ -50,6 +52,7 @@ skip_before_filter :verify_authenticity_token , :only => [:index ,:fbauth]
 	      @user.password = Digest::SHA1.hexdigest(@user.password);
 	     @user.save
 	     session[:user]=@user.email
+	     session[:isloggedIn] = true
 	     redirect_to :action => :index
 	 end  
   end
@@ -77,7 +80,7 @@ puts response.to_s
   
 
 if response.body.to_s.include? "email"
-  
+  session[:isloggedIn] = true
   puts JSON.parse(response.body.to_s)['email'];
   puts User.find_by_email(JSON.parse(response.body.to_s)['email'])
     user2 = User.find_by_email(JSON.parse(response.body.to_s)['email'])
@@ -106,6 +109,12 @@ end
     
   end
   
+  def signout
+    
+    session.delete(:user)
+    session.delete(:isloggedIn)
+     redirect_to :action => :index
+  end
    
     
   end
