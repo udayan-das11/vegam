@@ -1,20 +1,20 @@
- <head>
+<head xmlns="http://www.w3.org/1999/html">
  	<script src="jquery-1.11.3.min.js"></script>
  </head>
  <body>
-	<div id="fb-root"></div>
-  <div class="img-responsive" id="search">  
-  
-            <nav class="navbar navbar-inverse navbar-fixed-top">
-                  <div class="container-fluid">
-                    <div class="col-md-5" >
-                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+
+  <div class="img-responsive" id="search">
+
+    <nav class="navbar navbar-custom navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="col-md-5" >
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span> 
                       </button>
-                      <a class="navbar-brand" href="#">Welcome <%= session[:user].to_s %></a>
+                      <a class="navbar-brand" href="#"><img src="/assets/logo.PNG"  class="hlogo" width="150" height="100" > <%= session[:user].to_s %></a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                       <ul class="nav navbar-nav" >
@@ -36,8 +36,8 @@
                               	<% cities_array = City.all.map { |city| [city.cityName, city.id] } %>
                             <%= options_for_select(cities_array) %>
                               </select>
-                               
-                               
+
+
                          </li>
                         <li><a href="#">FAQ's</a></li>
                         <li><a href="#">Contact Us</a></li>
@@ -214,7 +214,7 @@
             
      								<!--  ( Banner   )-->
         
-            <div class="container">
+           <div class="container">
              <div class="col-md-2" ></div>
               <div class="col-md-8" id="inner">
                 <h2 align="center" style="color:#FFF"><strong>Service @t your door Step</strong></h2>
@@ -225,9 +225,10 @@
                             <label class="sr-only" for="Enter city name"></label>
                   <%= select_tag "city",content_tag(:option,'Select City',:value=>"") + options_from_collection_for_select(@city, "id", "cityName" ,  "Select your city") ,  :class => "form-control input-lg" ,:style => "width:100%"%>
                            </div>
+
+
                         
-                
-                            <div class="form-group" style="width:50%">
+                    <div class="form-group" style="width:50%">
                                 <label class="sr-only"  for="Select Service"></label>
              <select name="service" id="service" class="form-control input-lg" style="width:100%">
             	<option value="">Select Your Service</option> 
@@ -238,7 +239,10 @@
                  <% end %>
                  <br>
         	  <div class="row">
-				   <% @services.each do |temp_service| %>
+                <% @services.each do |temp_service| %>
+
+
+
               		<div >
 					  <a href="#"  rel=""  target="_blank">
                         <div style="margin-bottom:15px" class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
@@ -250,8 +254,69 @@
 			    </div>
              </div>
           </div>        <!--(banner)-->
-          <div class="container">
-          </div>
+                          <!--(content)-->
+                          <div class="container"  id="cont_img">
+                            <div class="row" >
+                              <div class="col-md-4">
+                                <img src="/assets/icons (8).jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
+                              </div>
+                              <div class="col-md-4">
+                                <img src="/assets/icons (8).jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
+                              </div>
+                              <div class="col-md-4">
+                                <img src="/assets/icons (8).jpg"class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
+                              </div>
+                            </div>
+                          </div>
+
+                          <!--(content)-->
+                          <footer class="container-fluid" >
+
+                            <div class="row"  id="foot_img">
+
+                              <div class="col-md-2" ></div>
+
+                              <div class="col-md-2" >
+                                <ul id="txt_styl" class="navbar" >
+                                  <li><a href="#">About</a></li>
+                                  <li><a href="#">City</a></li>
+                                  <li><a href="#">Contact</a></li>
+                                  <li><a href="#">Service</a></li>
+                                </ul>
+                              </div>
+
+                              <div class="col-md-2" >
+                                <ul id="txt_styl" class="navbar" >
+                                  <li><a href="#">FAQ's</a></li>
+                                  <li><a href="#">Contact</a></li>
+                                  <li><a href="#">Careers</a></li>
+                                </ul>
+                              </div>
+
+                              <div class="col-md-2">
+                                <ul id="txt_styl" class="navbar">
+                                  <li><a href="#">Plumbing</a></li>
+                                  <li><a href="#">Electrical</a></li>
+                                  <li><a href="#">Painting</a></li>
+                                  <li><a href="#">Fitness</a></li>
+                                  <li><a href="#">Gardening</a></li>
+                                </ul>
+                              </div>
+
+                              <div class="col-md-2" >
+                                <ul id="txt_styl" class="navbar">
+                                  <li><a href="#"><i class="fa fa-facebook fa-2x"></i>acebook</a></li>
+                                  <li><a href="#"><i class="fa fa-twitter fa-2x"></i>twitter</a></li>
+                                  <li><a href="#"><i class="fa fa-google-plus fa-2x"></i>oogle</a></li>
+                                  <li><a href="#"><i class="fa fa-instagram fa-2x"></i>nstagram</a></li>
+                                </ul>
+                              </div>
+
+                              <div class="col-md-2"></div>
+
+                            <div>
+                          </div>
+
      </div>
   </div>
 <input  type="hidden" name="jsonService" value='<%= raw @jsonService %>' id="jsonService"/>
