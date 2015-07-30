@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725121434) do
+ActiveRecord::Schema.define(version: 20150729234244) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "service_city_mapping_id"
@@ -171,6 +171,7 @@ ActiveRecord::Schema.define(version: 20150725121434) do
     t.integer  "count"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "servicename"
   end
 
   add_index "workers", ["service_id"], name: "index_workers_on_service_id"
