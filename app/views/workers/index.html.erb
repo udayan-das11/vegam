@@ -1,115 +1,114 @@
 
 
 
-            <!--Add worker start-->
+<!--Add worker start-->
 
-            <div class='row' style="margin-bottom: 60px">
-              <%= render 'shared/sharedTop' %>
-            </div>
-            <div class='row'>
-              <%= render 'shared/sharedside' %>
-
-
-         <div class="col-md-10" id="page_size">
-          <div id="page-wrapper">
-            <div class="row">
-                   <div>
-                      <h3 class="page-header">Add New Workers</h3>
-                   </div>
-                   <div class="panel panel-default">
-                      <div class="panel-heading" style="height:55px">
-                            <div class="col-md-5">
-                              <button type="button" class="btn btn-info">
-                                <%= link_to 'New Worker', '#new_item_modal', 'data-toggle' => 'modal', class: 'fa fa-plus over '  %></button>
-                            </div>
-
-                            <div class="col-md-3" align="right">
-                                 <div class="dataTable_lenght" id="dataTable-example_length">
-                                   <label>
-                                     <b>Show
-                                        <select name="dataTableexample" class="form-control_length" style="height: 30px;">
-                                          <option value="0"></option>
-                                          <option value="10">10</option>
-                                          <option value="20">20</option>
-                                          <option value="30">30</option>
-                                          <option value="40">40</option>
-                                          <option value="10">50</option>
-                                          <option value="10">100</option>
-                                        </select>
-                                     </b>
-                                   </label>
-                                 </div>
-                            </div>
-                            <div class="col-md-4" align="center">
-                              <div class="dataTable_filter" id="dataTable-example_filter">
-                                <label>Search:
-                                  <input type="search" class="form-group-sm input-sm" placeholder aria-controls="dataTable example">
-                                </label>
-                              </div>
-                            </div>
-                      </div>
-
-                   </div>
-
-                        <table  class='table table-hover table-bordered ' id='warehouse_table'>
-                          <thead>
-                          <tr>
-                            <th>Name</th>
-                            <th>City</th>
-                            <th>Area</th>
-                            <th>Address</th>
-                            <th>Mobile</th>
-                            <th>Email</th>
-                            <th>Service</th>
-                            <th>Contract Basis</th>
-                            <th>Status</th>
-                            <th>Edit/Delete</th>
-                          </tr>
-                          </thead>
-
-                          <tbody>
-                        <% @workers.each do |worker| %>
-                              <%= render partial: 'table_row', locals: {worker: worker,:myobject => @city} %>
-                        <% end %>
-                          </tbody>
-                      </table>
-
-              </div>
-            </div><!-- row -->
-          </div> <!-- paper wrapper -->
-        </div>  <!-- col-10 -->
-               <!--Add worker end-->
+<div class='row' style="margin-bottom: 60px">
+  <%= render 'shared/sharedTop' %>
+</div>
+<div class='row'>
+  <%= render 'shared/sharedside' %>
 
 
-
-    <div class="modal fade" id="new_item_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Create new Worker</h4>
-          </div>
-          <div class="modal-body">
-            <%# Render the new person form (passing modal => true to enable remote => true) %>
-            <%= render 'form', modal: true %>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+  <div class="col-md-10" id="page_size">
+    <div id="page-wrapper">
+      <div class="row">
+        <div>
+          <h3 class="page-header">Add New Workers</h3>
         </div>
-      </div>
-    </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" style="height:55px">
+            <div class="col-md-5">
+              <button type="button" class="btn btn-info">
+                <%= link_to 'New Worker', '#new_item_modal', 'data-toggle' => 'modal', class: 'fa fa-plus over '  %></button>
+            </div>
 
-    <div id="product-modal" class="modal fade">
-      <div class="modal-dialog">
-        <div id="inner-product-modal" class="modal-content"></div>
+            <div class="col-md-3" align="right">
+              <div class="dataTable_lenght" id="dataTable-example_length">
+                <label>
+                  <b>Show
+                    <select name="dataTableexample" class="form-control_length" style="height: 30px;">
+                      <option value="0"></option>
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                      <option value="40">40</option>
+                      <option value="10">50</option>
+                      <option value="10">100</option>
+                    </select>
+                  </b>
+                </label>
+              </div>
+            </div>
+            <div class="col-md-4" align="center">
+              <div class="dataTable_filter" id="dataTable-example_filter">
+                <label>Search:
+                  <input type="search" class="form-group-sm input-sm" placeholder aria-controls="dataTable example">
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <table  class='table table-hover table-bordered ' id='warehouse_table'>
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Area</th>
+            <th>Address</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Service</th>
+            <th>Contract Basis</th>
+            <th>Status</th>
+            <th>Edit/Delete</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <% @workers.each do |worker| %>
+              <%= render partial: 'table_row', locals: {worker: worker,:myobject => @city} %>
+          <% end %>
+          </tbody>
+        </table>
+
+      </div>
+    </div><!-- row -->
+  </div> <!-- paper wrapper -->
+</div>  <!-- col-10 -->
+<!--Add worker end-->
+
+
+
+<div class="modal fade" id="new_item_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Create new Worker</h4>
+      </div>
+      <div class="modal-body">
+        <%# Render the new person form (passing modal => true to enable remote => true) %>
+        <%= render 'form', modal: true %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
+  </div>
+</div>
+
+<div id="product-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div id="inner-product-modal" class="modal-content"></div>
+  </div>
+</div>
 <script>
     $('#new_item_modal').on('hidden.bs.modal', function(){
-    $(this).find('form')[0].reset();
-        var x = document.getElementById("LocationsBox");
-        x.options.length=0;
-});
+        $(this).find('form')[0].reset();
+
+    });
 
 </script>

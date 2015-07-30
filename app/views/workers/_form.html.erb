@@ -17,77 +17,77 @@
     <!--(new or form page)-->
 
 
-      <div class="form-group">
+    <div class="form-group">
 
-          <label class="control-label col-md-2"><%= f.label :name %> </label>
-          <input type="text" class="form-control" <%= f.text_field :name %>
+      <label class="control-label col-md-2"><%= f.label :name %> </label>
+      <input type="text" class="form-control" <%= f.text_field :name %>
 
-      </div>
+    </div>
 
     <div class="form-group">
       <%= f.label :city %><br>
-      <%= f.select :city, options_for_select(@cities.map { |value| [ value.cityName,value.id ]}, :selected => f.object.name), {:include_blank => 'Please select'},{:class => 'form-control', :id => 'mycity3', onChange:'populateLocations(this.selectedIndex);'} %>
+      <!--<%= f.select :city, options_for_select(@cities.map { |value| [ value.cityName,value.id ]}, :selected => f.object.name), {:include_blank => 'Please select'},{:class => 'form-control', :id => 'mycity3', onChange:'populateLocations(this.selectedIndex);'} %>-->
+      <%= f.collection_select :city, City.all,:id,:cityName ,{:include_blank => true}, {:class => 'form-control', :id => 'mycity3', onChange:'populateLocations(this.selectedIndex);'} %>
+    </div>
+    <div class="form-group">
+
+      <label class="control-label col-md-2"><%= f.label :subcity %></label>
+      <select id="LocationsBox1" class = "form-control"></select>
+
 
     </div>
-      <div class="form-group">
 
-          <label class="control-label col-md-2"><%= f.label :subcity %></label>
-        <select id="LocationsBox" class = "form-control"></select>
+    <div class="form-group">
 
+      <label class="control-label col-md-2"><%= f.label :Peramadd %></label>
+      <input type="text" class="form-control" <%= f.text_field :peramadd %>
 
-      </div>
+    </div>
+    <div class="form-group">
 
-      <div class="form-group">
+      <label class="control-label col-md-2"><%= f.label :phoneno %></label>
+      <input type="text" class="form-control" <%= f.text_field :phoneno %>
 
-          <label class="control-label col-md-2"><%= f.label :Peramadd %></label>
-          <input type="text" class="form-control" <%= f.text_field :peramadd %>
+    </div>
+    <div class="form-group">
 
-      </div>
-      <div class="form-group">
+      <label class="control-label col-md-2"><%= f.label :email %></label>
+      <input type="text" class="form-control" <%= f.text_field :email %>
 
-          <label class="control-label col-md-2"><%= f.label :phoneno %></label>
-          <input type="text" class="form-control" <%= f.text_field :phoneno %>
-
-      </div>
-      <div class="form-group">
-
-          <label class="control-label col-md-2"><%= f.label :email %></label>
-          <input type="text" class="form-control" <%= f.text_field :email %>
-
-      </div>
+    </div>
     <div class="field" >
       <%= f.label :servicename %><br>
       <%= f.select :servicename, options_for_select(@services.map { |value| [ value.name ]}, :selected => f.object.id), {:include_blank => 'Select Service'},{:class => 'form-control'} %>
     </div>
-      <div class="form-group">
+    <div class="form-group">
 
-          <label class="control-label col-md-2"><%= f.label :contractbasis %></label>
-          <input type="text" class="form-control" <%= f.text_field :contractbasis %>
+      <label class="control-label col-md-2"><%= f.label :contractbasis %></label>
+      <input type="text" class="form-control" <%= f.text_field :contractbasis %>
 
-      </div>
+    </div>
     <%= hidden_field_tag(:subcity, nil,{:id=> 'new'}) %>
-      <div class="form-group">
+    <div class="form-group">
 
-          <label class="control-label col-md-2"><%= f.label :status %></label>
-          <input type="text" class="form-control" <%= f.text_field :status %>
-          <br>
+      <label class="control-label col-md-2"><%= f.label :status %></label>
+      <input type="text" class="form-control" <%= f.text_field :status %>
+      <br>
 
-      </div>
-
-   <div class="form-group">
-
-    <div class="actions">
-      <%= f.submit 'Submit', class: 'btn btn-info' %>
     </div>
 
-   </div>
+    <div class="form-group">
+
+      <div class="actions">
+        <%= f.submit 'Submit', class: 'btn btn-info' %>
+      </div>
+
+    </div>
 
 <% end %>
 <script>
-  var sv;
+    var sv;
 
-    $( "#LocationsBox" ).change(function() {
-        var sel = document.getElementById('LocationsBox');
+    $( "#LocationsBox1" ).change(function() {
+        var sel = document.getElementById('LocationsBox1');
 
         var svLoc = sel.options[sel.selectedIndex].value;
         $.ajax({
@@ -114,14 +114,11 @@
         });
 
     });
-  function getIdLocations(){
-      alert(document.getElementById('LocationsBox').options[sel.selectedIndex].value)
-  }
-    function populateLocations(cityID) {
 
+    function populateLocations(cityID) {
         var sel = document.getElementById('mycity3');
-         sv = sel.options[sel.selectedIndex].value;
-        var x = document.getElementById("LocationsBox");
+        sv = sel.options[cityID].value;
+        var x = document.getElementById("LocationsBox1");
         x.options.length=0;
         x.selectedIndex=-1;
         $.ajax({
@@ -135,7 +132,7 @@
 
                 var temp=0;
                 $.each(data.locations, function(i, location) {
-                    var option = document.createElement("option");
+                    var option = document.createElement("Option");
                     option.value = location.id;
                     option.text = location.subCity;
                     x.add(option,i);
