@@ -1,43 +1,92 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" >
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>VEGAM</title>
+
+  <style>
+      #align{
+          margin-left:500px;
+          margin-top:20px;
+          margin-right:10px;
+          color:#FFF;
+          font-size:20px;
+      }
+      #align:hover{
+          color:#000;
+          text-decoration:none;
+      }
+      .navbar-custom {
+          color: #FFFFFF;
+          background-color: #00CCFF;
+      }
+  </style>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+
+
+</head>
+<body>
+<nav class="navbar navbar-fixed-top">
   <div class="container-fluid">
-    <div class="col-md-5" >
+    <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand nav"  href="#">VEGAM</a>
+      <a class="navbar-brand" href="#"><img src="/assets/logo.PNG"  class="hlogo" width="100" height="50" > </a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav" >
-        <li><a href="#">Home</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Plumbing</a></li>
-            <li><a href="#">Electrical</a></li>
-            <li><a href="#">painting</a></li>
-            <li><a href="#">fitness</a></li>
-            <li><a href="#">Beauty</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cities<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Hyderabad</a></li>
-            <li><a href="#">Bangalore</a></li>
-            <li><a href="#">Delhi</a></li>
-            <li><a href="#">Chennai</a></li>
-            <li><a href="#">Mumbai</a></li>
-          </ul>
-        </li>
-        <li><a href="#">FAQ's</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">Careers</a></li>
-        <li  data-toggle="modal" data-target="#loginModal"><a href="#">Login&nbsp;<i class="fa fa-user fa-1x"></i> </a></li>
-        <li  data-toggle="modal" data-target="#signup"><a href="#">Register&nbsp;<i class="fa fa-unlock fa-1x"></i></a></li>
-      </ul>
+
+    <div>
+      <div class="collapse navbar-collapse" id="align">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Plumbing</a></li>
+              <li><a href="#">Electrical</a></li>
+              <li><a href="#">painting</a></li>
+              <li><a href="#">fitness</a></li>
+              <li><a href="#">Beauty</a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cites<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Hyderabad</a></li>
+              <li><a href="#">Bangalore</a></li>
+              <li><a href="#">Delhi</a></li>
+              <li><a href="#">Chennai</a></li>
+              <li><a href="#">Mumbai</a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          <li><a href="#">FAQ's</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><i class="fa fa-unlock fa-1x"></i>Sign Up</a></li>
+          <li><a href="#"><i class="fa fa-user fa-1x"></i> Login</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
 </nav>
+
+
+
