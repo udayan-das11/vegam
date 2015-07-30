@@ -50,26 +50,30 @@
                       </div>
 
                    </div>
-                   <div>
-                        <table border = '1'  id='warehouse_table'>
-                        <tr align="center">
-                          <th class="col-md-1" id="form-design">Name</th>
-                          <th class="col-md-1" id="form-design">City</th>
-                          <th class="col-md-1"  id="form-design">Area</th>
-                          <th class="col-md-1"  id="form-design">Address</th>
-                          <th class="col-md-1"  id="form-design">Mobile</th>
-                          <th class="col-md-1"  id="form-design">Email</th>
-                          <th class="col-md-1"  id="form-design">Service</th>
-                          <th class="col-md-1"  id="form-design">Contract Basis</th>
-                          <th class="col-md-1"  id="form-design">Status</th>
-                          <th class="col-md-1"  id="form-design">Edit/Delete</th>
-                        </tr>
 
+                        <table  class='table table-hover table-bordered ' id='warehouse_table'>
+                          <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>City</th>
+                            <th>Area</th>
+                            <th>Address</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th>Service</th>
+                            <th>Contract Basis</th>
+                            <th>Status</th>
+                            <th>Edit/Delete</th>
+                          </tr>
+                          </thead>
+
+                          <tbody>
                         <% @workers.each do |worker| %>
                               <%= render partial: 'table_row', locals: {worker: worker,:myobject => @city} %>
                         <% end %>
+                          </tbody>
                       </table>
-                   </div>
+
               </div>
             </div><!-- row -->
           </div> <!-- paper wrapper -->
