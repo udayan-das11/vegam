@@ -1,577 +1,630 @@
-<head xmlns="http://www.w3.org/1999/html">
- 	<script src="jquery-1.11.3.min.js"></script>
- </head>
- <body>
 
-  <div class="img-responsive" id="search">
+<div>
 
-    <nav class="navbar navbar-custom navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="col-md-5" >
+  <nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="col-md-5" >
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span> 
-                      </button>
-                      <a class="navbar-brand" href="#"><img src="/assets/logo.PNG"  class="hlogo" width="150" height="100" > <%= session[:user].to_s %></a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                      <ul class="nav navbar-nav" >
-                         <li><a href="#">Home</a></li>
-                         <li class="dropdown">
-                                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
-                                  <ul class="dropdown-menu">
-                                    <li><a href="#">Plumbing</a></li>
-                                    <li><a href="#">Electrical</a></li>
-                                    <li><a href="#">painting</a></li>
-                                    <li><a href="#">fitness</a></li>
-                                    <li><a href="#">Beauty</a></li>
-                                    <li><a href="#"></a></li>
-                                  </ul>
-                         </li>
-                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cities<span class="caret"></span></a>
-                             <select  name="cityName" id="cityName" class="dropdown-menu">
-                              	<% cities_array = City.all.map { |city| [city.cityName, city.id] } %>
-                            <%= options_for_select(cities_array) %>
-                              </select>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="/assets/logo.PNG"  class="hlogo" width="150" height="100" > <%= session[:user].to_s %></a>
+      </div>
+      <div class="collapse navbar-collapse" id="foot">
+        <ul class="nav navbar-nav" >
+          <li><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Plumbing</a></li>
+              <li><a href="#">Electrical</a></li>
+              <li><a href="#">painting</a></li>
+              <li><a href="#">fitness</a></li>
+              <li><a href="#">Beauty</a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cities<span class="caret"></span></a>
+            <select  name="cityName" id="cityName" class="dropdown-menu">
+              <% cities_array = City.all.map { |city| [city.cityName, city.id] } %>
+              <%= options_for_select(cities_array) %>
+            </select>
 
 
-                         </li>
-                        <li><a href="#">FAQ's</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                         <li  data-toggle="modal" data-target="#loginModal"><a href="#">Login&nbsp;<i class="fa fa-user fa-1x"></i> </a></li>
-                        <li  data-toggle="modal" data-target="#signup"><a href="#">Register&nbsp;<i class="fa fa-unlock fa-1x"></i></a></li>
-                       </ul>
-                   </div>
-                </div>
-              </nav>   
-          
-          
-           				   <!--  ( Create )-->
-              
-              <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
-              <div class="modal-dialog">
-               <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title">SignUp</h4>
-                 </div>
-    
-                 <div class="modal-body">     
-					  <%= form_for @user, :html => {:class => 'form-horizontal'}, :url => {:action =>"signup" } do |f|%>
-                        <div class="form-group">
-                            <label class="col-xs-3 control-label">Full name</label>
-                    
-                            <div class="col-xs-3">
-							    <%= f.text_field :fname,class:"form-control",placeholder:"First name"%>
+          </li>
+          <li><a href="#">FAQ's</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li  data-toggle="modal" data-target="#loginModal"><a href="#">Login&nbsp;<i class="fa fa-user fa-1x"></i> </a></li>
+          <li  data-toggle="modal" data-target="#signup"><a href="#">Register&nbsp;<i class="fa fa-unlock fa-1x"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!--  ( Create )-->
+
+  <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">SignUp</h4>
+        </div>
+
+        <div class="modal-body">
+          <%= form_for @user, :html => {:class => 'form-horizontal'}, :url => {:action =>"signup" } do |f|%>
+              <div class="form-group">
+                <label class="col-xs-3 control-label">Full name</label>
+
+                <div class="col-xs-3">
+                  <%= f.text_field :fname,class:"form-control",placeholder:"First name"%>
+                      </div>
+
+                      <div class="col-xs-3">
+                        <%= f.text_field :lname,class:"form-control",placeholder:"Last name"%>
                             </div>
-    
-                            <div class="col-xs-3">
-                                <%= f.text_field :lname,class:"form-control",placeholder:"Last name"%>
                             </div>
-                        </div>
-                    
-                        <div class="form-group">
-                            <label class="col-xs-3 control-label">Phone number</label>
-                    
-                            <div class="col-xs-6">
-								<%= f.text_field :phone,class:"form-control",placeholder:"Phone Number"%>
-                            </div>
-                    
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="col-xs-3 control-label">Email Id</label>                    
-                            <div class="col-xs-6">
-								<%= f.text_field :email,class:"form-control",placeholder:"Email"%>
-                            </div>
-                         </div>
-                        
-                         <div class="form-group">
-                            <label class="col-xs-3 control-label">Password</label>
-                                <div class="col-xs-6">
-									<%= f.password_field :password,class:"form-control",placeholder:"Password",placeholder:"Password",type:"password"%>
-                                </div>
-                         </div>
-                        
-                          <div class="form-group">
-                                <label class="col-xs-3 control-label">Re-Enter Password</label>
-                                <div class="col-xs-6">
-								<%= f.password_field :confirm_password,class:"form-control",placeholder:"Confirm Password",placeholder:"Password",type:"password"%>
-                                </div>
-                          </div>
-                        
-                         <div class="form-group">
-                             <label class="col-xs-3 control-label">Gender</label>
-                               <div class="col-xs-5">
-                                   <div class="radio">
-                                        <label>
-										<%= f.radio_button  :gender,value:"male"%> Male
-                                        </label>
-                                   </div>
-                                   <div class="radio">
-                                        <label>
-										<%= f.radio_button  :gender,value:"female"%> Female
-                                        </label>
-                                   </div>
-                                   <div class="radio">
-                                        <label>
-										<%= f.radio_button  :gender,value:"Wont Disclose"%> Won't Disclose
-                                        </label>
-                                   </div>
-                              </div>
-                        </div>
-                    
-                        <div class="form-group">
-                            <label class="col-xs-3 control-label">Date of birth</label>
-                            <div class="col-xs-3">
-								<%= f.text_field :dob,class:"form-control",placeholder:"YYYY/MM/DD"%>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <div class="col-xs-3 col-xs-offset-3">
-                            <button type="submit" class="btn btn-link">Update profile</button>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <div class="col-xs-5 col-xs-offset-3">
-							    <button type="submit" class="btn btn-info" actions=<%=f.submit 'signup'%>Register</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                            </div>
-							
-                       </div>
-                  <% end %>
-                  </div>
-                </div>
-              </div>
-            </div>    <!--  ( Create )-->
+
+                            <div class="form-group">
+                              <label class="col-xs-3 control-label">Phone number</label>
+
+                              <div class="col-xs-6">
+                                <%= f.text_field :phone,class:"form-control",placeholder:"Phone Number"%>
+                                    </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label class="col-xs-3 control-label">Email Id</label>
+                                      <div class="col-xs-6">
+                                        <%= f.text_field :email,class:"form-control",placeholder:"Email"%>
+                                            </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                              <label class="col-xs-3 control-label">Password</label>
+                                              <div class="col-xs-6">
+                                                <%= f.password_field :password,class:"form-control",placeholder:"Password",placeholder:"Password",type:"password"%>
+                                                    </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                      <label class="col-xs-3 control-label">Re-Enter Password</label>
+                                                      <div class="col-xs-6">
+                                                        <%= f.password_field :confirm_password,class:"form-control",placeholder:"Confirm Password",placeholder:"Password",type:"password"%>
+                                                            </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                              <label class="col-xs-3 control-label">Gender</label>
+                                                              <div class="col-xs-5">
+                                                                <div class="radio">
+                                                                  <label>
+                                                                    <%= f.radio_button  :gender,value:"male"%> Male
+                                                                  </label>
+                                                                </div>
+                                                                <div class="radio">
+                                                                  <label>
+                                                                    <%= f.radio_button  :gender,value:"female"%> Female
+                                                                  </label>
+                                                                </div>
+                                                                <div class="radio">
+                                                                  <label>
+                                                                    <%= f.radio_button  :gender,value:"Wont Disclose"%> Won't Disclose
+                                                                  </label>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                              <label class="col-xs-3 control-label">Date of birth</label>
+                                                              <div class="col-xs-3">
+                                                                <%= f.text_field :dob,class:"form-control",placeholder:"YYYY/MM/DD"%>
+                                                                    </div>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                      <div class="col-xs-3 col-xs-offset-3">
+                                                                        <button type="submit" class="btn btn-link">Update profile</button>
+                                                                      </div>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                      <div class="col-xs-5 col-xs-offset-3">
+                                                                        <button type="submit" class="btn btn-info" actions=<%=f.submit 'signup'%>Register</button>
+                                                                          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                                      </div>
+
+                                                                    </div>
+                                                                <% end %>
+                                                                </div>
+                                                                </div>
+                                                                </div>
+                                                                </div>    <!--  ( Create )-->
 
 
-             <!-- (  Login  )-->
-         
-         
-         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
-   		  <div class="modal-dialog">
-           <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title">Login</h4>
-             </div>
-
-             <div class="modal-body">
-                
-                 <%= form_for @user, :html => {:class => 'form-horizontal'}, :url => {:action =>"signin" } do |f|%>
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">Email</label>
-                        <div class="col-xs-5">
-                            <%= f.text_field :email,class:"form-control",placeholder:"Email"%>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">Password</label>
-                        <div class="col-xs-5">
-                            <%= f.password_field :password,class:"form-control",placeholder:"Password",placeholder:"Password",type:"password"%>
-                        </div>
-                    </div>
-                    
-                  
-                    <div class="form-group">
-                        <div class="col-xs-3 col-xs-offset-3">
-                        <button type="submit" class="btn btn-link">Forget Password</button>
-                        
-                        
-			
-                        
-                        <button type="submit" class="btn btn-link">Connect with facebook&nbsp;<i class="fa fa-facebook-official fa-1x"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-xs-5 col-xs-offset-3">
-                            <button type="submit" class="btn btn-info" actions=<%=f.submit 'signin'%>Login</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        </div>
-                    </div>
-                <% end %>
-            <a href="javascript:void(0)" class="do_fb_login"   >SIGN IN with facebook</a> 
-          
-              </div>
-            </div>
-          </div>
-        </div>		<!-- (  Login  )-->
-        
-        
-            
-     								<!--  ( Banner   )-->
-        
-           <div class="container">
-             <div class="col-md-2" ></div>
-              <div class="col-md-8" id="inner">
-                <h2 align="center" style="color:#FFF"><strong>Service @t your door Step</strong></h2>
-              
-              <%= form_tag "/booking/create", :class => 'form-inline form-s1 formproject' , :style => "margin-left:29px"  do %>
-
-                  <div class="form-group" >
-                            <label class="sr-only" for="Enter city name"></label>
-                  <%= select_tag "city",content_tag(:option,'Select City',:value=>"") + options_from_collection_for_select(@city, "id", "cityName" ,  "Select your city") ,  :class => "form-control input-lg" ,:style => "width:100%"%>
-                           </div>
+                                                                <!-- (  Login  )-->
 
 
-                        
-                    <div class="form-group" style="width:50%">
-                                <label class="sr-only"  for="Select Service"></label>
-             <select name="service" id="service" class="form-control input-lg" style="width:100%">
-            	<option value="">Select Your Service</option> 
-            	</select>
-                           </div>
-                          
-                        <button type="submit" class="btn-s1 btn btn-info btn-lg">Search</button>
-                 <% end %>
-                 <br>
-        	  <div class="row">
-                <% @services.each do |temp_service| %>
+                                                                <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+                                                                  <div class="modal-dialog">
+                                                                    <div class="modal-content">
+                                                                      <div class="modal-header">
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                          <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                        <h4 class="modal-title">Login</h4>
+                                                                      </div>
+
+                                                                      <div class="modal-body">
+
+                                                                        <%= form_for @user, :html => {:class => 'form-horizontal'}, :url => {:action =>"signin" } do |f|%>
+                                                                            <div class="form-group">
+                                                                              <label class="col-xs-3 control-label">Email</label>
+                                                                              <div class="col-xs-5">
+                                                                                <%= f.text_field :email,class:"form-control",placeholder:"Email"%>
+                                                                                    </div>
+                                                                                    </div>
+
+                                                                                    <div class="form-group">
+                                                                                      <label class="col-xs-3 control-label">Password</label>
+                                                                                      <div class="col-xs-5">
+                                                                                        <%= f.password_field :password,class:"form-control",placeholder:"Password",placeholder:"Password",type:"password"%>
+                                                                                            </div>
+                                                                                            </div>
+
+
+                                                                                            <div class="form-group">
+                                                                                              <div class="col-xs-3 col-xs-offset-3">
+                                                                                                <button type="submit" class="btn btn-link">Forget Password</button>
+
+                                                                                                <button type="submit" class="btn btn-link">Connect with facebook&nbsp;<i class="fa fa-facebook-official fa-1x"></i></button>
+                                                                                              </div>
+                                                                                            </div>
+
+                                                                                            <div class="form-group">
+                                                                                              <div class="col-xs-5 col-xs-offset-3">
+                                                                                                <button type="submit" class="btn btn-info" actions=<%=f.submit 'signin'%>Login</button>
+                                                                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                                                              </div>
+                                                                                            </div>
+                                                                                        <% end %>
+                                                                                        <a href="javascript:void(0)" class="do_fb_login"   >SIGN IN with facebook</a>
+
+                                                                                        </div>
+                                                                                        </div>
+                                                                                        </div>
+                                                                                        </div>		<!-- (  Login  )-->
 
 
 
-              		<div >
-					  <a href="#"  rel=""  target="_blank">
-                        <div style="margin-bottom:15px" class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
-					      <img class="img-responsive "><i class="<%= temp_service.image%> fa-4x" style="color:#0CF"></i><br><%= temp_service.name %>
-						</div>	
-                     </a>
-                   </div>	
-				   <% end %>
-			    </div>
-             </div>
-          </div>        <!--(banner)-->
-                          <!--(content)-->
-                          <div class="container"  id="cont_img">
-                            <div class="row" >
-                              <div class="col-md-4">
-                                <img src="/assets/icons (8).jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
-                              </div>
-                              <div class="col-md-4">
-                                <img src="/assets/icons (8).jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
-                              </div>
-                              <div class="col-md-4">
-                                <img src="/assets/icons (8).jpg"class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
-                              </div>
-                            </div>
-                          </div>
+                                                                                        <!--  ( Banner   )-->
 
-                          <!--(content)-->
-                          <footer class="container-fluid" >
+                                                                                        <div class="container" id="search">
+                                                                                          <div class="col-md-2" ></div>
+                                                                                          <div class="col-md-8" id="inner">
+                                                                                            <h2 align="center" style="color:#FFF"><strong>Service @t your door Step</strong></h2>
 
-                            <div class="row"  id="foot_img">
+                                                                                            <%= form_tag "/booking/create", :class => 'form-inline form-s1 formproject' , :style => "margin-left:29px"  do %>
 
-                              <div class="col-md-2" ></div>
-
-                              <div class="col-md-2" >
-                                <ul id="txt_style" class="navbar" >
-                                  <li><a href="#">About</a></li>
-                                  <li><a href="#">City</a></li>
-                                  <li><a href="#">Contact</a></li>
-                                  <li><a href="#">Service</a></li>
-                                </ul>
-                              </div>
-
-                              <div class="col-md-2" >
-                                <ul id="txt_style" class="navbar" >
-                                  <li><a href="#">FAQ's</a></li>
-                                  <li><a href="#">Contact</a></li>
-                                  <li><a href="#">Careers</a></li>
-                                </ul>
-                              </div>
-
-                              <div class="col-md-2">
-                                <ul id="txt_style" class="navbar">
-                                  <li><a href="#">Plumbing</a></li>
-                                  <li><a href="#">Electrical</a></li>
-                                  <li><a href="#">Painting</a></li>
-                                  <li><a href="#">Fitness</a></li>
-                                  <li><a href="#">Gardening</a></li>
-                                </ul>
-                              </div>
-
-                              <div class="col-md-2" >
-                                <ul id="txt_style" class="navbar">
-                                  <li><a href="#"><i class="fa fa-facebook fa-2x"></i>acebook</a></li>
-                                  <li><a href="#"><i class="fa fa-twitter fa-2x"></i>twitter</a></li>
-                                  <li><a href="#"><i class="fa fa-google-plus fa-2x"></i>oogle</a></li>
-                                  <li><a href="#"><i class="fa fa-instagram fa-2x"></i>nstagram</a></li>
-                                </ul>
-                              </div>
-
-                              <div class="col-md-2"></div>
-
-                            <div>
-                          </div>
-
-     </div>
-  </div>
-<input  type="hidden" name="jsonService" value='<%= raw @jsonService %>' id="jsonService"/>
-<input  type="hidden" name="jsonSCMapping" value='<%= raw @jsonSCMapping %>'id="jsonSCMapping"/>
-<input  type="hidden" name="jsonCity" value= '<%= raw @jsonCity %>'  id="jsonCity"/>
-              
-      
-      			<!-- (signup)-->
-    <script src="//code.jquery.com/jquerybing&quot;, &quot;description&quot;=&gt;nil, &quot;image&quot;=&gt;nil, &quot;created_at&quot;=&gt;&quot;2015-07-18T18:31:04.933Z&quot;, &quot;updated_at&quot;=&gt;&quot;2015-07-18T18:31:04.933Z&quot;}, {&quot;id&quot;=&gt;2, &quot;name&quot;=&gt;&quot;Beauty&quot;, &quot;description&quot;=&gt;nil, &quot;image&quot;=&gt;nil, &quot;created_at&quot;=&gt;&quot;2015-07-20T19:32:42.168Z&quot;, &quot;updated_at&quot;=&gt;&quot;2015-07-20T19:32:42.168Z&quot;}, {&quot;id&quot;=&gt;3, &quot;name&quot;=&gt;&quot;Ac repair&quot;, &quot;description&quot;=&gt;nil, &quot;image&quot;=&gt;nil, &quot;created_at&quot;=&gt;&quot-1.11.3.min.js"></script>. 
-    <script src="//connect.facebook.net/en_US/all.js"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>
-    			$(document).ready(function() {
-    				console.log("ss");
-    				$("#city").change(function(){
-	console.log("ss");
-var jsonSCMapping1 = $('#jsonSCMapping').val();
-var jsonService1 = $('#jsonService').val();
-var jsonSCMapping2 = JSON.parse(''+ jsonSCMapping1 +'');
-var jsonService2= JSON.parse(''+ jsonService1 +'');
-var options="<option value=''>Select Your Service</option>";
-for (var i = 0; i < jsonSCMapping2.length; i++) {
-	var cityId =$('#city').val();
-    var counter = jsonSCMapping2[i];
- 	if(cityId == counter.city_id)
-    {
-    	console.log("cityId" + cityId);
-    	console.log("counterCityID" + counter.city_id);
-    for (var j = 0; j < jsonService2.length; j++) {
-    	console.log("service_id" + counter.service_id);
-    	console.log("jsonservice" + jsonService2[j].id);
-	if(counter.service_id == jsonService2[j].id)
-{ 	console.log("came here");
-options = options + "<option value="+counter.service_id+" >"+jsonService2[j].name+"</option>";
-  }
-    		
-    }
-    
-
-  }
-  }
-  	console.log("came here" +options);
-  $("#service").html(options);
-    			});
-});    	
-    	
-    	
-    </script>
-    
-    
-    <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '920712327967585', // Set YOUR APP ID
-      status     : true, // check login status
-      cookie     : true, // enable cookies to allow the server to access the session
-      xfbml      : true  // parse XFBML
-    });
-    
-    (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
- };
-   $('.do_fb_login').click(function(){
-  
-	
-		FB.login(function(response) {
-			if (response.authResponse) {
-				var fb_token;
-			   
-				var data = response.authResponse.accessToken;
-			 
-				$.ajax({
-					url: 		"vegam/fbauth" ,
-					data:		{fblogin :data},
-					type:		'POST',
-					dataType:	'JSON',
-					success:	function(res){
-					console.log("ss");
-					
-						location.reload();
-					},		
-					   error: function (error) {
-					   location.reload();
-					   
-					}
-					 
-				});
-			}
-		}, {scope:'email'});
-	
-
-	});
- 
-	
+                                                                                                <div class="form-group" >
+                                                                                                  <label class="sr-only" for="Enter city name"></label>
+                                                                                                  <%= select_tag "city",content_tag(:option,'Select City',:value=>"") + options_from_collection_for_select(@city, "id", "cityName" ,  "Select your city") ,  :class => "form-control input-lg" ,:style => "width:100%"%>
+                                                                                                </div>
 
 
- </script>
-    
-        <script>
-		
-   			 $(function() {
-	  				$('button.navbar-toggle').click(function() {
-					if ($('body').css('padding-top') < '100px') {
-						$('body').css('padding-top', '+=245');
-					} else {
-						$('body').css('padding-top', '0');
-					}
-				  });
-				});
 
-			$(document).ready(function() {
-				$('#signup').formValidation({
-					framework: 'bootstrap',
-					icon: {
-						valid: 'glyphicon glyphicon-ok',
-						invalid: 'glyphicon glyphicon-remove',
-						validating: 'glyphicon glyphicon-refresh'
-					},
-					fields: {
-						firstName: {
-							row: '.col-xs-5',
-							validators: {
-								notEmpty: {
-									message: 'The first name is required'
-								},
-								regexp: {
-									regexp: /^[a-zA-Z\s]+$/,
-									message: 'The first name can only consist of alphabetical and space'
-								}
-							}
-						},
-						lastName: {
-							row: '.col-xs-5',
-							validators: {
-								notEmpty: {
-									message: 'The last name is required'
-								},
-								regexp: {
-									regexp: /^[a-zA-Z\s]+$/,
-									message: 'The last name can only consist of alphabetical and space'
-								}
-							}
-						},
-						cellPhone: {
-							row: '.col-xs-3',
-							validators: {
-								notEmpty: {
-									message: 'The cell phone number is required'
-								}
-							}
-						},
-						homePhone: {
-							row: '.col-xs-3',
-							validators: {
-								notEmpty: {
-									message: 'The home phone number is required'
-								}
-							}
-						},
-						officePhone: {
-							row: '.col-xs-3',
-							validators: {
-								notEmpty: {
-									message: 'The office phone number is required'
-								}
-							}
-						}
-					},
-					 email: {
-						 row: '.col-xs-6',
-						validators: {
-							notEmpty: {
-								message: 'The email address is required'
-							},
-							emailAddress: {
-								message: 'The input is not a valid email address'
-							}
-						}
-					},
-					password: {
-						row: '.col-xs-6',
-							validators: {
-								notEmpty: {
-									message: 'The password is required'
-								},
-								different: {
-									field: 'username',
-									message: 'The password cannot be the same as username'
-								}
-							}
-						},
-						gender: {
-							validators: {
-								notEmpty: {
-									message: 'The gender is required'
-								}
-							}
-						},
-						birthday: {
-							row: '.col-xs-5',
-							validators: {
-								notEmpty: {
-									message: 'The date of birth is required'
-								},
-								date: {
-									format: 'YYYY/MM/DD',
-									message: 'The date of birth is not valid'
-								}
-							}
-						}
-				 });
-			});
-			</script>
-    
-    
-    
-         <!--   (Login)-->
-    
-      <script>
-		$(document).ready(function() {
-		 
-			$('#loginForm').formValidation({
-				framework: 'bootstrap',
-				excluded: [':disabled'],
-				icon: {
-					valid: 'glyphicon glyphicon-ok',
-					invalid: 'glyphicon glyphicon-remove',
-					validating: 'glyphicon glyphicon-refresh'
-				},
-				fields: {
-					username: {
-						validators: {
-							notEmpty: {
-								message: 'The username is required'
-							}
-						}
-					},
-					password: {
-						validators: {
-							notEmpty: {
-								message: 'The password is required'
-							}
-						}
-					}
-				}
-			});
-		});
-		</script>
-		
-    
- 					
-    
-  </body>
+                                                                                                <div class="form-group" style="width:50%">
+                                                                                                  <label class="sr-only"  for="Select Service"></label>
+                                                                                                  <select name="service" id="service" class="form-control input-lg" style="width:100%">
+                                                                                                    <option value="">Select Your Service</option>
+                                                                                                  </select>
+                                                                                                </div>
+
+                                                                                                <button type="submit" class="btn-s1 btn btn-info btn-lg">Search</button>
+                                                                                            <% end %>
+                                                                                            <br>
+
+                                                                                            <div>
+                                                                                              <a href="#"  rel=""  target="_blank">
+                                                                                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
+                                                                                                  <img class="img-responsive "><img src="/assets/electric_icon.jpg" width="50px" height="50px"><br>Electrical
+                                                                                                </div>
+                                                                                              </a>
+                                                                                            </div>
+
+
+                                                                                            <div>
+                                                                                              <a href="#"  rel=""  target="_blank">
+                                                                                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
+                                                                                                  <img class="img-responsive "><img src="/assets/plumber2_icon.jpg" width="50px" height="50px;"><br>Plumbing
+                                                                                                </div>
+                                                                                              </a>
+                                                                                            </div>
+
+                                                                                            <div>
+                                                                                              <a href="#"  rel=""  target="_blank">
+                                                                                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
+                                                                                                  <img class="img-responsive "><img src="/assets/gardening_icon.jpg" width="50" height="50"><br>Gardening
+                                                                                                </div>
+                                                                                              </a>
+                                                                                            </div>
+
+
+                                                                                            <div>
+                                                                                              <a href="#"  rel=""  target="_blank">
+                                                                                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
+                                                                                                  <img class="img-responsive "><img src="/assets/plumber_icon.jpg" width="50" height="50s"><br>
+                                                                                                  Repairing
+                                                                                                </div>
+                                                                                              </a>
+                                                                                            </div>
+
+                                                                                            <div>
+                                                                                              <a href="#"  rel=""  target="_blank">
+                                                                                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
+                                                                                                  <img class="img-responsive "><img src="/assets/cleaning_icon.jpg" width="50" height="50"><br>Cleaning
+                                                                                                </div>
+                                                                                              </a>
+                                                                                            </div>
+
+                                                                                            <div>
+                                                                                              <a href="#"  rel=""  target="_blank">
+                                                                                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
+                                                                                                  <img class="img-responsive "><img src="/assets/painting_icon.jpg" width="50" height="50"><br>Painting
+                                                                                                </div>
+                                                                                              </a>
+                                                                                            </div>
+
+
+                                                                                            <div class="row">
+                                                                                              <% @services.each do |temp_service| %>
+                                                                                                  <div >
+                                                                                                    <a href="#"  rel=""  target="_blank">
+                                                                                                      <div style="margin-bottom:15px" class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
+                                                                                                        <img class="img-responsive"><i class="<%= temp_service.image%> fa-4x" style="color:#0CF"></i><br><%= temp_service.name %>
+                                                                                                      </div>
+                                                                                                    </a>
+                                                                                                  </div>
+                                                                                              <% end %>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                        </div><!--banner end-->
+
+                                                                                        <!--content-->
+
+                                                                                        <div class="container">
+                                                                                          <div class="row">
+
+                                                                                            <div class="col-md-3">
+                                                                                              <h2>Content Part1</h2>
+                                                                                              <p>There are also several nationally or locally scarce invertebrates and plants specialised for this coastal habitat. The reserve has an environmentally friendly visitor centre and five bird hides, and attracts large numbers of visitors, contributing significantly to the economy of Cley village. Despite centuries of embanking to reclaim land and protect the village, the marshes have been flooded many times; the southward march of the coastal shingle bank and encroachment by the sea make it inevitable that the reserve will eventually be lost</p>
+                                                                                              <div><img src="/assets/Painting.jpg" class="img-responsive img-thumbnail"> </div>
+                                                                                            </div>
+
+                                                                                            <div class="col-md-3">
+                                                                                              <h2>Content Part2</h2>
+                                                                                              <p>There are also several nationally or locally scarce invertebrates and plants specialised for this coastal habitat. The reserve has an environmentally friendly visitor centre and five bird hides, and attracts large numbers of visitors, contributing significantly to the economy of Cley village.<div><img src="/assets/Painting.jpg" class="img-responsive img-thumbnail"> </div> Despite centuries of embanking to reclaim land and protect the village, the marshes have been flooded many times; the southward march of the coastal shingle bank and encroachment by the sea make it inevitable that the reserve will eventually be lost</p>
+                                                                                            </div>
+
+                                                                                            <div class="col-md-3">
+                                                                                              <h2>Content Part3</h2>
+                                                                                              <div><img src="/assets/Painting.jpg" class="img-responsive img-thumbnail"> </div>
+                                                                                              <p>There are also several nationally or locally scarce invertebrates and plants specialised for this coastal habitat. The reserve has an environmentally friendly visitor centre and five bird hides, and attracts large numbers of visitors, contributing significantly to the economy of Cley village. Despite centuries of embanking to reclaim land and protect the village, the marshes have been flooded many times; the southward march of the coastal shingle bank and encroachment by the sea make it inevitable that the reserve will eventually be lost</p>
+                                                                                            </div>
+
+                                                                                            <div class="col-md-3">
+                                                                                              <h2>Content Part4</h2>
+                                                                                              <p>There are also several nationally or locally scarce invertebrates and plants specialised for this coastal habitat. The reserve has an environmentally friendly visitor centre and five bird hides, and attracts large numbers of visitors, contributing significantly to the economy of Cley village. Despite centuries of embanking to reclaim land and protect the village, the marshes have been flooded many times;<div><img src="/assets/Painting.jpg" class="img-responsive img-thumbnail"> </div> the southward march of the coastal shingle bank and encroachment by the sea make it inevitable that the reserve will eventually be lost</p>
+                                                                                            </div>
+
+                                                                                          </div>
+                                                                                        </div>
+                                                                                        <!--content end-->
+
+                                                                                        <!--footer-->
+                                                                                        <footer class="container-fluid" style="background-color: #080808" >
+
+                                                                                          <div class="row" id="foot_img">
+
+                                                                                            <div class="col-md-2" ></div>
+
+                                                                                            <div class="col-md-2"  >
+                                                                                              <ul id="txt_style" class="nav" >
+                                                                                                <li><a href="#">About</a></li>
+                                                                                                <li><a href="#">City</a></li>
+                                                                                                <li><a href="#">Contact</a></li>
+                                                                                                <li><a href="#">Service</a></li>
+                                                                                              </ul>
+                                                                                            </div>
+
+                                                                                            <div class="col-md-2" >
+                                                                                              <ul id="txt_style" class="nav" >
+                                                                                                <li><a href="#">FAQ's</a></li>
+                                                                                                <li><a href="#">Contact</a></li>
+                                                                                                <li><a href="#">Careers</a></li>
+                                                                                              </ul>
+                                                                                            </div>
+
+                                                                                            <div class="col-md-2">
+                                                                                              <ul id="txt_style" class="nav">
+                                                                                                <li><a href="#">Plumbing</a></li>
+                                                                                                <li><a href="#">Electrical</a></li>
+                                                                                                <li><a href="#">Painting</a></li>
+                                                                                                <li><a href="#">Fitness</a></li>
+                                                                                                <li><a href="#">Gardening</a></li>
+                                                                                              </ul>
+                                                                                            </div>
+
+                                                                                            <div class="col-md-2" >
+                                                                                              <ul id="txt_style" class="nav">
+                                                                                                <li><a href="#"><i class="fa fa-facebook fa-2x"></i>acebook</a></li>
+                                                                                                <li><a href="#"><i class="fa fa-twitter fa-2x"></i>twitter</a></li>
+                                                                                                <li><a href="#"><i class="fa fa-google-plus fa-2x"></i>oogle</a></li>
+                                                                                                <li><a href="#"><i class="fa fa-instagram fa-2x"></i>nstagram</a></li>
+                                                                                              </ul>
+                                                                                            </div>
+
+                                                                                            <div class="col-md-2"></div>
+                                                                                          </div>
+                                                                                        </footer>
+
+
+                                                                                        </div>
+                                                                                        </div>
+                                                                                        <input  type="hidden" name="jsonService" value='<%= raw @jsonService %>' id="jsonService"/>
+                                                                                        <input  type="hidden" name="jsonSCMapping" value='<%= raw @jsonSCMapping %>'id="jsonSCMapping"/>
+                                                                                        <input  type="hidden" name="jsonCity" value= '<%= raw @jsonCity %>'  id="jsonCity"/>
+
+
+                                                                                        <!-- (signup)-->
+                                                                                        <script src="//code.jquery.com/jquerybing&quot;, &quot;description&quot;=&gt;nil, &quot;image&quot;=&gt;nil, &quot;created_at&quot;=&gt;&quot;2015-07-18T18:31:04.933Z&quot;, &quot;updated_at&quot;=&gt;&quot;2015-07-18T18:31:04.933Z&quot;}, {&quot;id&quot;=&gt;2, &quot;name&quot;=&gt;&quot;Beauty&quot;, &quot;description&quot;=&gt;nil, &quot;image&quot;=&gt;nil, &quot;created_at&quot;=&gt;&quot;2015-07-20T19:32:42.168Z&quot;, &quot;updated_at&quot;=&gt;&quot;2015-07-20T19:32:42.168Z&quot;}, {&quot;id&quot;=&gt;3, &quot;name&quot;=&gt;&quot;Ac repair&quot;, &quot;description&quot;=&gt;nil, &quot;image&quot;=&gt;nil, &quot;created_at&quot;=&gt;&quot-1.11.3.min.js"></script>.
+                                                                                        <script src="//connect.facebook.net/en_US/all.js"></script>
+                                                                                        <script>
+                                                                                            $(document).ready(function() {
+                                                                                                $("#city").change(function(){
+
+                                                                                                    var jsonSCMapping1 = $('#jsonSCMapping').val();
+                                                                                                    var jsonService1 = $('#jsonService').val();
+                                                                                                    var jsonSCMapping2 = JSON.parse(''+ jsonSCMapping1 +'');
+                                                                                                    var jsonService2= JSON.parse(''+ jsonService1 +'');
+                                                                                                    var options="<option value=''>Select Your Service</option>";
+                                                                                                    for (var i = 0; i < jsonSCMapping2.length; i++) {
+                                                                                                        var cityId =$('#city').val();
+                                                                                                        var counter = jsonSCMapping2[i];
+                                                                                                        if(cityId == counter.city_id)
+                                                                                                        {
+                                                                                                            console.log("cityId" + cityId);
+                                                                                                            console.log("counterCityID" + counter.city_id);
+                                                                                                            for (var j = 0; j < jsonService2.length; j++) {
+                                                                                                                console.log("service_id" + counter.service_id);
+                                                                                                                console.log("jsonservice" + jsonService2[j].id);
+                                                                                                                if(counter.service_id == jsonService2[j].id)
+                                                                                                                { 	console.log("came here");
+                                                                                                                    options = options + "<option value="+counter.service_id+" >"+jsonService2[j].name+"</option>";
+                                                                                                                }
+
+                                                                                                            }
+
+
+                                                                                                        }
+                                                                                                    }
+                                                                                                    console.log("came here" +options);
+                                                                                                    $("#service").html(options);
+                                                                                                });
+                                                                                            });
+
+
+                                                                                        </script>
+
+
+                                                                                        <script>
+                                                                                            window.fbAsyncInit = function() {
+                                                                                                FB.init({
+                                                                                                    appId      : '920712327967585', // Set YOUR APP ID
+                                                                                                    status     : true, // check login status
+                                                                                                    cookie     : true, // enable cookies to allow the server to access the session
+                                                                                                    xfbml      : true  // parse XFBML
+                                                                                                });
+
+                                                                                                (function(d, s, id) {
+                                                                                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                                                                                    if (d.getElementById(id)) return;
+                                                                                                    js = d.createElement(s); js.id = id;
+                                                                                                    js.src = "//connect.facebook.net/en_US/sdk.js";
+                                                                                                    fjs.parentNode.insertBefore(js, fjs);
+                                                                                                }(document, 'script', 'facebook-jssdk'));
+                                                                                            };
+                                                                                            $('.do_fb_login').click(function(){
+
+
+                                                                                                FB.login(function(response) {
+                                                                                                    if (response.authResponse) {
+                                                                                                        var fb_token;
+
+                                                                                                        var data = response.authResponse.accessToken;
+
+                                                                                                        $.ajax({
+                                                                                                            url: 		"vegam/fbauth" ,
+                                                                                                            data:		{fblogin :data},
+                                                                                                            type:		'POST',
+                                                                                                            dataType:	'JSON',
+                                                                                                            success:	function(res){
+                                                                                                                console.log("ss");
+
+                                                                                                                location.reload();
+                                                                                                            },
+                                                                                                            error: function (error) {
+                                                                                                                location.reload();
+
+                                                                                                            }
+
+                                                                                                        });
+                                                                                                    }
+                                                                                                }, {scope:'email'});
+
+
+                                                                                            });
+
+
+
+
+                                                                                        </script>
+
+                                                                                        <script>
+
+                                                                                            $(function() {
+                                                                                                $('button.navbar-toggle').click(function() {
+                                                                                                    if ($('body').css('padding-top') < '100px') {
+                                                                                                        $('body').css('padding-top', '+=245');
+                                                                                                    } else {
+                                                                                                        $('body').css('padding-top', '0');
+                                                                                                    }
+                                                                                                });
+                                                                                            });
+
+                                                                                            $(document).ready(function() {
+                                                                                                $('#signup').formValidation({
+                                                                                                    framework: 'bootstrap',
+                                                                                                    icon: {
+                                                                                                        valid: 'glyphicon glyphicon-ok',
+                                                                                                        invalid: 'glyphicon glyphicon-remove',
+                                                                                                        validating: 'glyphicon glyphicon-refresh'
+                                                                                                    },
+                                                                                                    fields: {
+                                                                                                        firstName: {
+                                                                                                            row: '.col-xs-5',
+                                                                                                            validators: {
+                                                                                                                notEmpty: {
+                                                                                                                    message: 'The first name is required'
+                                                                                                                },
+                                                                                                                regexp: {
+                                                                                                                    regexp: /^[a-zA-Z\s]+$/,
+                                                                                                                    message: 'The first name can only consist of alphabetical and space'
+                                                                                                                }
+                                                                                                            }
+                                                                                                        },
+                                                                                                        lastName: {
+                                                                                                            row: '.col-xs-5',
+                                                                                                            validators: {
+                                                                                                                notEmpty: {
+                                                                                                                    message: 'The last name is required'
+                                                                                                                },
+                                                                                                                regexp: {
+                                                                                                                    regexp: /^[a-zA-Z\s]+$/,
+                                                                                                                    message: 'The last name can only consist of alphabetical and space'
+                                                                                                                }
+                                                                                                            }
+                                                                                                        },
+                                                                                                        cellPhone: {
+                                                                                                            row: '.col-xs-3',
+                                                                                                            validators: {
+                                                                                                                notEmpty: {
+                                                                                                                    message: 'The cell phone number is required'
+                                                                                                                }
+                                                                                                            }
+                                                                                                        },
+                                                                                                        homePhone: {
+                                                                                                            row: '.col-xs-3',
+                                                                                                            validators: {
+                                                                                                                notEmpty: {
+                                                                                                                    message: 'The home phone number is required'
+                                                                                                                }
+                                                                                                            }
+                                                                                                        },
+                                                                                                        officePhone: {
+                                                                                                            row: '.col-xs-3',
+                                                                                                            validators: {
+                                                                                                                notEmpty: {
+                                                                                                                    message: 'The office phone number is required'
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    },
+                                                                                                    email: {
+                                                                                                        row: '.col-xs-6',
+                                                                                                        validators: {
+                                                                                                            notEmpty: {
+                                                                                                                message: 'The email address is required'
+                                                                                                            },
+                                                                                                            emailAddress: {
+                                                                                                                message: 'The input is not a valid email address'
+                                                                                                            }
+                                                                                                        }
+                                                                                                    },
+                                                                                                    password: {
+                                                                                                        row: '.col-xs-6',
+                                                                                                        validators: {
+                                                                                                            notEmpty: {
+                                                                                                                message: 'The password is required'
+                                                                                                            },
+                                                                                                            different: {
+                                                                                                                field: 'username',
+                                                                                                                message: 'The password cannot be the same as username'
+                                                                                                            }
+                                                                                                        }
+                                                                                                    },
+                                                                                                    gender: {
+                                                                                                        validators: {
+                                                                                                            notEmpty: {
+                                                                                                                message: 'The gender is required'
+                                                                                                            }
+                                                                                                        }
+                                                                                                    },
+                                                                                                    birthday: {
+                                                                                                        row: '.col-xs-5',
+                                                                                                        validators: {
+                                                                                                            notEmpty: {
+                                                                                                                message: 'The date of birth is required'
+                                                                                                            },
+                                                                                                            date: {
+                                                                                                                format: 'YYYY/MM/DD',
+                                                                                                                message: 'The date of birth is not valid'
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                });
+                                                                                            });
+                                                                                        </script>
+
+
+
+                                                                                        <!--   (Login)-->
+
+                                                                                        <script>
+                                                                                            $(document).ready(function() {
+
+                                                                                                $('#loginForm').formValidation({
+                                                                                                    framework: 'bootstrap',
+                                                                                                    excluded: [':disabled'],
+                                                                                                    icon: {
+                                                                                                        valid: 'glyphicon glyphicon-ok',
+                                                                                                        invalid: 'glyphicon glyphicon-remove',
+                                                                                                        validating: 'glyphicon glyphicon-refresh'
+                                                                                                    },
+                                                                                                    fields: {
+                                                                                                        username: {
+                                                                                                            validators: {
+                                                                                                                notEmpty: {
+                                                                                                                    message: 'The username is required'
+                                                                                                                }
+                                                                                                            }
+                                                                                                        },
+                                                                                                        password: {
+                                                                                                            validators: {
+                                                                                                                notEmpty: {
+                                                                                                                    message: 'The password is required'
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                });
+                                                                                            });
+                                                                                        </script>
