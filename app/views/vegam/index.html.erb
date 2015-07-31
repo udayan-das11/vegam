@@ -313,69 +313,16 @@
                                                                                             <% end %>
                                                                                             <br>
 
-                                                                                            <div>
-                                                                                              <a href="#"  rel=""  target="_blank">
-                                                                                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
-                                                                                                  <img class="img-responsive "><img src="/assets/electric_icon.jpg" width="50px" height="50px"><br>Electrical
+                                                                                            <% @services.each do |service| %>
+                                                                                                <div>
+                                                                                                  <a href="#"  rel=""  target="_blank">
+                                                                                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
+                                                                                                      <img class="img-responsive "><img src="<%= service.image %>" width="50px" height="50px"><br><%= service.name %>
+                                                                                                    </div>
+                                                                                                  </a>
                                                                                                 </div>
-                                                                                              </a>
-                                                                                            </div>
 
-
-                                                                                            <div>
-                                                                                              <a href="#"  rel=""  target="_blank">
-                                                                                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
-                                                                                                  <img class="img-responsive "><img src="/assets/plumber2_icon.jpg" width="50px" height="50px;"><br>Plumbing
-                                                                                                </div>
-                                                                                              </a>
-                                                                                            </div>
-
-                                                                                            <div>
-                                                                                              <a href="#"  rel=""  target="_blank">
-                                                                                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
-                                                                                                  <img class="img-responsive "><img src="/assets/gardening_icon.jpg" width="50" height="50"><br>Gardening
-                                                                                                </div>
-                                                                                              </a>
-                                                                                            </div>
-
-
-                                                                                            <div>
-                                                                                              <a href="#"  rel=""  target="_blank">
-                                                                                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
-                                                                                                  <img class="img-responsive "><img src="/assets/plumber_icon.jpg" width="50" height="50s"><br>
-                                                                                                  Repairing
-                                                                                                </div>
-                                                                                              </a>
-                                                                                            </div>
-
-                                                                                            <div>
-                                                                                              <a href="#"  rel=""  target="_blank">
-                                                                                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
-                                                                                                  <img class="img-responsive "><img src="/assets/cleaning_icon.jpg" width="50" height="50"><br>Cleaning
-                                                                                                </div>
-                                                                                              </a>
-                                                                                            </div>
-
-                                                                                            <div>
-                                                                                              <a href="#"  rel=""  target="_blank">
-                                                                                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
-                                                                                                  <img class="img-responsive "><img src="/assets/painting_icon.jpg" width="50" height="50"><br>Painting
-                                                                                                </div>
-                                                                                              </a>
-                                                                                            </div>
-
-
-                                                                                            <div class="row">
-                                                                                              <% @services.each do |temp_service| %>
-                                                                                                  <div >
-                                                                                                    <a href="#"  rel=""  target="_blank">
-                                                                                                      <div style="margin-bottom:15px" class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
-                                                                                                        <img class="img-responsive"><i class="<%= temp_service.image%> fa-4x" style="color:#0CF"></i><br><%= temp_service.name %>
-                                                                                                      </div>
-                                                                                                    </a>
-                                                                                                  </div>
-                                                                                              <% end %>
-                                                                                            </div>
+                                                                                            <% end %>
                                                                                           </div>
                                                                                         </div><!--banner end-->
 

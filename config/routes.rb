@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   post 'vegam/signup'
   
   get 'admins/admin'
+  get 'admins/getIcons'
   get 'vegam/myaccount'
   
  

@@ -172,7 +172,7 @@
               
         	  <div class="row">
               		<div>
-					  <a href="#"  rel=""  data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#serviceModal">
+					  <a href="#"  rel=""  data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#serviceModal" onClick="populateServiceModal();">
                         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="cont" align="center">
 					      <img class="img-responsive "><i class="fa fa-cog fa-3x" style="color:#0CF"></i><br>Manage Services
 						</div>	
@@ -244,21 +244,8 @@
                                     <div class="col-md-4">
 										<div id="myCarousel" class="carousel">
 										  <!-- Wrapper for slides -->
-										  <div class="carousel-inner" role="listbox" height="100px" width="100px" >
-										    <div class="item active">
-										      <img src="/assets/icons/plumber_icon.jpg" alt="Chania">
-										    </div>
+										  <div class="carousel-inner" role="listbox" height="100px" width="100px" id="myCarousel1">
 
-										    <div class="item">
-										      <img src="/assets/icons/plumber2_icon.jpg" alt="Chania">
-										    </div>
-											<div class="item">
-										      <img src="/assets/icons/cleaning_icon.jpg" alt="Chania">
-										    </div>
-
-										    <div class="item">
-										      <img src="/assets/icons/painting_icon.jpg" alt="Chania">
-										    </div>
 										  </div>
 
 										  <!-- Left and right controls -->
@@ -577,6 +564,9 @@
     <script>
 			var inival=0;
 			var selectedicon;
+			var slideTo=0;
+			var myArray=[];
+
 			$('#saveModalIconPickerButton').on('change', function(e) { 
 			    
 				var sel = document.getElementById('iconSample');
@@ -662,12 +652,12 @@
 				   var sel1 = document.getElementById('LocationsBox');
 				   var location = sel1.options[sel1.selectedIndex].value;
 				   var servicename = document.getElementById('servicename').value;
-				   
+				   alert(myArray[slideTo]);
 				   $.ajax({
 			                 url: "<%= '/services/add' %>", // Route to the Script Controller method
 			                type: "GET",
 			            dataType: "json",
-			                data: { city_id: city, location_id: location ,service_name: servicename,icon_name:selectedicon},
+			                data: { city_id: city, location_id: location ,service_name: servicename,icon_name:myArray[slideTo]},
 			            complete: function() {},
 			             success: function(data) {
 										alert(data.status)
@@ -677,6 +667,50 @@
 			                      }
 			    });
 			}
+			
+			
+			function populateServiceModal(){
+				$.ajax({
+			                 url: "<%= '/admins/getIcons' %>", // Route to the Script Controller method
+			                type: "GET",
+			            dataType: "json",
+			                data: {},
+			            complete: function() {},
+			             success: function(data) {
+									var myIcons = data.icons;
+							        var myparentDiv = document.getElementById('myCarousel1');
+							        myparentDiv.innerHTML='';
+							 		var myflag=0;
+									for (var i=0;i<myIcons.length;i++) {
+										if (!myIcons[i].startsWith('.')) {
+											if (myflag==0) {
+												var newdiv1 = document.createElement('div'); // Create dynamic element
+												newdiv1.setAttribute('class','item active');
+												var img1 = document.createElement('img');
+												img1.setAttribute('src','/assets/icons/'+myIcons[i]);
+												newdiv1.appendChild(img1);
+												myparentDiv.appendChild(newdiv1);
+												myflag=1;
+											} else {
+												var newdiv1 = document.createElement('div'); // Create dynamic element
+												newdiv1.setAttribute('class','item');
+												var img1 = document.createElement('img');
+												img1.setAttribute('src','/assets/icons/'+myIcons[i]);
+												newdiv1.appendChild(img1);
+												myparentDiv.appendChild(newdiv1);
+											}
+											myArray.push('/assets/icons/'+myIcons[i]);
+										}
+									}
+
+			                      },
+			               error: function() {
+			                        alert("Ajax error!")
+			                      }
+			    });
+
+			}
+			
 			
 			function populateLocations(cityID) {
 				var sel = document.getElementById('mycity3');
@@ -724,7 +758,15 @@
 			                      }
 			    });
 			}
-			
+						$('.carousel').carousel({
+						   interval: 10000000
+						  });
+
+						$('.carousel').on('slide.bs.carousel', function (e) {
+							slideTo = $(e.relatedTarget).index();
+						});
+
+
 	</script>
  					
     
