@@ -2,6 +2,16 @@ class AdminsController < ApplicationController
   def services
   end
 
+  def getIcons
+  myDir=Dir.entries('app/assets/images/icons')
+  	 respond_to do |format|
+     format.html
+     format.js {} 
+     format.json { 
+        render json: {:icons => myDir}
+     } 
+    end	
+  end
   def cities
   end
 

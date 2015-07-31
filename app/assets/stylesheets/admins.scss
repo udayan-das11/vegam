@@ -3,5 +3,12 @@
       width: 100%;
       margin: auto;
   }
-  
+  .carousel-inner > .item {
+    position: relative;
+    display: none;
+    -webkit-transition: 50000s ease-in-out left;
+    -moz-transition: 50000s ease-in-out left;
+    -o-transition: 50000s ease-in-out left;
+    transition: 50000s ease-in-out left;
+}
   .slider { border: none !important; }
