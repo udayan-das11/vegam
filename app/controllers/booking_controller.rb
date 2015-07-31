@@ -10,7 +10,9 @@ end
 def booking
  puts params[:city]
  puts  params[:service]
-  @locality = Locality.where(city_id:params[:city])
+  
+#  @locality = Locality.where(city_id:params[:city])
+   @locality =Locality.find_by_sql(" select * from localities where id in (select locality_id from service_locality_mappings where service_id ='#{params[:service]}' ) ")    
   @subService = SubService.where(service_id:params[:service])
   puts @locality.to_s;
   @serviceId = params[:service]
@@ -47,7 +49,11 @@ puts @workerMap
  
     @booking.worker_id = @worker.id
   WorkerMailer.work_email(@worker , @booking).deliver
-  @worker.count +=1 
+  if @worker.count.nil?
+   @worker.count =1
+  else
+  @worker.count +=1  
+  end
   @worker.save
   @booking.save
 

@@ -11,7 +11,7 @@ def change
       t.references :service, index: true, foreign_key: true
       t.string :contractbasis
       t.string :status
-      t.integer :count
+      t.integer :count , default:0
 
       t.timestamps null: false
     end
