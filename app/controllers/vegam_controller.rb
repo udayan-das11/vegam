@@ -23,7 +23,6 @@ skip_before_filter :verify_authenticity_token , :only => [:index ,:fbauth]
   def signin
          puts(params[:user][:email])
 		 user2 = User.find_by_email(params[:user][:email])
-		puts "ss url" + session[:requestUrl]
 		 puts(Digest::SHA1.hexdigest(params[:user][:password].to_s)+"  > "+user2.password.to_s+"#")
 		 if (Digest::SHA1.hexdigest(params[:user][:password].to_s) == user2.password.to_s)
 		  puts "pwd match"
