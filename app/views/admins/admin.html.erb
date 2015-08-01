@@ -239,8 +239,9 @@
 						  <button type="button" class="close" data-dismiss="modal">&times;</button>
 
 						  <ul class="nav nav-pills">
-							<li class="active"><a href="#servicetab1" data-toggle="tab">Manage Service</a></li>
+							<li class="active"><a href="#servicetab1" data-toggle="tab">Add Service</a></li>
 							<li><a href="#servicetab2" data-toggle="tab">Manage SubServices</a></li>
+							<li><a href="#servicetab3" data-toggle="tab">Manage Services</a></li>
 						  </ul>
 						</div>
 						<div class="modal-body">
@@ -270,11 +271,11 @@
 									<div class="col-sm-10">
 									  <%= form_for @city, :html => {:class => 'form-horizontal'}, :url => {:controller => 'services',:action =>"add" } do |f|%>
 										  <%= f.text_field :cityName,class:"form-control",placeholder:"Service Name",id:"servicename"%></br>
-										  <%= f.collection_select :cityName, City.all,:id,:cityName ,{:include_blank => ''}, {:class => 'form-control', :id => 'mycity3', onChange:'populateLocations(this.selectedIndex);'} %></br>
-										  <select id="LocationsBox" class='form-control'>
+										  <%= f.collection_select :cityName, City.all,:id,:cityName ,{:include_blank => ''}, {:class => 'form-control', :id => 'mycity3', onChange:'populateLocations(3,1);'} %></br>
+										  <select id="LocationsBox1" class='form-control'>
 										  </select></br>
 										  <div align="right">
-											<li class="btn btn-info" , onClick="createService();">Add</li>
+											<li class="btn btn-info" , onClick="createService(3,1);">Add</li>
 										  </div>
 									  <% end %>
 									</div>
@@ -308,6 +309,18 @@
 							  <% end %>
 							</div>
 
+
+							<div class="tab-pane" id="servicetab3">
+							  <%= form_for @city, :html => {:class => 'form-horizontal'}, :url => {:controller => 'services',:action =>"add" } do |f|%>
+								  <%= collection_select(:service, :id, Service.all,:id, :name,{},{:class=>'form-control',:id=>'serviceDrop'}) %></br>
+								  <%= f.collection_select :cityName, City.all,:id,:cityName ,{:include_blank => ''}, {:class => 'form-control', :id => 'mycity4', onChange:'populateLocations(4,2);'} %></br>
+								  <select id="LocationsBox2" class='form-control'>
+								  </select></br>
+								  <div align="right">
+									<li class="btn btn-info" , onClick="createService(4,2);">Add</li>
+								  </div>
+							  <% end %>
+							</div>
 
 						  </div>
 						</div>
@@ -704,12 +717,19 @@
 			    });
 			}
 			
-			function createService() {
-				   var sel = document.getElementById('mycity3');
+			function createService(cityID,LocationID) {
+				   var sel = document.getElementById('mycity'+cityID);
 				   var city = sel.options[sel.selectedIndex].value;
-				   var sel1 = document.getElementById('LocationsBox');
+				   var sel1 = document.getElementById('LocationsBox'+LocationID);
 				   var location = sel1.options[sel1.selectedIndex].value;
-				   var servicename = document.getElementById('servicename').value;
+				   var servicename='';
+				   if (cityID==3 && LocationID==1) {
+					   servicename = document.getElementById('servicename').value;
+				   }
+				   else {
+					   var sel2 = document.getElementById('serviceDrop');
+					   servicename = sel2.options[sel2.selectedIndex].value;
+				   }
 				   alert(myArray[slideTo]);
 				   $.ajax({
 			                 url: "<%= '/services/add' %>", // Route to the Script Controller method
@@ -770,10 +790,10 @@
 			}
 			
 			
-			function populateLocations(cityID) {
-				var sel = document.getElementById('mycity3');
+			function populateLocations(cityID,LocationsID) {
+				var sel = document.getElementById('mycity'+cityID);
 				var sv = sel.options[sel.selectedIndex].value;
-				var x = document.getElementById("LocationsBox");
+				var x = document.getElementById("LocationsBox"+LocationsID);
 				x.options.length=0;
 				x.selectedIndex=-1;
 				$.ajax({

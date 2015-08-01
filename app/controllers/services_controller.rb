@@ -1,7 +1,11 @@
 class ServicesController < ApplicationController
   def add
     puts(params[:city_id]+' '+params[:location_id]+' '+params[:service_name])
-	service = Service.find_by_name(params[:service_name])
+	  if (is_number?(params[:service_name]))
+			service = Service.find(params[:service_name])
+		else
+			service = Service.find_by_name(params[:service_name])
+		end
 	if (service)
 		if (!ServiceCityMapping.exists?(service_id: service.id.to_s , city_id: params[:city_id]))
 		   newServiceCityMapping =  ServiceCityMapping.new(city_id:params[:city_id],service_id:service.id)
@@ -74,5 +78,9 @@ class ServicesController < ApplicationController
 			end
 		end
 		redirect_to :back
+	end
+
+	def is_number? string
+		true if Float(string) rescue false
 	end
 end
