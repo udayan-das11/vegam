@@ -58,5 +58,21 @@ class ServicesController < ApplicationController
   end
 
   def show
-  end
+	end
+
+	def addSubService
+		puts("@@@@@@@@@@@@@@@@@@@@@@@")
+		puts(params.length.to_s);
+
+		numLocations=params.size-6;
+		for i in 1..numLocations
+			subserviveField="Subservice"+i.to_s;
+			@subservice=SubService.new(subServiceName:params[subserviveField],service_id:params[:service][:name]);
+
+			if (@subservice.subServiceName && !@subservice.subServiceName.blank?)
+				@subservice.save;
+			end
+		end
+		redirect_to :back
+	end
 end

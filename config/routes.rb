@@ -54,7 +54,7 @@ Rails.application.routes.draw do
   
   post 'booking/create' => 'booking#booking'
   post 'booking/doBooking'=> 'booking#doBooking'  
-  
+  post 'services/addSubService'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

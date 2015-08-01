@@ -232,60 +232,98 @@
 
                           <!-- Manage Services -->
 
-                          <div class="modal fade" id="serviceModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                  <h4 class="modal-title">Login</h4>
-                                </div>
-                                <div class="modal-body">
-                                  <div class="row">
-                                    <div class="col-md-4">
-										<div id="myCarousel" class="carousel">
-										  <!-- Wrapper for slides -->
-										  <div class="carousel-inner" role="listbox" height="100px" width="100px" id="myCarousel1">
+				  <div class="modal fade" id="serviceModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+					<div class="modal-dialog">
+					  <div class="modal-content">
+						<div class="modal-header">
+						  <button type="button" class="close" data-dismiss="modal">&times;</button>
 
+						  <ul class="nav nav-pills">
+							<li class="active"><a href="#servicetab1" data-toggle="tab">Manage Service</a></li>
+							<li><a href="#servicetab2" data-toggle="tab">Manage SubServices</a></li>
+						  </ul>
+						</div>
+						<div class="modal-body">
+						  <div class="tab-content">
+							<div class="tab-pane active" id="servicetab1">
+							  <div class="row">
+								<div class="col-md-4">
+								  <div id="myCarousel" class="carousel">
+									<!-- Wrapper for slides -->
+									<div class="carousel-inner" role="listbox" height="100px" width="100px" id="myCarousel1">
+
+									</div>
+
+									<!-- Left and right controls -->
+									<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+									  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+									  <span class="sr-only">Previous</span>
+									</a>
+									<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+									  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+									  <span class="sr-only">Next</span>
+									</a>
+								  </div>>
+								</div>
+								<div class="col-md-8">
+								  <div class="form-group">
+									<div class="col-sm-10">
+									  <%= form_for @city, :html => {:class => 'form-horizontal'}, :url => {:controller => 'services',:action =>"add" } do |f|%>
+										  <%= f.text_field :cityName,class:"form-control",placeholder:"Service Name",id:"servicename"%></br>
+										  <%= f.collection_select :cityName, City.all,:id,:cityName ,{:include_blank => ''}, {:class => 'form-control', :id => 'mycity3', onChange:'populateLocations(this.selectedIndex);'} %></br>
+										  <select id="LocationsBox" class='form-control'>
+										  </select></br>
+										  <div align="right">
+											<li class="btn btn-info" , onClick="createService();">Add</li>
 										  </div>
+									  <% end %>
+									</div>
+								  </div>
+								</div>
+							  </div>
+							</div>
 
-										  <!-- Left and right controls -->
-										  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-										    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-										    <span class="sr-only">Previous</span>
-										  </a>
-										  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-										    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-										    <span class="sr-only">Next</span>
-										  </a>
-										</div>
-                                    </div>
-                                    <div class="col-md-8">
-                                      <div class="form-group">
-                                        <div class="col-sm-10">
-										  	<%= form_for @city, :html => {:class => 'form-horizontal'}, :url => {:controller => 'services',:action =>"add" } do |f|%>
-											        <%= f.text_field :cityName,class:"form-control",placeholder:"Service Name",id:"servicename"%></br>
-						                            <%= f.collection_select :cityName, City.all,:id,:cityName ,{:include_blank => ''}, {:class => 'form-control', :id => 'mycity3', onChange:'populateLocations(this.selectedIndex);'} %></br>
-						                            <select id="LocationsBox" class='form-control'>
-													
-												    </select></br>
-													<div align="right">
-													<li class="btn btn-info" , onClick="createService();">Add</li>
-													</div>
-										 <% end %>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+							<div class="tab-pane" id="servicetab2">
+							  <%= form_for @service, :html => {:class => 'form-horizontal'}, :url => {:controller => 'services',:action =>"addSubService" } do |f|%>
+								  <div class="form-group">
+									<label class="col-xs-3 control-label">Service Name</label>
+									<div class="col-xs-5">
+									  <%= f.collection_select :name, Service.all,:id,:name ,{:include_blank => ''}, {:class => 'form-control', :id => 'myService2'} %>
+									</div>
+								  </div>
 
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                              </div>
+								  <div class="form-group">
+									<label class="col-xs-3 control-label">Sub Services</label>
+									<div class="col-xs-5">
+									  <li class="btn btn-info" onClick="addNewSubservice('servicesGroup2');">Add</li>
+									</div>
+								  </div>
+								  <div id='servicesGroup2'>
+								  </div>
+								  <div class="modal-footer">
+									<div class="form-group">
+									  <%=f.submit 'Submit', class:"btn btn-info"%>
+									</div>
+								  </div>
+							  <% end %>
+							</div>
 
-                            </div>
-                          </div>
-                  </div>		<!-- (  Manage Services  )-->
+
+						  </div>
+						</div>
+
+
+						<div class="modal-footer">
+						  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					  </div>
+					</div>
+				  </div>
+
+
+
+
+  <!-- (  Manage Services  )-->
         
         
 	 
@@ -566,6 +604,7 @@
 			var selectedicon;
 			var slideTo=0;
 			var myArray=[];
+			var inivalsubservice=0;
 
 			$('#saveModalIconPickerButton').on('change', function(e) { 
 			    
@@ -614,8 +653,27 @@
 			newText.setAttribute('placeholder','Locality Name');
 			newdiv.appendChild(newText);
 			}
-			
-			
+
+			function addNewSubservice(elementServiceID) {
+				inivalsubservice=inivalsubservice+1; // Increment element number by 1
+				var ni = document.getElementById(elementServiceID);
+				var newdiv1 = document.createElement('div'); // Create dynamic element
+				newdiv1.setAttribute('class','form-group');
+				ni.appendChild(newdiv1);
+				var newlab = document.createElement('label');
+				newlab.setAttribute('class','col-xs-3 control-label');
+				var newdiv = document.createElement('div'); // Create dynamic element
+				var divIdName = 'Subservice'+inivalsubservice;
+				newdiv.setAttribute('class','col-xs-5');
+				newdiv1.appendChild(newlab);
+				newdiv1.appendChild(newdiv);
+				var newText = document.createElement('input');
+				newText.setAttribute('type','text');
+				newText.setAttribute('name',divIdName);
+				newText.setAttribute('class','form-control');
+				newText.setAttribute('placeholder','Sub Service Name');
+				newdiv.appendChild(newText);
+			}
 			   function getCityID(){
 
 				   var sel = document.getElementById('mycity');

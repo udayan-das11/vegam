@@ -24,7 +24,8 @@ class AdminsController < ApplicationController
   
   def admin
     @user=User.new
-	@city=City.new
-	@locations = Locality.all
+	  @city=City.new
+	  @locations = Locality.all
+    @service=Service.new
   end
 end
