@@ -42,6 +42,8 @@ class WorkersController < ApplicationController
     @city =City.find(params[:worker][:city])
     puts("***************Debugging******************")
     @worker.city=@city.cityName
+    @worker.service_id=@worker.servicename
+    @worker.servicename=Service.find(@worker.service_id).name.to_s
     subCityName=""
     if(@worker.save)
       params.each do |key, value|

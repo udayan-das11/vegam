@@ -29,20 +29,22 @@
       <!--<%= f.select :city, options_for_select(@cities.map { |value| [ value.cityName,value.id ]}, :selected => f.object.name), {:include_blank => 'Please select'},{:class => 'form-control', :id => 'mycity3', onChange:'populateLocations(this.selectedIndex);'} %>-->
       <%= f.collection_select :city, City.all,:id,:cityName ,{:include_blank => true}, {:class => 'form-control', :id => 'mycity3', onChange:'populateLocations(this.selectedIndex);'} %>
     </div>
+    <label class="control-label col-md-2"><%= f.label :subcity %></label>
     <div class="form-group">
+
     <div id ="localitiesPlaceHolder" class = "form-control">
 
     </div>
       </div>
 
-    <div class="form-group">
+    <!--<div class="form-group">-->
 
-      <label class="control-label col-md-2"><%= f.label :subcity %></label>
+      <!--<label class="control-label col-md-2"><%= f.label :subcity %></label>-->
 
-      <select id="LocationsBox1" class = "form-control"></select>
+      <!--<select id="LocationsBox1" class = "form-control"></select>-->
 
 
-    </div>
+    <!--</div>-->
 
     <div class="form-group">
 
@@ -64,7 +66,7 @@
     </div>
     <div class="field" >
       <%= f.label :servicename %><br>
-      <%= f.select :servicename, options_for_select(@services.map { |value| [ value.name ]}, :selected => f.object.id), {:include_blank => 'Select Service'},{:class => 'form-control'} %>
+      <%= f.select :servicename, options_for_select(@services.map { |value| [ value.name , value.id ]}, :selected => f.object.id), {:include_blank => 'Select Service'},{:class => 'form-control'} %>
     </div>
     <div class="form-group">
 
@@ -148,11 +150,11 @@ alert("here");
     function populateLocations(cityID) {
         var sel = document.getElementById('mycity3');
         sv = sel.options[cityID].value;
-        var x = document.getElementById("LocationsBox1");
+       // var x = document.getElementById("LocationsBox1");
         var y = document.getElementById("localitiesPlaceHolder");
 
-        x.options.length=0;
-        x.selectedIndex=-1;
+//        x.options.length=0;
+//        x.selectedIndex=-1;
 
         $.ajax({
 
@@ -178,11 +180,11 @@ alert("here");
                     label.innerHTML=location.subCity;
                     y.appendChild(checkbox);
                     y.appendChild(label);
-                    var option = document.createElement("Option");
-                    option.value = location.id;
-                    option.text = location.subCity;
-                    x.add(option,i);
-                    x.selectedIndex=-1;
+//                    var option = document.createElement("Option");
+//                    option.value = location.id;
+//                    option.text = location.subCity;
+//                    x.add(option,i);
+//                    x.selectedIndex=-1;
                 });
             },
             error: function() {
