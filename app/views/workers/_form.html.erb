@@ -29,13 +29,22 @@
       <!--<%= f.select :city, options_for_select(@cities.map { |value| [ value.cityName,value.id ]}, :selected => f.object.name), {:include_blank => 'Please select'},{:class => 'form-control', :id => 'mycity3', onChange:'populateLocations(this.selectedIndex);'} %>-->
       <%= f.collection_select :city, City.all,:id,:cityName ,{:include_blank => true}, {:class => 'form-control', :id => 'mycity3', onChange:'populateLocations(this.selectedIndex);'} %>
     </div>
+    <label class="control-label col-md-2"><%= f.label :subcity %></label>
     <div class="form-group">
 
-      <label class="control-label col-md-2"><%= f.label :subcity %></label>
-      <select id="LocationsBox1" class = "form-control"></select>
-
+    <div id ="localitiesPlaceHolder" class = "form-control">
 
     </div>
+      </div>
+
+    <!--<div class="form-group">-->
+
+      <!--<label class="control-label col-md-2"><%= f.label :subcity %></label>-->
+
+      <!--<select id="LocationsBox1" class = "form-control"></select>-->
+
+
+    <!--</div>-->
 
     <div class="form-group">
 
@@ -57,7 +66,7 @@
     </div>
     <div class="field" >
       <%= f.label :servicename %><br>
-      <%= f.select :servicename, options_for_select(@services.map { |value| [ value.name ]}, :selected => f.object.id), {:include_blank => 'Select Service'},{:class => 'form-control'} %>
+      <%= f.select :servicename, options_for_select(@services.map { |value| [ value.name , value.id ]}, :selected => f.object.id), {:include_blank => 'Select Service'},{:class => 'form-control'} %>
     </div>
     <div class="form-group">
 
@@ -85,6 +94,29 @@
 <% end %>
 <script>
     var sv;
+
+    var options = [];
+
+    $( '.dropdown-menu a' ).on( 'click', function( event ) {
+alert("here");
+        var $target = $( event.currentTarget ),
+                val = $target.attr( 'data-value' ),
+                $inp = $target.find( 'input' ),
+                idx;
+
+        if ( ( idx = options.indexOf( val ) ) > -1 ) {
+            options.splice( idx, 1 );
+            setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
+        } else {
+            options.push( val );
+            setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
+        }
+
+        $( event.target ).blur();
+
+        console.log( options );
+        return false;
+    });
 
     $( "#LocationsBox1" ).change(function() {
         var sel = document.getElementById('LocationsBox1');
@@ -118,9 +150,12 @@
     function populateLocations(cityID) {
         var sel = document.getElementById('mycity3');
         sv = sel.options[cityID].value;
-        var x = document.getElementById("LocationsBox1");
-        x.options.length=0;
-        x.selectedIndex=-1;
+       // var x = document.getElementById("LocationsBox1");
+        var y = document.getElementById("localitiesPlaceHolder");
+
+//        x.options.length=0;
+//        x.selectedIndex=-1;
+
         $.ajax({
 
             url: "<%= '/cities/show' %>", // Route to the Script Controller method
@@ -131,12 +166,25 @@
             success: function(data) {
 
                 var temp=0;
+                y.innerHTML='';
                 $.each(data.locations, function(i, location) {
-                    var option = document.createElement("Option");
-                    option.value = location.id;
-                    option.text = location.subCity;
-                    x.add(option,i);
-                    x.selectedIndex=-1;
+                    //alert('here');
+                    var checkbox = document.createElement("input");
+                    var label = document.createElement("label");
+                    checkbox.setAttribute('type','checkbox');
+                    checkbox.setAttribute('id','location'+i);
+                    checkbox.setAttribute('value',location.id);
+                    checkbox.setAttribute('name','location'+i);
+                    ///checkbox.onchange=dynamicEvent;
+                    label.setAttribute('for','location'+i);
+                    label.innerHTML=location.subCity;
+                    y.appendChild(checkbox);
+                    y.appendChild(label);
+//                    var option = document.createElement("Option");
+//                    option.value = location.id;
+//                    option.text = location.subCity;
+//                    x.add(option,i);
+//                    x.selectedIndex=-1;
                 });
             },
             error: function() {
