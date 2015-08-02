@@ -37,12 +37,25 @@ class WorkersController < ApplicationController
   # POST /workers
   # POST /workers.json
   def create
+    puts(params.size)
     @worker = Worker.new(worker_params)
     @city =City.find(params[:worker][:city])
     puts("***************Debugging******************")
-    @locality=Locality.find(params[:subcity])
     @worker.city=@city.cityName
-    @worker.subcity=@locality.subCity
+
+    subCityName=""
+    numServices=params.size-7
+
+    for i in 0..numServices
+      subAreaField="location"+i.to_s;
+      if (!WorkerLocalityMapping.exists?(worker_id:params[:worker_id],locality_id:params[subAreaField]))
+        workerLocalityMapping=WorkerLocalityMapping.new(worker_id:@worker.id,locality_id:params[subAreaField]);
+        subCityName=subCityName+ ";"+Locality.find(params[subAreaField]).subCity.to_s
+        workerLocalityMapping.save
+      end
+    end
+    @worker.subcity=subCityName
+
     respond_to do |format|
       if @worker.save
         format.html { redirect_to @worker, notice: 'Worker was successfully created.' }
