@@ -43,7 +43,7 @@ UserMailer.booking_email(@booking).deliver
 
 
 #find a algo to assign a task to worker
-@workerMap =WorkerSlMapping.select(:worker_id).distinct.where(locality_id: @locality.id ).map{ |x| x.worker_id }
+@workerMap =WorkerLocalityMapping.select(:worker_id).distinct.where(locality_id: @locality.id ).map{ |x| x.worker_id }
 puts @workerMap
 @worker =Worker.where('service_id in (?) and id in (?)', params[:serviceId] ,@workerMap).order('count asc').first
  
