@@ -30,89 +30,79 @@
 
 
               <!--(filter table)-->
+     <div  id="date-table">
+       <table >
+         <tr>
+     <%= form_for_filterrific @filterrific, html: { :id => 'filterrific-no-ajax-auto-submit'} do |f| %>
 
-        <div  id="date-table">
-           <table >
-                  <tr>
-                    <%= form_tag item_wh_transacs_path, :role => 'form', :method => 'get' do %>
-                        <td style="padding-left:20px ">
-                          Warehouse
-                          <span><%= select_tag :warehouse_filter, options_for_select(@warehouse.map { |value| [ value.name + "-" + value.location, value.id ]}, :selected => params[:warehouse_filter]), {:include_blank => true} %></span>
-                        </td>
-                        <td style="padding-left:20px ">
-                          Item
-                          <span><%= select_tag :item_filter, options_for_select(@item.map { |value| [ value.name +  " (" + value.uom + ")", value.id ]}, :selected => params[:item_filter]), {:include_blank => true}%></span>
-                        </td>
-                        <td style="padding-left:20px ">
-                          Transac Type
-                          <span><%= select_tag :transac_type_filter, options_for_select([['Stock In', 'Stock In'], ['Stock Out', 'Stock Out'], ['Usage', 'Usage'], ['Return', 'Return'],['Initial', 'Initial'], ['Adjustment', 'Adjustment'], ['Purchase','Purchase']], :selected => params[:transac_type_filter]), {:include_blank => true}%></span>
-                        </td>
-                        <td style="padding-left:40px ">
-                          <span ><%= submit_tag("Filter")%></span>
-                        </td>
-                    <% end %>
-                  </tr>
-           </table>
-        </div>
+                 <div>
+                   <td style="padding-left:20px ">
+           Warehouse
+           <span><%= f.select(
+                       :with_warehouse_id,
+                       @filterrific.select_options[:with_warehouse_id],
+                       { include_blank: '- Any -' }
+               ) %></span>
+                   </td>
+         </div>
 
-              <!--(end filter table)-->
 
-              <!--(Date table)-->
+         <div>
+           <td style="padding-left:20px ">
+           Item
+           <span><%= f.select(
+                       :with_item_id,
+                       @filterrific.select_options[:with_item_id],
+                       { include_blank: '- Any -' }
+               ) %></span>
 
-              <div id="date-table1" align="right">
-                <table  style=" width:100%;">
-                  <tr>
-                    <td><b>Transaction Date</b></td>
-                    <td>From&nbsp;<%= date_select(:transac_start, params[:transac_start]) %></td>
-                    <td> To&nbsp;<%= date_select(:transac_end, params[:transac_end]) %></td>
-                  </tr>
-                </table>
-              </div>
+         </div>
 
-              <!--(End date table)-->
 
-              <!--(table)-->
+               <div>
+                 <td style="padding-left:20px ">
+           Transaction Type
+           <span><%= f.select(
+                       :with_transaction_type,
+                       @filterrific.select_options[:with_transaction_type],
+                       { include_blank: '- Any -' }
+               ) %></span>
+                 </td>
+         </div>
 
-        <div >
-          <table class='table  table-hover table-bordered ' id='warehouse_table'>
-               <tbody>
-                  <tr style="background-color: #1ba7e2">
-                    <th>Warehouse</th>
-                    <th>Item</th>
-                    <th>Transac date</th>
-                    <th>Amount</th>
-                    <th>Price</th>
-                    <th>Transac type</th>
-                    <th>Reference</th>
-                    <th>Responsible person</th>
-                    <th colspan="3">Action</th>
-                  </tr>
 
-                  <% @item_wh_transacs.each do |item_wh_transac| %>
-                      <tr>
-                        <td><%=  %></td>
+         <div>
+           <td style="padding-left:20px ">
+           Registered after
+           <%= f.text_field(:with_transaction_date_from, class: 'js-datepicker') %>
+           </td>
+         </div>
 
-                        <td><%= item_wh_transac.transac_date %></td>
-                        <td><%= item_wh_transac.amount.to_s + " "  %></td>
-                        <td><%= item_wh_transac.price.to_s + " $" unless item_wh_transac.price.nil? %></td>
-                        <td><%= item_wh_transac.transac_type %></td>
-                        <td>
-                          <% @transac = ItemWhTransac.all.where("id=?", item_wh_transac.reference_stockout_usage) %>
-                          <% unless @transac.empty? %>
-                              <% @transac.each do |value| %>
-                                  <%= value.item.name + "(" + value.amount.to_s + " "+ value.item.uom + ") " + value.transac_type + " " +value.transac_date.to_s %>
-                              <% end %>
-                          <% end %>
-                        </td>
-                        <td><%= item_wh_transac.responsible_person %></td>
-                        <td><%= item_wh_transac.responsible_person %></td>
-                        <td><%= link_to 'Show', item_wh_transac %>
-                        <%= link_to 'Edit', edit_item_wh_transac_path(item_wh_transac) %>
-                        <%= link_to 'Destroy', item_wh_transac, method: :delete, data: { confirm: 'Are you sure?'} %></td>
-                      </tr>
-                  <% end %>
-                  </tbody>
-          </table>
-        </div> <!--( end table)-->
+
+         <div>
+           <td style="padding-left:20px ">
+           Registered after
+           <%= f.text_field(:with_transaction_date_to, class: 'js-datepicker') %>
+           </td>
+         </div>
+
+               </tr>
+               </table>
+
+         <div>
+           <%= link_to(
+                       'Reset filters',
+                       reset_filterrific_url,
+               ) %>
+         </div>
+         <%= f.submit 'Filter' %>
+         <%# add an automated spinner to your form when the list is refreshed %>
+     <% end %>
+
+     <%= render(
+                 :partial => 'list',
+                 :locals => { :items_wh_transacs => @item_wh_transacs }
+         ) %>
+
      </div>
  </div>

@@ -1,0 +1,51 @@
+<!--(table)-->
+<div id="filterrific_results">
+
+  <div>
+    <%= page_entries_info items_wh_transacs %>
+  </div>
+
+  <div >
+    <table class='table  table-hover table-bordered ' id='warehouse_table'>
+      <tbody>
+      <tr style="background-color: #1ba7e2">
+        <th>Warehouse</th>
+        <th>Item</th>
+        <th>Transac date</th>
+        <th>Amount</th>
+        <th>Price</th>
+        <th>Transac type</th>
+        <th>Reference</th>
+        <th>Responsible person</th>
+        <th colspan="3">Action</th>
+      </tr>
+
+      <% @item_wh_transacs.each do |item_wh_transac| %>
+          <tr>
+            <td><%=  %></td>
+
+            <td><%= item_wh_transac.transac_date %></td>
+            <td><%= item_wh_transac.amount.to_s + " "  %></td>
+            <td><%= item_wh_transac.price.to_s + " $" unless item_wh_transac.price.nil? %></td>
+            <td><%= item_wh_transac.transac_type %></td>
+            <td>
+              <% @transac = ItemWhTransac.all.where("id=?", item_wh_transac.reference_stockout_usage) %>
+              <% unless @transac.empty? %>
+                  <% @transac.each do |value| %>
+                      <%= value.item.name + "(" + value.amount.to_s + " "+ value.item.uom + ") " + value.transac_type + " " +value.transac_date.to_s %>
+                  <% end %>
+              <% end %>
+            </td>
+            <td><%= item_wh_transac.responsible_person %></td>
+            <td><%= item_wh_transac.responsible_person %></td>
+            <td><%= link_to 'Show', item_wh_transac %>
+              <%= link_to 'Edit', edit_item_wh_transac_path(item_wh_transac) %>
+              <%= link_to 'Destroy', item_wh_transac, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%= will_paginate @item_wh_transacs %>
+<!--( end table)-->

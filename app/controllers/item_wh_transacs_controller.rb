@@ -5,18 +5,32 @@ class ItemWhTransacsController < ApplicationController
   # GET /item_wh_transacs
   # GET /item_wh_transacs.json
   def index
-    warehouse_filter = ItemWhTransac.all.where("warehouse_id=?",params[:warehouse_filter])
-    item_filter = ItemWhTransac.all.where("item_id=?",params[:item_filter])
-    transac_type_filter = ItemWhTransac.all.where("transac_type=?",params[:transac_type_filter])
+   #** warehouse_filter = ItemWhTransac.all.where("warehouse_id=?",params[:warehouse_filter])
+   #** item_filter = ItemWhTransac.all.where("item_id=?",params[:item_filter])
+   #** transac_type_filter = ItemWhTransac.all.where("transac_type=?",params[:transac_type_filter])
     #transac_start = ItemWhTransac.all.where("transac_date >=?",params[:transac_start])
     #transac_start = ItemWhTransac.all.where("transac_date <=?",params[:transac_end])
-    puts params[:transac_start].to_s + "----------------------------"
-    @item_wh_transacs = ItemWhTransac.all
-    @item_wh_transacs = @item_wh_transacs & warehouse_filter if params[:warehouse_filter].present?
-    @item_wh_transacs = @item_wh_transacs & item_filter if params[:item_filter].present?
-    @item_wh_transacs = @item_wh_transacs & transac_type_filter if params[:transac_type_filter].present?
+   #**  puts params[:transac_start].to_s + "----------------------------"
+   #**  @item_wh_transacs = ItemWhTransac.all
+   #** @item_wh_transacs = @item_wh_transacs & warehouse_filter if params[:warehouse_filter].present?
+   #** @item_wh_transacs = @item_wh_transacs & item_filter if params[:item_filter].present?
+   #** @item_wh_transacs = @item_wh_transacs & transac_type_filter if params[:transac_type_filter].present?
     #@item_wh_transacs = @item_wh_transacs & transac_start if params[:transac_start].present?
     #@item_wh_transacs = @item_wh_transacs & transac_end if params[:transac_end].present?
+    @filterrific = initialize_filterrific(
+        ItemWhTransac,
+        params[:filterrific],
+        select_options: {
+            with_warehouse_id: Warehouse.options_for_select,
+            with_item_id: Item.options_for_select,
+            with_transaction_type: Item.options_for_transaction_type
+        }
+    ) or return
+      @item_wh_transacs = @filterrific.find.page(params[:page])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /item_wh_transacs/1
