@@ -1,0 +1,227 @@
+
+<%# encoding: utf-8 %>
+
+
+<style>
+    #box{
+        height:40px;
+        width:60%;
+        background-color:#DDD;
+        color:#000;
+        padding-top:10px;
+    }
+
+    #search-margin{
+        margin:25px;
+    }
+    #search-margin1{
+        margin:10px;
+    }
+    #panel, #flip {
+        padding: 5px;
+        text-align: left;
+        border-bottom: solid 1px #0CF;
+        color:#000;
+    }
+    #panel {
+        padding: 50px;
+        display: none;
+    }
+    #second1, #second {
+        padding: 5px;
+        text-align: left;
+        border-bottom: solid 1px #0CF;
+        color:#000;
+    }
+    #second1 {
+        padding: 50px;
+        display: none;
+    }
+    #third1, #third {
+        padding: 5px;
+        text-align: left;
+        border-bottom: solid 1px #0CF;
+        color:#000;
+    }
+    #third1 {
+        padding: 50px;
+        display: none;
+    }
+    #forth1, #forth {
+        padding: 5px;
+        text-align:left;
+        border-bottom: solid 1px #0CF;
+        color:#000;
+    }
+    #forth1 {
+        padding: 50px;
+        display: none;
+    }
+    #fifth1, #fifth {
+        padding: 5px;
+        text-align: left;
+        border-bottom: solid 1px #0CF;
+        color:#000;
+    }
+    #fifth1{
+        padding: 50px;
+        display: none;
+    }
+
+</style>
+
+<script>
+    $(document).ready(function(){
+        $("#flip").click(function(){
+            $("#panel").slideToggle("slow");
+        });
+    });
+
+    $(document).ready(function(){
+        $("#second").click(function(){
+            $("#second1").slideToggle("slow");
+        });
+    });
+    $(document).ready(function(){
+        $("#third").click(function(){
+            $("#third1").slideToggle("slow");
+        });
+    });
+    $(document).ready(function(){
+        $("#forth").click(function(){
+            $("#forth1").slideToggle("slow");
+        });
+    });
+
+    $("#fifth").click(function(){
+        $("#fifth1").slideToggle("slow");
+    });
+
+
+</script>
+<div class='row' style="margin-bottom: 60px">
+  <%= render 'shared/sharedTop' %>
+</div>
+
+<div class="container">
+  <div class="row">
+
+
+    <div class="col-md-8" id="search-margin">
+      <div class="row">
+        <br/>
+        <br/>
+        <br/>
+
+        <div ><h3>Frequently Asked Questions</h3></div>
+
+        <br/>
+        <!--1st page-->
+
+
+        <div class="list-group-item" id="flip"><b>Registration and Your Account</b><span class="badge"><i class="fa fa-chevron-circle-down"></i></span></div>
+
+        <div id="panel">
+          <div><b style="color:#000">1. Do I need to register to be able to shop at www.Vegam.co.in?</b><br/>
+            No, you can shop as a guest on www.vegam.co.in if you do not want to register on this website. However, we strongly recommend that you register on www.vegam.co.in as it makes your checkout faster, allows you to track your order, save products that interest you to a wishlist (which you may access at a later time) and provides a better shopping experience. If you would like to register, click here.</div>
+
+          <div><b style="color:#000">2. I don’t remember my password. What do I do?</b><br/>
+            You can enter your e-mail address and click on the “forgot password” link and we will e-mail you a system generated password on your registered email address. However, you should set a new password once you sign in with the system generated password.</div>
+
+          <div><b style="color:#000">3. Can I edit my personal details?</b><br/>
+            You can edit your personal details by accessing the “edit profile” section in My Account.</div>
+
+          <div><b style="color:#000"> 4. Can I have multiple accounts linked to the same email ID?</b><br/>
+            No, you can have only one account linked to a single e-mail address.</div>
+        </div><br/>
+
+
+        <!--2nd page-->
+
+        <div class="list-group-item" id="second"><b>Payments & Transactions</b><span class="badge"><i class="fa fa-chevron-circle-down"></i></span></div>
+
+        <div id="second1">
+          <div><b style="color:#000">1. Do I need to register to be able to shop at www.Vegam.co.in?</b><br/>
+            No, you can shop as a guest on www.vegam.co.in if you do not want to register on this website. However, we strongly recommend that you register on www.vegam.co.in as it makes your checkout faster, allows you to track your order, save products that interest you to a wishlist (which you may access at a later time) and provides a better shopping experience. If you would like to register, click here.</div>
+
+          <div><b style="color:#000">2. I don’t remember my password. What do I do?</b><br/>
+            You can enter your e-mail address and click on the “forgot password” link and we will e-mail you a system generated password on your registered email address. However, you should set a new password once you sign in with the system generated password.</div>
+
+          <div><b style="color:#000">3. Can I edit my personal details?</b><br/>
+            You can edit your personal details by accessing the “edit profile” section in My Account.</div>
+
+          <div><b style="color:#000"> 4. Can I have multiple accounts linked to the same email ID?</b><br/>
+            No, you can have only one account linked to a single e-mail address.</div>
+        </div><br/>
+
+        <!--3rd page-->
+
+        <div class="list-group-item" id="third"><b>Order, Delivery & Shipping</b><span class="badge"><i class="fa fa-chevron-circle-down"></i></span></div>
+
+        <div id="third1">
+          <div><b style="color:#000">1. Do I need to register to be able to shop at www.Vegam.co.in?</b><br/>
+            No, you can shop as a guest on www.vegam.co.in if you do not want to register on this website. However, we strongly recommend that you register on www.vegam.co.in as it makes your checkout faster, allows you to track your order, save products that interest you to a wishlist (which you may access at a later time) and provides a better shopping experience. If you would like to register, click here.</div>
+
+          <div><b style="color:#000">2. I don’t remember my password. What do I do?</b><br/>
+            You can enter your e-mail address and click on the “forgot password” link and we will e-mail you a system generated password on your registered email address. However, you should set a new password once you sign in with the system generated password.</div>
+
+          <div><b style="color:#000">3. Can I edit my personal details?</b><br/>
+            You can edit your personal details by accessing the “edit profile” section in My Account.</div>
+
+          <div><b style="color:#000"> 4. Can I have multiple accounts linked to the same email ID?</b><br/>
+            No, you can have only one account linked to a single e-mail address.</div>
+        </div><br/>
+
+        <!--4th-->
+
+        <div class="list-group-item" id="forth"><b>Questions on COD</b><span class="badge"><i class="fa fa-chevron-circle-down"></i></span></div>
+
+        <div id="forth1">
+          <div><b style="color:#000">1. Do I need to register to be able to shop at www.Vegam.co.in?</b><br/>
+            No, you can shop as a guest on www.vegam.co.in if you do not want to register on this website. However, we strongly recommend that you register on www.vegam.co.in as it makes your checkout faster, allows you to track your order, save products that interest you to a wishlist (which you may access at a later time) and provides a better shopping experience. If you would like to register, click here.</div>
+
+          <div><b style="color:#000">2. I don’t remember my password. What do I do?</b><br/>
+            You can enter your e-mail address and click on the “forgot password” link and we will e-mail you a system generated password on your registered email address. However, you should set a new password once you sign in with the system generated password.</div>
+
+          <div><b style="color:#000">3. Can I edit my personal details?</b><br/>
+            You can edit your personal details by accessing the “edit profile” section in My Account.</div>
+
+          <div><b style="color:#000"> 4. Can I have multiple accounts linked to the same email ID?</b><br/>
+            No, you can have only one account linked to a single e-mail address.</div>
+        </div><br/>
+
+        <!--5th-->
+
+        <div class="list-group-item" id="fifth"><b>Cancellation Service</b><span class="badge"><i class="fa fa-chevron-circle-down"></i></span></div>
+
+        <div id="fifth1">
+          <div><b style="color:#000">1. Do I need to register to be able to shop at www.Vegam.co.in?</b><br/>
+            No, you can shop as a guest on www.vegam.co.in if you do not want to register on this website. However, we strongly recommend that you register on www.vegam.co.in as it makes your checkout faster, allows you to track your order, save products that interest you to a wishlist (which you may access at a later time) and provides a better shopping experience. If you would like to register, click here.</div>
+
+          <div><b style="color:#000">2. I don’t remember my password. What do I do?</b><br/>
+            You can enter your e-mail address and click on the “forgot password” link and we will e-mail you a system generated password on your registered email address. However, you should set a new password once you sign in with the system generated password.</div>
+
+          <div><b style="color:#000">3. Can I edit my personal details?</b><br/>
+            You can edit your personal details by accessing the “edit profile” section in My Account.</div>
+
+          <div><b style="color:#000"> 4. Can I have multiple accounts linked to the same email ID?</b><br/>
+            No, you can have only one account linked to a single e-mail address.</div>
+        </div> <br/>
+      </div>
+    </div>
+
+    <!--serch-->
+    <div class="col-md-4" id="search-margin1">
+      <br/>
+      <br/>
+      <div align="right">
+        <input type="search" class="form" placeholder="Search"> <button><i class="fa fa-search fa-1x "></i></button>
+      </div>
+      <br/>
+
+      <!--nav-->
+
+    </div>
+  </div>
+</div>
+

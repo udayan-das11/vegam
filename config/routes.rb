@@ -48,6 +48,8 @@ Rails.application.routes.draw do
   get 'leads/showBody2'
   get 'leads/deleteMail'
   get 'vegam/signout'
+  get 'faq/index'
+
   resources :location
 
   resources :workers
